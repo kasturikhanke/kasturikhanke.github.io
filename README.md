@@ -4,3 +4,4 @@
 I am interested in digital fabrication because I want to explore and learn the differnt tools that can be used to create new and fun things. 
 I have done some laser cutting and silcone molding before and I would love to help my peers out with it. 
 
+## [Assignment 1] (https://github.com/kasturikhanke/kasturikhanke.github.io/tree/main/assignment_1) 
