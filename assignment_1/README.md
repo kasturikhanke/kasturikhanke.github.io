@@ -1,6 +1,7 @@
 ## This is the documentation for Assignment 1
 
 The Illustrator file 
+
 <img src="https://user-images.githubusercontent.com/115178948/196016458-0df5a217-9a5e-41ec-9be8-813f0657ba53.png" width="300">
 
 
