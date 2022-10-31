@@ -13,4 +13,4 @@ After laser cutting, the final model looked as follow:
 
 
 Link to files:
-https://drive.google.com/drive/folders/1Q8IH23JbK5tevr4H_3B4_XLvoysI6vhd?usp=sharing 
+https://drive.google.com/drive/folders/1q0035q7gOJBDXQdSaW69V8LTpA3KGG5N?usp=sharing
