@@ -10,3 +10,7 @@ After laser cutting, the final model looked as follow:
 
 <img src ="https://user-images.githubusercontent.com/115178948/197316493-42d233a3-5992-4ae9-99c0-3ca1897cdc84.jpeg" width ="300"> 
 <img src ="https://user-images.githubusercontent.com/115178948/197316550-a7126e94-a098-4bf1-896e-96e0cd83cb6c.jpeg" width ="300"> 
+
+
+Link to files:
+https://drive.google.com/drive/folders/1Q8IH23JbK5tevr4H_3B4_XLvoysI6vhd?usp=sharing 
