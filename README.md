@@ -7,6 +7,8 @@
 ## [Assignment 3](kasturikhanke.github.io/assignment_3/)
 ## [Assignment 4](kasturikhanke.github.io/assignment_4/)
 ## [Assignment 5](kasturikhanke.github.io/assignment_5/)
+## [Assignment 5](kasturikhanke.github.io/assignment_6/)
+
  
 
 #### I am a Second Year Master's student in the HCDE program. I have a background in Industrial Design. 
