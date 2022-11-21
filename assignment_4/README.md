@@ -21,5 +21,11 @@ The 3D print did not end up working since the extrusion was too thick.
 <img src = "https://user-images.githubusercontent.com/115178948/199373497-6fa349d8-1d72-4743-a394-7972e1da5dd1.JPG" width ="300"> 
 
 
+I tried to do this again with thinner layers and this time it worked! Yay! It did not pass the sugar test though :( 
+
+
+<img src ="https://user-images.githubusercontent.com/115178948/202962440-b5861c47-8234-4bed-8d3f-d120df389174.JPG" width="400"> 
+
+
 
 Source file: https://drive.google.com/drive/folders/158poPy7eRzEbqbXstttoIcFQYfAQwBT7?usp=sharing 
