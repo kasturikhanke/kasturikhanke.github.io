@@ -24,3 +24,17 @@
 ![giphy (21)](https://user-images.githubusercontent.com/115178948/202927523-7105337a-706b-4d5d-8b8e-14b032423b49.gif)
 
 
+I started from scratch. Created a new model and a new mold and it worked!! 
+
+
+<img width="500" alt="Screen Shot 2022-11-20 at 1 20 25 PM" src="https://user-images.githubusercontent.com/115178948/203235408-70d83c92-10a2-4481-abb5-151f8a6b0773.png">
+
+<img width="300" src="https://user-images.githubusercontent.com/115178948/203235378-4ae07c96-80cf-4c09-ae08-7114f6d2ec61.JPG"> 
+
+<img width="300" src="https://user-images.githubusercontent.com/115178948/203235363-00f9f2f1-263a-4741-bbd2-d6c90eb92f2a.JPG"> 
+
+
+
+
+
+
