@@ -2,12 +2,13 @@
 ## Welcome to my github page! 
 
 
-## [Assignment 1](https://github.com/kasturikhanke/kasturikhanke.github.io/tree/main/assignment_1) 
+## [Assignment 1](https://github.com/kasturikhanke/kasturikhanke.github.io/tree/main/assignment_1)
 ## [Assignment 2](kasturikhanke.github.io/assignment_2/)
 ## [Assignment 3](kasturikhanke.github.io/assignment_3/)
 ## [Assignment 4](kasturikhanke.github.io/assignment_4/)
 ## [Assignment 5](kasturikhanke.github.io/assignment_5/)
-## [Assignment 5](kasturikhanke.github.io/assignment_6/)
+## [Assignment 6](kasturikhanke.github.io/assignment_6/)
+## [Assignment 7](kasturikhanke.github.io/assignment_7/)
 
  
 
