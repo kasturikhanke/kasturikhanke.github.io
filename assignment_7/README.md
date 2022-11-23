@@ -39,3 +39,7 @@ $15.85
 
 Rest of the materials, I already own- Oomo mixture, 3D filament and hardstone. 
 
+### Contingency 
+
+If the laser cutters are down, I will 3D print the box. This should be done before 1st Dec since additional Rhino models need to be made. 
+
