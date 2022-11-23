@@ -21,6 +21,11 @@ I want to organize my mess a little more and what better way than to do it throu
 - 3D printing the mold for pouring silicone
 - Curing the hardstone for the jewelry 
 
+### Inspiration 
+
+![57f38f4055446b5f01abefe20bc2cb33](https://user-images.githubusercontent.com/115178948/203459997-913247db-4c2b-4253-b7fe-0ee7fcd233c5.jpeg)
+ 
+
 ### Timeline 
 
 
