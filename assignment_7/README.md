@@ -40,7 +40,7 @@ $15.85
 Rest of the materials, I already own- Oomo mixture, 3D filament and hardstone. 
 
 ### Stretch Goal
-Adding these cut outs on top of the box. And the earrings themselves will be stretch goals 
+Adding these cut outs on top of the box. 
 
 ![image](https://user-images.githubusercontent.com/115178948/203460697-9cdba148-d81f-4b28-82f0-e6202340b04f.png)
 
