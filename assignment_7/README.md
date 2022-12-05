@@ -47,5 +47,5 @@ Adding these cut outs on top of the box.
 
 ### Contingency 
 
-If the laser cutters are down, I will 3D print the box. This should be done before 1st Dec since additional Rhino models need to be made. 
+If the laser cutters are down, I will 3D print the box. This should be done before 1st Dec since additional Rhino models need to be made. If molding a earring becomes a cumbersome task, I will mold a ring instead. 
 
