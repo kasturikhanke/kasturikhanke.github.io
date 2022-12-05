@@ -19,6 +19,12 @@ For my final project, I created a jewelry box with a ring.
 
 
 
+### Techniques used
+- Laser cutting
+- Rhino (incl modelling, mesh editing)
+- 3D printing 
+- Mold design 
+
 
 ### Bill of materials
 
