@@ -19,10 +19,11 @@ html {
   }
   
   /* Define a keyframe animation for the spin effect */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+  @keyframes boomerang-spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1); } /* Rotate halfway with faster animation in the middle */
+    100% { transform: rotate(10deg); }
+  }
 
 /* Apply styles to the logo and define the hover effect */
 .navbar-logo img {
@@ -33,7 +34,7 @@ html {
 /* Apply the spin animation on hover */
 .navbar-logo:hover img {
   transform: rotate(360deg);
-  animation: spin 0.3s linear forwards;
+  animation: boomerang-spin 0.3s linear forwards;
 }
 
 
