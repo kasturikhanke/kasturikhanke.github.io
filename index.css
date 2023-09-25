@@ -1,34 +1,161 @@
-body {
+html {
+    height: 100%;
+  }
+  
+  body {
+    min-height: 100%;
+    color: #333;
+    background-color: #fff;
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
   }
   
-  .bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333; /* Background color of the bottom bar */
-    color: #fff; /* Text color */
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
+  .tooltip-container {
+    position: relative ;
+    display: inline-block; 
   }
   
-  .bottom-bar a {
-    text-decoration: none;
-    color: #fff; /* Text color */
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
   }
   
-  .bottom-bar a:hover {
+  .tooltip {
+    visibility: hidden;
+    font-size: 18px; /* Adjust font size for smaller screens */
+    max-width: 80%; /* Adjust maximum width for responsiveness */
+    background-color: #ffffff;
+    color: #4e4e4e;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: -40px; /* Adjust as needed to position the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-style: italic;
+  }
+  
+  .tooltip-container:hover .tooltip {
+    visibility: visible;
+  }
+  
+  .hacky-word {
+    cursor: pointer;
     text-decoration: underline;
-  }  
+  }
+  
+  /* Other styles remain unchanged */
+  
+  @media screen and (max-width: 767px) {
+    .tooltip {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      max-width: 90%; /* Adjust maximum width for responsiveness */
+      top: -30px; /* Adjust as needed to position the tooltip */
+    }
+  }
+  
+  @media screen and (max-width: 479px) {
+    .tooltip {
+      font-size: 12px; /* Adjust font size for smaller screens */
+      max-width: 100%; /* Adjust maximum width for responsiveness */
+      top: -20px; /* Adjust as needed to position the tooltip */
+    }
+  }
+  
+  /* Section and Container Styles */
+  .section-about {
+    margin-top: 80px;
+    padding-top: 0;
+    padding-bottom: 8em;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  
+  .col_22-24 {
+    max-width: 91.6667%;
+  }
+  
+  .row-margin-96 {
+    margin-bottom: 5em;
+    padding-top: 0;
+  }
+  
+  @media screen and (max-width: 479px) {
+    .row-margin-96 {
+      margin-bottom: 4em;}
+  }
+  
 
-.bio{
-    color: #3f006c;
+  
+  /* Text Display Styles */
+  .text-display-3 {
+    line-height: 100%;
+  }
+  
+  .text-display-3 {
+    font-size: 3em;
+    line-height: 100%;
+  }
+  
+  .text-display-3 {
+    letter-spacing: 0;
+    font-size: 4.5em;
+    font-weight: 300;
+    line-height: 1.15;
+  }
+  
+  .text-display-3 {
+    letter-spacing: 0;
+    font-size: 4.5em;
+    font-weight: 300;
+    line-height: 1.15;
+  }
+
+  .text-display-4 {
+    font-size: 1.5em
+}
+  
+  .trademark {
+    vertical-align: super;
+    font-size: 14px;
+    position: relative;
+    top: -0.5em; /* Adjust this value to raise or lower the TM */
+
+  }
+
+.link-list {
+  list-style: none; /* Remove default list styles */
+  padding-left: 2em;/* Remove default padding */
+  padding-right: 2em; 
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif;
+    font-size: 22px;
+    line-height: 32px;
 }
 
-.link{
-    color: #9500ff;
+.link-list li {
+  margin-bottom: 10px; /* Add margin between list items */
 }
+
+.link-list a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Link color */
+}
+
+.link-list a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+  
