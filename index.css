@@ -11,7 +11,9 @@ html {
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 20px;
+    cursor: none; /* Hide the default cursor */
   }
+
 
 .navbar-logo img {
     max-width: 48px;
@@ -36,6 +38,28 @@ html {
 .navbar-logo:hover img {
   transform: rotate(360deg);
   animation: boomerang-spin 0.3s linear forwards;
+}
+
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: url('Logo3.png') no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 9999;
+}
+::selection {
+  background-color: blue;
+  color: #fff; /* White text when selected */
+}
+/* Optional: Change the cursor pointer color */
+.your-element-class:hover {
+  cursor: pointer;
+}
+a:hover {
+  cursor: url('Logo2.png'), none; /* Replace 'path_to_your_custom_cursor.png' with the path to your custom cursor image */
 }
 
 
