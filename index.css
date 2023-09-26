@@ -118,6 +118,13 @@ a:hover {
     }
   }
   
+
+  @media (max-width: 767px) {
+    .custom-cursor {
+      display: none;
+    }
+  }
+  
   /* Section and Container Styles */
   .section-about {
     margin-top: 80px;
