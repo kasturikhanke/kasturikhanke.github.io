@@ -124,7 +124,7 @@ a:hover {
       display: none;
     }
   }
-  
+
   /* Section and Container Styles */
   .section-about {
     margin-top: 80px;
@@ -217,3 +217,34 @@ a:hover {
 }
 
   
+
+/* Define a class for the spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Apply the spin animation on hover for desktop */
+@media (min-width: 768px) {
+  .navbar-logo:hover img {
+    transform: rotate(360deg);
+    animation: spin 0.3s linear forwards;
+  }
+}
+
+/* Safari specific */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+  .navbar-logo:hover img {
+    -webkit-transform: rotate(360deg);
+    -webkit-animation: spin 0.3s linear forwards;
+  }
+}
+
+
+
+

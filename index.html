@@ -6,6 +6,36 @@
   <link rel="stylesheet" href="index.css">
   <title>@kasturi</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<!-- delete from here -->
+
+  <style>
+    /* CSS code goes here */
+    /* Define a class for the spin animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); animation-timing-function: cubic-bezier(0.2, 2, 0.2, 2); } /* Rotate halfway with faster animation in the middle */
+    100% { transform: rotate(10deg); }
+    }
+
+    /* Apply the spin animation on hover for desktop */
+    @media (min-width: 768px) {
+      .navbar-logo:hover img {
+        transform: rotate(360deg);
+        animation: spin 0.2s ease-in-out forwards;
+      }
+    }
+
+    /* Apply the spin animation once on mobile */
+    .navbar-logo img.spin-once {
+      animation: spin 0.6s ease-in-out forwards;
+    }
+
+    /* Rest of your existing styles */
+
+  </style>
+
+<!-- till here -->
   
 </head>
 
@@ -24,12 +54,34 @@
   
   <script src="script.js"></script>
 
+  <!-- delete from here -->
+  <script>
+    // JavaScript code goes here
+    window.addEventListener('load', function() {
+      var isMobile = window.innerWidth <= 767;
+
+      if (isMobile) {
+        var logoImage = document.querySelector('.navbar-logo img');
+        logoImage.classList.add('spin-once');
+
+        // Remove the spin class after the initial spin
+        logoImage.addEventListener('animationend', function() {
+          logoImage.classList.remove('spin-once');
+        });
+      }
+    });
+  </script>
+  <!-- till here-->
+
+  
+
 <div class="section-about">
   <div class="container">
     <div class="row-margin-96">
       <div class="col_22-24">
         <h2 class="text-display-3">
-          Kasturi is a <span class="tooltip-container"><span class="hacky-word">hacky designer</span><span class="tooltip">  applying non-traditional design methods to get faster user feedback</span></span><sup class="trademark">TM</sup> based in San Francisco 🌁 currently researching Responsible AI. Past Growth Designer.
+          Kasturi is a <span class="tooltip-container"><span class="hacky-word">hacky designer</span><span class="tooltip">  applying non-traditional design methods to get faster user feedback</span></span><sup class="trademark">TM</sup> based in San Francisco 🌁 currently researching Responsible AI. 
+          Previosuly, Growth Designer. 
         </h2>
       </div>
     </div>
@@ -44,9 +96,11 @@
                 Check out my latest writing:
             </h3>
             <ul class="link-list">
+                <li><a href="https://uxbestie.substack.com/p/first-job-success-7-guiding-principles" target="_blank" >First Job Success: 7 Guiding Principles</a></li>
                 <li><a href="https://open.substack.com/pub/uxbestie/p/the-rearview-mirror-syndrome?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" >Rearview Mirror Syndrome</a></li>
                 <li><a href="https://open.substack.com/pub/uxbestie/p/unveiling-user-insights?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" >Unveiling User Insights</a></li>
                 <li><a href="https://open.substack.com/pub/uxbestie/p/making-use-of-personas?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" >Making Use of Personas</a></li>
+                
               </ul>
 
 </div>
