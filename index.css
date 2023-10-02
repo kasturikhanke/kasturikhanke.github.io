@@ -1,3 +1,9 @@
+@font-face {
+  font-family: ShareTechMono;
+  src: url('Fonts/Share_Tech_Mono/STM.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
     height: 100%;
   }
@@ -8,13 +14,19 @@ html {
     background-color: #fff;
     margin: 0;
     padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 10px;
     cursor: none; /* Hide the default cursor */
   }
 
-
+  h2, h3 {
+    margin-bottom: 20px; /* Remove margin bottom */
+    padding-bottom: -50px; /* Adjust the padding between h2 and h3 */
+  }
+  
 .navbar-logo img {
     max-width: 48px;
     padding: 40px; /* Adjust the padding as needed */
@@ -45,7 +57,7 @@ html {
   position: fixed;
   width: 20px;
   height: 20px;
-  background: url('Logo3.png') no-repeat;
+  background: url('Cursor.svg') no-repeat;
   background-size: cover;
   pointer-events: none;
   z-index: 9999;
@@ -133,12 +145,12 @@ a:hover {
   }
   
   .container {
+    max-width: calc(1920px - 4em);
     width: 100%;
-    max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding-left: 2em;
     padding-right: 2em;
+    box-sizing: border-box;
   }
   
   .col_22-24 {
@@ -160,18 +172,12 @@ a:hover {
   /* Text Display Styles */
   .text-display-3 {
     line-height: 100%;
+    
   }
   
   .text-display-3 {
     font-size: 3em;
     line-height: 100%;
-  }
-  
-  .text-display-3 {
-    letter-spacing: 0;
-    font-size: 4.5em;
-    font-weight: 300;
-    line-height: 1.15;
   }
   
   .text-display-3 {
@@ -198,7 +204,7 @@ a:hover {
   padding-left: 2em;/* Remove default padding */
   padding-right: 2em; 
   margin: 0; /* Remove default margin */
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
     font-size: 22px;
     line-height: 32px;
 }
@@ -228,15 +234,11 @@ a:hover {
 @media (min-width: 768px) {
   .navbar-logo:hover img {
     transform: rotate(360deg);
-    animation: spin 0.3s linear forwards;
+    animation: spin 0.2s ease-in forwards;
+    animation-iteration-count: 10; 
   }
 }
 
-/* Safari specific */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
 
 @media (min-width: 768px) {
   .navbar-logo:hover img {
@@ -245,6 +247,39 @@ a:hover {
   }
 }
 
+.link-block-18 {
+  width: 100%;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255,255,255,.5);
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  padding: 1rem;
+  font-family: Ppneuemontreal,sans-serif;
+  text-decoration: none
+}
 
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block
+}
 
+.link-block-18 {
+  width: 100%;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255,255,255,.5);
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  padding: 1rem;
+  font-family: Pp neuemont real,sans-serif;
+  text-decoration: none;
+}
 
+.text-block-101 {
+  font-family: 'ShareTechMono',sans-serif;
+  font-size: 1rem;
+  font-weight: 700
+}
+
+.text-block-102 {
+  font-weight: 400
+}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <title>@kasturi</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="Topbar.png" type="image/x-icon">
 
 <!-- delete from here -->
 
@@ -14,24 +14,23 @@
     /* Define a class for the spin animation */
     @keyframes spin {
       0% { transform: rotate(0deg); }
-    50% { transform: rotate(180deg); animation-timing-function: cubic-bezier(0.2, 2, 0.2, 2); } /* Rotate halfway with faster animation in the middle */
+    50% { transform: rotate(180deg); animation-timing-function: cubic-bezier(0.2, 5, 0.4, 2); } /* Rotate halfway with faster animation in the middle */
     100% { transform: rotate(10deg); }
     }
 
-    /* Apply the spin animation on hover for desktop */
+    /* Apply the spin animation on hover for desktop 
     @media (min-width: 768px) {
       .navbar-logo:hover img {
         transform: rotate(360deg);
-        animation: spin 0.2s ease-in-out forwards;
+        animation: spin 0.1s ease forwards;
       }
     }
+    */
 
     /* Apply the spin animation once on mobile */
     .navbar-logo img.spin-once {
       animation: spin 0.6s ease-in-out forwards;
     }
-
-    /* Rest of your existing styles */
 
   </style>
 
@@ -93,15 +92,33 @@
 
 <div class="container">
             <h3 class="text-display-4"> 
-                Check out my latest writing:
+                Recent words: 
             </h3>
-            <ul class="link-list">
-                <li><a href="https://uxbestie.substack.com/p/first-job-success-7-guiding-principles" target="_blank" >First Job Success: 7 Guiding Principles</a></li>
-                <li><a href="https://open.substack.com/pub/uxbestie/p/the-rearview-mirror-syndrome?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" >Rearview Mirror Syndrome</a></li>
-                <li><a href="https://open.substack.com/pub/uxbestie/p/unveiling-user-insights?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" >Unveiling User Insights</a></li>
-                <li><a href="https://open.substack.com/pub/uxbestie/p/making-use-of-personas?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" >Making Use of Personas</a></li>
-                
-              </ul>
+
+            <div class="collection-list-wrapper-8 w-dyn-list">
+              <div role="list" class="link-list">
+                <div role="listitem" class="w-dyn-item">
+                  <a href="https://uxbestie.substack.com/p/first-job-success-7-guiding-principles" target="_blank" class="link-block-18 w-inline-block">
+                    <div class="text-block-101">SEPT 28, 2023</div>
+                    <div class="text-block-102">First Job Success: 7 Guiding Principles</div></a>
+                </div>
+
+                    <div role="listitem" class="w-dyn-item"><a href="https://open.substack.com/pub/uxbestie/p/the-rearview-mirror-syndrome?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" class="link-block-18 w-inline-block">
+                      <div class="text-block-101">JUN 8, 2023</div>
+                      <div class="text-block-102">Rearview Mirror Syndrome</div></a>
+
+                    <div role="listitem" class="w-dyn-item"><a href="https://open.substack.com/pub/uxbestie/p/unveiling-user-insights?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" class="link-block-18 w-inline-block">
+                        <div class="text-block-101">SEPT 17, 2023</div>
+                        <div class="text-block-102">Unveiling User Insights</div></a>
+                      </div></div>
+                      
+                      <div role="listitem" class="w-dyn-item"><a href="https://open.substack.com/pub/uxbestie/p/making-use-of-personas?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" class="link-block-18 w-inline-block">
+                        <div class="text-block-101">MAY 9, 2023</div>
+                        <div class="text-block-102">Making Use of Personas</div></a>
+                      </div>
+
+                 </div>
+              </div> 
 
 </div>
 

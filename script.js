@@ -1,4 +1,5 @@
 const customCursor = document.querySelector('.custom-cursor');
+const navbarLogo = document.querySelector('.navbar-logo img');
 
 // Function to set the initial position of the cursor
 function setInitialCursorPosition() {
@@ -6,6 +7,16 @@ function setInitialCursorPosition() {
   const centerY = window.innerHeight / 2;
   customCursor.style.left = `${centerX}px`;
   customCursor.style.top = `${centerY}px`;
+}
+
+// Function to initiate the spin animation
+function spinLogo() {
+  navbarLogo.classList.add('spin-once');
+
+  // Remove the spin class after the initial spin
+  navbarLogo.addEventListener('animationend', function() {
+    navbarLogo.classList.remove('spin-once');
+  });
 }
 
 document.addEventListener('mousemove', (e) => {
@@ -17,19 +28,18 @@ window.addEventListener('load', function() {
   var isMobile = window.innerWidth <= 767;
 
   if (isMobile) {
-    var logoImage = document.querySelector('.navbar-logo img');
-    logoImage.classList.add('spin-once');
-
-    // Remove the spin class after the initial spin
-    logoImage.addEventListener('animationend', function() {
-      logoImage.classList.remove('spin-once');
-    });
+    spinLogo(); // Spin on mobile
+  } else {
+    spinLogo(); // Spin on desktop
   }
 
   // Set the initial position of the cursor
   setInitialCursorPosition();
 });
 
+navbarLogo.addEventListener('mouseenter', () => {
+  spinLogo(); // Spin on hover
+});
+
 // Reset cursor position on window resize
 window.addEventListener('resize', setInitialCursorPosition);
-
