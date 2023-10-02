@@ -187,6 +187,13 @@ a:hover {
     line-height: 1.15;
   }
 
+  @media screen and (max-width: 767px) {
+    .text-display-3 {
+      font-size: 2.2em; /* Adjust the font size for text-display-3 on smaller screens */
+      line-height: 1.5em;
+    }
+  }
+
   .text-display-4 {
     font-size: 1.5em
 }
