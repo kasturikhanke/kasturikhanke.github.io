@@ -43,3 +43,4 @@ navbarLogo.addEventListener('mouseenter', () => {
 
 // Reset cursor position on window resize
 window.addEventListener('resize', setInitialCursorPosition);
+
