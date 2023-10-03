@@ -139,18 +139,27 @@ a:hover {
 
   /* Section and Container Styles */
   .section-about {
-    margin-top: 80px;
+    margin-top: 60px;
     padding-top: 0;
-    padding-bottom: 8em;
+    padding-bottom: 4em;
   }
   
   .container {
     max-width: calc(1920px - 4em);
     width: 100%;
     margin: 0 auto;
-    padding-left: 2em;
+    padding-left: 4em;
     padding-right: 2em;
     box-sizing: border-box;
+  }
+
+  .container2{
+    max-width: calc(1920px - 4em);
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 4em;
+    padding-right: 2em;
+    box-sizing: border-box
   }
   
   .col_22-24 {
