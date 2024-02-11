@@ -116,8 +116,8 @@ a:hover {
   
   @media screen and (max-width: 767px) {
     .tooltip {
-      font-size: 12px; /* Adjust font size for smaller screens */
-      max-width: 100%; /* Adjust maximum width for responsiveness */
+      font-size: 10px; /* Adjust font size for smaller screens */
+      max-width: 120%; /* Adjust maximum width for responsiveness */
       top: -30px; /* Adjust as needed to position the tooltip */
     }
   }
