@@ -358,7 +358,9 @@ a:hover {
   max-width: calc(60% - 24px); /* Limit width to screen width minus padding */
   margin-left: auto; /* Push to the right edge */
 }
-
+.about-right {
+  white-space: nowrap; /* Prevent text wrapping */
+}
 .about-left, .about-right {
   width: calc(40% - 12px); /* 50% width minus half of the margin */
 }
@@ -369,4 +371,15 @@ a:hover {
 }
 .about-left p, .about-right p {
   margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .row.about {
+    justify-content: flex-start;
+    padding-right: 32px;
+    max-width: calc(80% - 32px);
+  }
+  .about-left, .about-right {
+    width: 60%;
+    margin-bottom: 20px;
+  }
 }
