@@ -206,7 +206,11 @@ a:hover {
   .text-display-4 {
     font-size: 1.5em
 }
-  
+.text-display-5 {
+  font-size: 1.5em;
+  font-weight: 100; 
+  line-height: 1;
+}
   .trademark {
     vertical-align: super;
     font-size: 14px;
@@ -343,4 +347,26 @@ a:hover {
   white-space: nowrap; /* Prevent text wrapping */
   max-width: 100%; /* Limit width to prevent overflowing on smaller screens */
   box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Adjust the row about section */
+.row.about {
+  display: flex; /* Use flexbox */
+  justify-content: 24px; /* Space items evenly */
+  padding-right: 16px; /* Add padding from the right */
+  padding-bottom: 32px;
+  max-width: calc(60% - 24px); /* Limit width to screen width minus padding */
+  margin-left: auto; /* Push to the right edge */
+}
+
+.about-left, .about-right {
+  width: calc(40% - 12px); /* 50% width minus half of the margin */
+}
+
+/* Optional: Adjust styles as needed */
+.about-left h2, .about-right h2 {
+  margin-top: 0;
+}
+.about-left p, .about-right p {
+  margin-bottom: 0;
 }
