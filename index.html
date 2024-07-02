@@ -10,34 +10,6 @@
   <title>@kasturi</title>
   <link rel="icon" href="Topbar.png" type="image/x-icon">
 
-<!-- delete from here -->
-
-  <style>
-    /* CSS code goes here */
-    /* Define a class for the spin animation */
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-    50% { transform: rotate(180deg); animation-timing-function: cubic-bezier(0.2, 5, 0.4, 2); } /* Rotate halfway with faster animation in the middle */
-    100% { transform: rotate(10deg); }
-    }
-
-    /* Apply the spin animation on hover for desktop 
-    @media (min-width: 768px) {
-      .navbar-logo:hover img {
-        transform: rotate(360deg);
-        animation: spin 0.1s ease forwards;
-      }
-    }
-    */
-
-    /* Apply the spin animation once on mobile */
-    .navbar-logo img.spin-once {
-      animation: spin 0.6s ease-in-out forwards;
-    }
-
-  </style>
-
-<!-- till here -->
   
 </head>
 
@@ -56,24 +28,6 @@
   
   <script src="script.js"></script>
 
-  <!-- delete from here -->
-  <script>
-    // JavaScript code goes here
-    window.addEventListener('load', function() {
-      var isMobile = window.innerWidth <= 767;
-
-      if (isMobile) {
-        var logoImage = document.querySelector('.navbar-logo img');
-        logoImage.classList.add('spin-once');
-
-        // Remove the spin class after the initial spin
-        logoImage.addEventListener('animationend', function() {
-          logoImage.classList.remove('spin-once');
-        });
-      }
-    });
-  </script>
-  <!-- till here-->
 
   
 
@@ -89,54 +43,8 @@
   </div>
 </div>
 
-<div class="row about">
-  <div class="col_12-24 about-left">
-    <!-- Left content here -->
-    <h2 class="text-display-5">Adobe</h2>
-    <h2 class="text-display-5">UW</h2>
-    <h2 class="text-display-5">Sezzle</h2>
-  </div>
-  <div class="col_12-24 about-right">
-    <!-- Right content here -->
-    <h2 class="text-display-5">Experience Designer </h2>
-    <h2 class="text-display-5">MS HCDE </h2>
-    <h2 class="text-display-5">Product Designer</h2>
-
   </div>
 </div>
-
-<div class="container2">
-            <h3 class="text-display-4"> 
-                Recent words: 
-            </h3>
-
-            <div class="collection-list-wrapper-8 w-dyn-list">
-              <div role="list" class="link-list">
-                <div role="listitem" class="w-dyn-item">
-                  <a href="https://uxbestie.substack.com/p/first-job-success-7-guiding-principles" target="_blank" class="link-block-18 w-inline-block">
-                    <div class="text-block-101">SEPT 28, 2023</div>
-                    <div class="text-block-102">First Job Success: 7 Guiding Principles</div></a>
-                </div>
-
-                    <div role="listitem" class="w-dyn-item"><a href="https://open.substack.com/pub/uxbestie/p/the-rearview-mirror-syndrome?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" class="link-block-18 w-inline-block">
-                      <div class="text-block-101">JUN 8, 2023</div>
-                      <div class="text-block-102">Rearview Mirror Syndrome</div></a>
-
-                    <div role="listitem" class="w-dyn-item"><a href="https://open.substack.com/pub/uxbestie/p/unveiling-user-insights?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" class="link-block-18 w-inline-block">
-                        <div class="text-block-101">SEPT 17, 2023</div>
-                        <div class="text-block-102">Unveiling User Insights</div></a>
-                      </div></div>
-                      
-                      <div role="listitem" class="w-dyn-item"><a href="https://open.substack.com/pub/uxbestie/p/making-use-of-personas?r=2caii3&utm_campaign=post&utm_medium=web" target="_blank" class="link-block-18 w-inline-block">
-                        <div class="text-block-101">MAY 9, 2023</div>
-                        <div class="text-block-102">Making Use of Personas</div></a>
-                      </div>
-
-                 </div>
-              </div> 
-
-</div>
-
 
 
 <div class="bottom-nav">
@@ -146,6 +54,14 @@
   <!-- <a href="#photos">Photos</a>
   <a href="#words">Words</a> -->
 </div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <span>DESIGN PORTFOLIO</span>
+    <span class="footer-separator"></span>
+    <span>2019-2024</span>
+  </div>
+</footer>
 
 </body>
 </html>
