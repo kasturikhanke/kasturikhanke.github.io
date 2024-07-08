@@ -327,20 +327,21 @@ a:hover {
 }
 .site-footer {
   position: fixed;
-  top: 40px; /* Adjust as needed for spacing from the bottom */
-  right: 20px; /* Adjust as needed for spacing from the right */
+  top: 40px;
+  right: 20px;
   display: flex;
   align-items: center;
-  
   padding: 10px;
-  
+  z-index: 1000; /* Ensure it's above other content */
 }
 
 .footer-content {
   display: flex;
   align-items: center;
-  font-family: Arial, sans-serif; /* Change this to match your font */
+  font-family: Arial, sans-serif;
   font-size: 14px;
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+  justify-content: flex-end; /* Align content to the right */
 }
 
 .footer-content span {
@@ -349,7 +350,90 @@ a:hover {
 
 .footer-separator {
   display: inline-block;
-  width: 100px; /* Adjust the width of the separator */
+  width: 100px;
   height: 1px;
-  background-color: black; /* Change this to match your design */
+  background-color: black;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .site-footer {
+    position: static; /* Change to static positioning on smaller screens */
+    margin-top: 20px; /* Add some top margin */
+    padding: 10px 20px; /* Add horizontal padding */
+  }
+
+  .footer-content {
+    justify-content: center; /* Center content on smaller screens */
+  }
+
+  .footer-separator {
+    width: 50px; /* Reduce separator width on smaller screens */
+    margin: 10px 0; /* Add vertical margin to separator */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-content {
+    flex-direction: column; /* Stack content vertically on very small screens */
+    align-items: center;
+  }
+
+  .footer-content span {
+    margin: 5px 0; /* Adjust vertical spacing */
+  }
+
+  .footer-separator {
+    display: none; /* Hide separator on very small screens */
+  }
+}
+
+.section-design-system {
+  margin-top: 60px;
+  padding-top: 60px;
+  padding-bottom: 4em;
+}
+
+.design-system-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Changed from center to flex-start */
+}
+
+.design-system-text {
+  width: 30%;
+  padding-top: 20px; /* Add some top padding for better alignment */
+}
+
+.design-system-video {
+  width: 70%;
+}
+
+.design-system-video video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.design-system-text h2 {
+  font-size: 2.5em;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-top: 0; /* Ensure there's no extra space above the text */
+}
+
+@media screen and (max-width: 768px) {
+  .design-system-content {
+    flex-direction: column;
+  }
+  
+  .design-system-text,
+  .design-system-video {
+    width: 100%;
+  }
+  
+  .design-system-text {
+    margin-bottom: 20px;
+    padding-top: 0; /* Remove top padding on mobile */
+  }
 }
