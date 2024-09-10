@@ -44,3 +44,27 @@ navbarLogo.addEventListener('mouseenter', () => {
 // Reset cursor position on window resize
 window.addEventListener('resize', setInitialCursorPosition);
 
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const membersButton = document.querySelector('.bottom-nav-button.members');
+  const effect1 = membersButton.querySelector('.members-effect-1');
+  const effect2 = membersButton.querySelector('.members-effect-2');
+
+  membersButton.addEventListener('mousemove', function(e) {
+    const rect = membersButton.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    effect1.style.left = `${x}px`;
+    effect1.style.top = `${y}px`;
+  });
+});
