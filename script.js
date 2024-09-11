@@ -45,26 +45,58 @@ navbarLogo.addEventListener('mouseenter', () => {
 window.addEventListener('resize', setInitialCursorPosition);
 
 document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.querySelector('.hamburger-menu');
-  const mobileMenu = document.querySelector('.mobile-menu');
+  const navContainer = document.querySelector('.bottom-nav-container');
+  const navButtons = document.querySelectorAll('.bottom-nav-button');
+  const homeButton = document.querySelector('.bottom-nav-button[data-page="home"]');
+  
+  // Create a highlight element
+  const highlight = document.createElement('div');
+  highlight.classList.add('nav-highlight');
+  navContainer.appendChild(highlight);
 
-  hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
+  // Function to set active state and move highlight
+  function setActiveButton(button, animate = true) {
+    navButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    updateHighlight(button, animate);
+  }
+
+  // Function to update highlight position and size
+  function updateHighlight(button, animate = true) {
+    const buttonRect = button.getBoundingClientRect();
+    const containerRect = navContainer.getBoundingClientRect();
+    
+    const highlightWidth = buttonRect.width - 10; // Adjust for padding
+    const highlightLeft = buttonRect.left - containerRect.left;
+
+    if (animate) {
+      highlight.style.transition = 'all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)';
+    } else {
+      highlight.style.transition = 'none';
+    }
+
+    highlight.style.width = `${highlightWidth}px`;
+    highlight.style.transform = `translateX(${highlightLeft}px)`;
+  }
+
+  // Set initial active state without animation
+  if (homeButton) {
+    setActiveButton(homeButton, false);
+  }
+
+  // Handle button clicks
+  navButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      setActiveButton(this);
+    });
   });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-  const membersButton = document.querySelector('.bottom-nav-button.members');
-  const effect1 = membersButton.querySelector('.members-effect-1');
-  const effect2 = membersButton.querySelector('.members-effect-2');
-
-  membersButton.addEventListener('mousemove', function(e) {
-    const rect = membersButton.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    effect1.style.left = `${x}px`;
-    effect1.style.top = `${y}px`;
+  // Update highlight on window resize
+  window.addEventListener('resize', function() {
+    const activeButton = document.querySelector('.bottom-nav-button.active');
+    if (activeButton) {
+      updateHighlight(activeButton, false);
+    }
   });
 });
