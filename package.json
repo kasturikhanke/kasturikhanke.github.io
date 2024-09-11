@@ -15,5 +15,8 @@
     "express-session": "^1.18.0",
     "framer-motion": "^11.3.23"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
 }

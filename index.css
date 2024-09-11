@@ -312,6 +312,31 @@ button,
   transform: translate(-50%, -50%);
 }
 
+/* ====== What I Did Specific Styles ====== */
+.what-i-did-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.what-i-did-list li {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.what-i-did-list li strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.challenges-description {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
 /* ====== Project Link Styles ====== */
 .project-link {
   display: block;
@@ -338,24 +363,216 @@ button,
   opacity: 0.03;
 }
 
+/* ====== Grid System ====== */
+.Grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.Grid-cell {
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+.Grid-cell--full {
+  width: 100%;
+}
+
+.Grid-cell--1of2 {
+  width: 50%;
+}
+
+/* ====== Case Study Specific Styles ====== */
+.case-study-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 5% 0;
+}
+
+.case-study-intro {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.case-study-details {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+
+.detail-item {
+  margin-right: 60px;
+}
+
+.detail-item h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  color: #666;
+}
+
+.detail-item p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ====== Outcomes Section ====== */
+.outcomes-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.outcomes-header {
+  width: 30%;
+}
+
+.outcomes-header h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.outcomes-grid {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.outcome-box {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.outcome-box h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.outcome-box p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* ====== Case Study Images ====== */
+.case-study-image {
+  margin-bottom: 40px;
+}
+
+/* ====== Section Container ====== */
+.section-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.section-header {
+  width: 30%;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-content {
+  width: 70%;
+}
+
+/* ====== Case Study Sections ====== */
+.case-study-section {
+  margin-bottom: 80px;
+  display: flex;
+  gap: 40px;
+}
+
+.section-number-container {
+  width: 30%;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.section-number {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.section-description {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.section-image {
+  margin-bottom: 40px;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: #888;
+  border-radius: 8px;
+  position: relative;
+}
+
+.image-placeholder span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* ====== Responsive Styles ====== */
 @media screen and (max-width: 768px) {
   body {
-    padding: 60px 4vw 80px;
+    padding: 40px 4vw 60px;
   }
 
   .bottom-nav-container {
-    bottom: 32px;
-    padding: 8px;
+    bottom: 20px;
+    padding: 6px;
   }
 
   .bottom-nav-button {
-    padding: 10px 20px;
+    padding: 8px 16px;
     font-size: 14px;
   }
 
   .navbar-logo {
-    top: 10px;
+    top: 20px;
+    max-width: 40px;
+  }
+
+  .navbar-logo img {
+    max-width: 40px;
   }
 
   .ai-assistant-content,
@@ -372,7 +589,7 @@ button,
 
   .ai-assistant-text,
   .design-system-text {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     padding-top: 0;
   }
 
@@ -380,30 +597,206 @@ button,
   .design-system-text h2 {
     font-size: 1.8rem;
   }
+
+  .case-study-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-number-container,
+  .section-content {
+    width: 100%;
+  }
+
+  .section-number-container {
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-number {
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+  }
+
+  .text-display-3 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .text-display-5 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  }
+
+  .case-study-intro {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  
+
+  .detail-item {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .detail-item h2 {
+    font-size: 0.9rem;
+  }
+
+  .detail-item p {
+    font-size: 1.2rem;
+  }
+
+  .outcomes-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .outcomes-header,
+  .outcomes-grid {
+    width: 100%;
+  }
+
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .Grid-cell--1of2 {
+    width: 100%;
+  }
+
+  .case-study-details {
+    flex-wrap: column;
+  }
+
+  .section-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .section-header,
+  .section-content {
+    width: 100%;
+  }
+
+
+  .outcome-box h3 {
+    font-size: 2rem;
+  }
+
+  .outcome-box p {
+    font-size: 1rem;
+  }
+
+  .what-i-did-list li {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+
+  .challenges-description {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
   body {
-    padding: 60px 3vw 80px;
+    padding: 30px 3vw 50px;
   }
 
   .bottom-nav-container {
-    bottom: 12px;
+    bottom: 10px;
     padding: 4px;
     max-width: 95%;
   }
 
   .bottom-nav-button {
-    padding: 16px 24px;
-    font-size: 17px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
 
   .navbar-logo {
-    top: 24px;
+    top: 15px;
+    max-width: 32px;
+  }
+
+  .navbar-logo img {
+    max-width: 32px;
+  }
+
+  .text-display-3 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
   }
 
   .text-display-5 {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+  }
+
+  .case-study-intro {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .case-study-details {
+    flex-direction: column;
+  }
+
+  .detail-item {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .detail-item h2 {
+    font-size: 0.8rem;
+  }
+
+  .detail-item p {
+    font-size: 1rem;
+  }
+
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .outcome-box {
+    padding: 10px;
+  }
+
+  .outcome-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .outcome-box p {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-number {
+    font-size: 1.2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .what-i-did-list li {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .challenges-description {
+    font-size: 1rem;
   }
 }
 
@@ -421,3 +814,5 @@ button,
 .section-design-system {
   margin-bottom: 80px;
 }
+
+
