@@ -1,14 +1,6 @@
 const customCursor = document.querySelector('.custom-cursor');
 const navbarLogo = document.querySelector('.navbar-logo img');
 
-// Function to set the initial position of the cursor
-function setInitialCursorPosition() {
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
-  customCursor.style.left = `${centerX}px`;
-  customCursor.style.top = `${centerY}px`;
-}
-
 // Function to initiate the spin animation
 function spinLogo() {
   navbarLogo.classList.add('spin-once');
@@ -16,7 +8,7 @@ function spinLogo() {
   // Remove the spin class after the initial spin
   navbarLogo.addEventListener('animationend', function() {
     navbarLogo.classList.remove('spin-once');
-  });
+  }, { once: true });
 }
 
 document.addEventListener('mousemove', (e) => {
@@ -24,30 +16,25 @@ document.addEventListener('mousemove', (e) => {
   customCursor.style.top = `${e.clientY}px`;
 });
 
-window.addEventListener('load', function() {
-  var isMobile = window.innerWidth <= 767;
-
-  if (isMobile) {
-    spinLogo(); // Spin on mobile
-  } else {
-    spinLogo(); // Spin on desktop
+// Function to check if current page is home and spin logo
+function spinLogoIfHome() {
+  const currentPage = window.location.pathname.split('/').pop();
+  if (currentPage === '' || currentPage === 'index.html') {
+    spinLogo();
   }
+}
 
-  // Set the initial position of the cursor
-  setInitialCursorPosition();
+window.addEventListener('load', function() {
+  spinLogoIfHome();
 });
 
 navbarLogo.addEventListener('mouseenter', () => {
   spinLogo(); // Spin on hover
 });
 
-// Reset cursor position on window resize
-window.addEventListener('resize', setInitialCursorPosition);
-
 document.addEventListener('DOMContentLoaded', function() {
   const navContainer = document.querySelector('.bottom-nav-container');
   const navButtons = document.querySelectorAll('.bottom-nav-button');
-  const homeButton = document.querySelector('.bottom-nav-button[data-page="home"]');
   
   // Create a highlight element
   const highlight = document.createElement('div');
@@ -70,25 +57,62 @@ document.addEventListener('DOMContentLoaded', function() {
     const highlightWidth = buttonRect.width - 10; // Adjust for padding
     const highlightLeft = buttonRect.left - containerRect.left;
 
+    highlight.style.width = `${highlightWidth}px`;
+    
     if (animate) {
       highlight.style.transition = 'all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)';
+      highlight.style.transform = `translateX(${highlightLeft}px)`;
     } else {
       highlight.style.transition = 'none';
+      highlight.style.transform = `translateX(${highlightLeft}px)`;
+      // Force a reflow to ensure the transition is applied on the next frame
+      highlight.offsetHeight;
+      highlight.style.transition = 'all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)';
+    }
+  }
+
+  // Function to set the active button based on the current page
+  function setActiveButtonBasedOnPage() {
+    const currentPage = window.location.pathname.split('/').pop();
+    let activeButton;
+
+    switch(currentPage) {
+      case 'index.html':
+      case '':
+        activeButton = document.querySelector('.bottom-nav-button[data-page="home"]');
+        break;
+      case 'craft.html':
+        activeButton = document.querySelector('.bottom-nav-button[data-page="craft"]');
+        break;
+      // Add more cases for other pages as needed
+      default:
+        activeButton = document.querySelector('.bottom-nav-button[data-page="home"]');
     }
 
-    highlight.style.width = `${highlightWidth}px`;
-    highlight.style.transform = `translateX(${highlightLeft}px)`;
+    if (activeButton) {
+      setActiveButton(activeButton, false);
+    }
   }
 
-  // Set initial active state without animation
-  if (homeButton) {
-    setActiveButton(homeButton, false);
-  }
+  // Set initial active state based on the current page
+  setActiveButtonBasedOnPage();
 
   // Handle button clicks
   navButtons.forEach(button => {
     button.addEventListener('click', function() {
-      setActiveButton(this);
+      setActiveButton(this, true);  // Set to true to animate the transition
+      
+      // Navigation logic
+      const page = this.getAttribute('data-page');
+      if (page === 'home') {
+        window.location.href = 'index.html';
+        // Logo will spin when the page loads
+      } else if (page === 'craft') {
+        window.location.href = 'craft.html';
+      } else if (page === 'work') {
+        // Add the correct URL for the work page when it's ready
+        console.log('Work page not implemented yet');
+      }
     });
   });
 
