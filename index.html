@@ -1,14 +1,78 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/Topbar.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kasturi Khanke</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>@kasturi</title>
+  <link rel="icon" href="Topbar.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.typekit.net/zfx5ucl.css">
+</head>
+
+<body>
+  <div class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="/" class="navbar-logo" aria-label="home">
+        <img src="LogoK.png" alt="Logo">
+      </a>
+    </nav>
+  </div>
+
+  <div class="custom-cursor"></div>
+  <script src="script.js"></script>
+  <div class="section-about">
+    <div class="container">
+      <div class="row-margin-96">
+        <div class="col_22-24">
+          <h2 class="text-display-3">
+            Kasturi is a <span class="tooltip-container"><span class="hacky-word">hacky designer</span><span class="tooltip">applying non-traditional design methods to get faster user feedback</span></span><sup class="trademark">TM</sup> based in San Francisco 🌁 currently designing the future of AI @ Adobe. 
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- <div class="section-ai-assistant">
+    <div class="container">
+      <a href="ai-assistant-case-study.html" class="project-link">
+        <div class="ai-assistant-content">
+          <div class="ai-assistant-text">
+            <h2 class="text-display-1">AI Assistant</h2>
+          </div>
+          <div class="ai-assistant-video">
+            <div class="video-placeholder">
+              <span>AI Assistant Video Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  -->
+
+  <div class="section-design-system">
+    <div class="container">
+      <a href="design-system-case-study.html" class="project-link">
+        <div class="design-system-content">
+          <div class="design-system-text">
+            <h2 class="text-display-1">Design system - Adobe Acrobat</h2>
+          </div>
+          <div class="design-system-video">
+            <video width="100%" height="auto" autoplay loop muted playsinline>
+              <source src="Design system.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="bottom-nav-container">
+    <button class="bottom-nav-button" data-page="home">Home</button>
+    <button class="bottom-nav-button" data-page="craft">Craft</button>
+    <button class="bottom-nav-button" data-page="work">Work</button>
+  </div>
+</body>
 </html>
