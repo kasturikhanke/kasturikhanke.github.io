@@ -2,11 +2,11 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://kasturikhanke.github.io/react-gh-pages",
+  "homepage": "https://kasturikhanke.github.io",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
