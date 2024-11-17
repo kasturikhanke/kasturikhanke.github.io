@@ -282,7 +282,7 @@ const SezzleUp = () => {
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-4 border border-gray-200 p-5 rounded-3xl">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Wanted</h3>
-            <p className="text-2xl text-gray-700">NPS Score > than 70</p>
+            <p className="text-2xl text-gray-700">NPS Score {'>'} than 70</p>
           </div>
           
           <div className="col-span-8 border-2 border-emerald-100 p-6 rounded-3xl">
