@@ -152,20 +152,21 @@ const App = () => {
       <Routes>
         <Route path="/" element={
           <div className="min-h-screen bg-white text-gray-800 font-sans">
-            <header className="w-full bg-transparent fixed top-0 z-50">
+            <header className="w-full bg-transparent">
               <SpinningLogo />
             </header>
                  
             <main className="container mx-auto px-4 max-w-5xl pt-20">
+
             {/* Hero Section */}
             <section 
               id="home" 
               ref={el => sectionsRef.current['home'] = el} 
-              className="h-[64vh] text-black relative container mx-auto px-4 max-w-5xl"
+              className="min-h-[400px] max-h-[160px] h-[64vh] text-black relative container mx-auto px-4 max-w-5xl"
             >
               {/* Bottom left - AI Designer text */}
               <div>
-                <h1 className="text-6xl font-normal mb-4 leading-tight max-w-3xl mt-32">
+                <h1 className="text-6xl font-normal mb-4 leading-tight max-w-3xl">
                   Crafting AI experiences that empower creativity
                 </h1>
               </div>
@@ -174,7 +175,7 @@ const App = () => {
               <div className="absolute max-w-lg">
                 <p className="text-xl font-normal leading mb-8">
                   I specialize in human-centered AI design that bridges technological complexity 
-                  with intuitive designs.
+                  with intuitive designs
                 </p>
 
                 {/* Status indicators */}
@@ -188,10 +189,16 @@ const App = () => {
                     Based in San Francisco
                   </div>
                 </div>
-
-                <button className="px-8 py-4 bg-black text-white rounded-full text-sm">
-                  Let's chat
+                <a 
+                  href="https://calendly.com/kasturi-khanke/30min"
+                  className="transition-colors duration-300 "
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                <button className="px-8 py-2 rounded-full border-2 border-black flex items-center gap-2 text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300">             
+                   Let's chat
                 </button>
+                </a>
               </div>
             </section>
 
@@ -199,7 +206,7 @@ const App = () => {
               <section 
                 id="work" 
                 ref={el => sectionsRef.current['work'] = el} 
-                className="mb-32 scroll-mt-24"
+                className="mt-16 lg:mt-24 mb-32 scroll-mt-24"
               >
                 <div className="mx-8">
                   <h2 className="text-4xl font-medium mb-12 text-gray-800">Explore my work ↓</h2>
@@ -261,7 +268,7 @@ const App = () => {
               <section 
                 id="words" 
                 ref={el => sectionsRef.current['words'] = el} 
-                className="mb-32 scroll-mt-24"
+                className="mb-16 scroll-mt-24"
               >
                 <div className="mx-8">
                   <h2 className="text-4xl font-medium mb-8 text-gray-800">Some thoughts</h2>
@@ -303,11 +310,18 @@ const App = () => {
 
             <section className="bg-gray-950 text-white py-32">
               <div className="container mx-auto px-8">
-               <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
-                Let's build something meaningful together
-               </h2>
+                <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
+                  Let's build the future of AI design together
+                </h2>
                 <p className="text-5xl text-gray-500 pl-12 font-normal">
-                Get in touch.
+                  <a 
+                    href="https://calendly.com/kasturi-khanke/30min?month=2024-11"
+                    className="transition-colors duration-300 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get in touch
+                  </a>
                 </p>
               </div>
             </section>

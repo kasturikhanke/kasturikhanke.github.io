@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const BottomNav = ({ activePage, onNavClick, isTabTap }) => {
+const BottomNav = ({ activePage, onNavClick, isTabTap, isCaseStudy = false }) => {
   const navContainerRef = useRef(null);
   const highlightRef = useRef(null);
 
@@ -49,12 +49,17 @@ const BottomNav = ({ activePage, onNavClick, isTabTap }) => {
     };
   }, [activePage, isTabTap]);
 
+  // Define navigation items based on whether it's a case study page
+  const navItems = isCaseStudy 
+    ? ['home'] 
+    : ['home', 'work', 'craft', 'words', 'about'];
+
   return (
     <div ref={navContainerRef} className="fixed bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-    bg-black/70 backdrop-blur-md rounded-[30px] p-[5px] flex shadow-lg isolate z-50 w-auto max-w-[90%]">
+      bg-black/70 backdrop-blur-md rounded-[30px] p-[5px] flex shadow-lg isolate z-50 w-auto max-w-[90%]">
       <div className="absolute inset-[-2px] bg-gradient-to-r from-black/10 to-black/50 rounded-[32px] -z-10 blur-md"></div>
       <div ref={highlightRef} className="nav-highlight absolute top-[5px] left-[5px] h-[calc(100%-10px)] bg-black rounded-[25px] transition-all duration-300 ease-in-out -z-10"></div>
-      {['home', 'work', 'craft', 'words','about'].map((page) => (
+      {navItems.map((page) => (
         <button
           key={page}
           data-page={page}

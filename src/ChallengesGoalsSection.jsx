@@ -19,19 +19,19 @@ const ChallengesGoalsSection = () => {
   }, []);
 
   return (
-    <section className="relative py-12">
+    <section className="relative py-8">
       <div className="max-w-7xl mx-auto">
          {/* Context Section */}
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
             <div className="max-w-md">
-              <h2 className="text-4xl font-medium mb-4">📝 Context</h2>
+              <h2 className="text-2xl font-medium mb-12 text-gray-800">📝 Context</h2>
             </div>
           </div>
 
           <div className="space-y-8">
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-              <p className="text-xl text-gray-700">
+              <p className="text-lg text-gray-700">
                 
                 
                 As an experience designer for a tool on which more than 400 billion PDFs are opened, I took up the challenge of 
@@ -47,47 +47,47 @@ const ChallengesGoalsSection = () => {
           {/* Challenges Section */}
           <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
             <div className="max-w-md">
-              <h2 className="text-4xl font-medium mb-4">❗️Challenges</h2>
+              <h2 className="text-2xl font-medium mb-12 text-gray-800">❗️Challenges</h2>
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-4">
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-              <p className="text-xl text-gray-700">90% of users were not aware of the AI Assistant and what it did</p>
+              <p className="text-lg text-gray-700">90% of users were not aware of the AI Assistant and what it did</p>
             </div>
 
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-              <p className="text-xl text-gray-700">The AI Assistant had a very low adoption rate</p>
+              <p className="text-lg text-gray-700">The AI Assistant had a very low adoption rate</p>
             </div>
 
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-              <p className="text-xl text-gray-700">Users complained and were unhappy about the over-messaging throughout the app</p>
+              <p className="text-lg text-gray-700">Users complained and were unhappy about the over-messaging throughout the app</p>
             </div>
           </div>
         </div>
 
         {/* Design Goals Section */}
-        <div className="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
             <div className="max-w-md">
-              <h2 className="text-4xl font-medium mb-4 text-gray-800">🎯 Design goals</h2>
+              <h2 className="text-2xl font-medium mb-12 text-gray-800">🎯 Design goals</h2>
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-4">
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out flex items-start gap-2">
             {/* <span className="text-5xl font-extralight text-gray-700">*</span> */}
-              <p className="text-xl text-gray-700">Increasing awareness</p>
+              <p className="text-lg text-gray-700">Increasing awareness</p>
             </div>
 
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out flex items-start gap-2">
             {/* <span className="text-5xl font-extralight text-gray-700">*</span> */}
-              <p className="text-xl text-gray-700">Non-disruptive messaging</p>
+              <p className="text-lg text-gray-700">Non-disruptive messaging</p>
             </div>
 
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out flex items-start gap-2">
             {/* <span className="text-5xl font-extralight text-gray-700">*</span> */}
-              <p className="text-xl text-gray-700">Nudging when users needed it</p>
+              <p className="text-lg text-gray-700">Nudging when users needed it</p>
             </div>
           </div>
         </div>

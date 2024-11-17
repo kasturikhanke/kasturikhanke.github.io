@@ -5,6 +5,12 @@ import BottomNav from './BottomNav';
 const SezzleUp = () => {
   const [activePage, setActivePage] = React.useState('sezzle-up');
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array means this runs once when component mounts
+
+
+
   const handleNavClick = (page) => {
     if (page === 'home') {
       window.location.href = '/';
@@ -13,94 +19,122 @@ const SezzleUp = () => {
     }
   };
 
+  
+
   return (
     <div className="min-h-screen bg-white text-gray-950 font-sans">
-      <header className="w-full bg-transparent">
+      <header className="w-full bg-transparent pt-8 pb-16">
         <SpinningLogo />
       </header>
-      
-      
 
       <main className="container mx-auto px-4 max-w-4xl">
-        <section className="mb-8 pt-16">
-          <h1 className="text-6xl font-semibold mb-4">Sezzle Up</h1>
-          <p className="text-xl font-regular mb-8">First BNPL service to empower users with credit building.</p>
-          
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div>
-              <h2 className="text-xl font-semibold mb-2">My Role</h2>
-              <p className="text-xl">Lead UX Designer</p>
+        {/* Hero Section */}
+        <section className="mb-16">
+          <h1 className="text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800">Sezzle Up</h1>
+          <p className="text-xl font-normal mb-8 max-w-2xl text-gray-700">
+            First BNPL service to empower users with credit building.
+          </p>
+          <div className="flex items-center gap-8 text-sm text-gray-500 mb-8">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+              Lead UX Designer
             </div>
-            <div>
-              <h2 className="text-xl font-semibold mb-2">Timeline</h2>
-              <p className="text-xl">June 2022 - December 2022</p>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+              June 2022 - December 2022
             </div>
           </div>
         </section>
 
-        {/* Add the full bleed image here, outside the container */}
-      <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%] mb-16">
-        <img 
-          src="SezzleUpMock0.jpg" 
-          alt="Sezzle Up" 
-          className="w-full h-auto"
-        />
-      </div>
+        
 
-        <section className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8">Outcomes</h2>
+        {/* Impact Section */}
+        <section className="mb-24">
+          <h2 className="text-2xl font-medium mb-8 text-gray-800">📈 Impact</h2>
           <div className="grid grid-cols-2 gap-8">
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <h3 className="text-4xl font-bold mb-2">70%</h3>
-              <p className="text-xl">Increase in conversion rates of users connecting their bank accounts</p>
+            <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
+              <div className="relative">
+                <h3 className="text-4xl font-semibold mb-6 text-gray-800">70%</h3>
+                <p className="text-lg text-gray-700">Increase in conversion rates of users connecting their bank accounts</p>
+              </div>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <h3 className="text-4xl font-bold mb-2">22%</h3>
-              <p className="text-xl">Increase in user satisfaction</p>
+            <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
+              <div className="relative">
+                <h3 className="text-4xl font-semibold mb-6 text-gray-800">22%</h3>
+                <p className="text-lg text-gray-700">Increase in user satisfaction</p>
+              </div>
             </div>
-          
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <h3 className="text-4xl font-bold mb-2">4.8</h3>
-              <p className="text-xl">App Store rating</p>
+            <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
+              <div className="relative">
+                <h3 className="text-4xl font-semibold mb-6 text-gray-800">4.8</h3>
+                <p className="text-lg text-gray-700">App Store rating</p>
+              </div>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <h3 className="text-4xl font-bold mb-2">80</h3>
-              <p className="text-xl">Net Promoter Score</p>
+            <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
+              <div className="relative">
+                <h3 className="text-4xl font-semibold mb-6 text-gray-800">80</h3>
+                <p className="text-lg text-gray-700">Net Promoter Score</p>
+              </div>
             </div>
           </div>
         </section>
+        {/* Full bleed image */}
+        <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%] mb-16">
+          <img 
+            src="SezzleUpMock0.jpg" 
+            alt="Sezzle Up" 
+            className="w-full h-auto"
+          />
+        </div>
 
-        
-        
-
-        
-        <section className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4">Problem Overview</h2>
-          <p className="text-xl leading-relaxed">
+        <section className="relative py-8">
+      {/* Context Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+        <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+          <div className="max-w-md">
+            <h2 className="text-2xl font-medium mb-12 text-gray-800">📝 Context</h2>
+          </div>
+        </div>
+        <div className="space-y-8">
+          <p className="text-lg text-gray-700">
             Sezzle's main mission is to financially empower the next generation. 
             Nearly 36% of Americans are not financially literate and roughly 28 million Americans have no credit score at all. 
-            Sezzle Up stemmed from an idea that users who use Buy Now, Pay Later tools should be able to build credit.<br></br><br></br>
+            Sezzle Up stemmed from an idea that users who use Buy Now, Pay Later tools should be able to build credit.
+          </p>
+        </div>
+      </div>
 
+      {/* Goals Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+        <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+          <div className="max-w-md">
+            <h2 className="text-2xl font-medium mb-12 text-gray-800">🎯 Goals</h2>
+          </div>
+        </div>
+        <div className="space-y-8">
+          <p className="text-lg text-gray-700">
             The goal was to create a user-friendly mobile app that would educate users about 
             financial literacy and help them make better financial decisions. The app needed to 
             be engaging, informative, and easy to use while handling sensitive financial information 
             securely.
           </p>
-        </section>
+        </div>
+      </div>
+    </section>
 
-
-        <section className="mb-24">
-          <h2 className="text-4xl font-bold mb-8">Solution</h2>
-          <p className="text-xl  mb-16 max-w-3xl">
-            Designing Sezzle Up involved creating a highly engaging, secure, and user-friendly interface that translated financial concepts into everyday language. 
-            Here's how I achieved it:
-          </p>
+        {/* Solution Section */}
+        <section className="relative py-12">
+        <h2 className="inline-flex px-4 py-2 text-sm font-medium rounded-full bg-gray-100 text-gray-800 mb-8">
+          The Solution
+        </h2>
+          
+          
 
           <div className="space-y-24">
             {/* Solution 1 */}
             <div className="border-b border-gray-200 pb-16">
-              <h3 className="text-3xl font-bold mb-6">1. Educational Onboarding</h3>
-              <p className="text-xl  mb-12 max-w-3xl">
+              <h3 className="text-2xl font-medium mb-8 text-gray-800">1. Educational Onboarding</h3>
+              <p className="text-lg text-gray-700">
                 The onboarding flow was designed to educate users on the value of Sezzle Up and how it can help them build their credit scores. It showed them clear steps on how to enroll for the program.
               </p>
               <img src="SezzleUpMock1.jpg" alt="Sezzle Up" className="w-full rounded-xl mb-12" />
@@ -145,8 +179,8 @@ const SezzleUp = () => {
 
             {/* Solution 2 */}
             <div className="border-b border-gray-200 pb-16">
-              <h3 className="text-3xl font-bold mb-6">2. Secure Credit Building Input</h3>
-              <p className="text-xl  mb-12 max-w-3xl">
+              <h3 className="text-2xl font-medium mb-8 text-gray-800">2. Secure Credit Building Input</h3>
+              <p className="text-lg text-gray-700">
                 Since users were entering their Social Security Number (SSN) into the form input fields when enrolling for Sezzle Up, handling the input in a secure manner was crucial. 
                 Gaining user's trust as they filled out the necessary information to enroll into Sezzle Up was one of the most important steps. We wanted to ensure that user's felt that someone was holding their hand throughout the signing up process in order to avoid them from feeling like they couldn't trust Sezzle.
               </p>
@@ -192,8 +226,8 @@ const SezzleUp = () => {
 
             {/* Solution 3 */}
             <div className="border-b border-gray-200 pb-16">
-              <h3 className="text-3xl font-bold mb-6">3. Linking Bank Account</h3>
-              <p className="text-xl text- mb-12 max-w-3xl">
+              <h3 className="text-2xl font-medium mb-8 text-gray-800">3. Linking Bank Account</h3>
+              <p className="text-lg text-gray-700 mb-8">
                 Users needed to see all available banking options.
               </p>
               
@@ -236,9 +270,9 @@ const SezzleUp = () => {
             </div>
           </div>
         </section>
-
+        {/* Success Metrics */}
         <section className="mb-16">
-      <h2 className="text-3xl font-bold mb-2">Defining success</h2>
+      <h2 className="text-2xl font-medium mb-8 text-gray-800">Defining success</h2>
       <p className=" mb-8">
         It's deeply important to clearly define success so that we have a bar to measure against that the entire team is aligned on. This can be used as a gut check in discussions, for iterations, and ultimately for tracking impact post-launch.
       </p>
@@ -246,108 +280,115 @@ const SezzleUp = () => {
       <div className="space-y-6">
         {/* NPS Score */}
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4 border border-gray-200 p-5 rounded-lg">
+          <div className="col-span-4 border border-gray-200 p-5 rounded-3xl">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Wanted</h3>
-            <p className="text-2xl ">NPS Score greater than 70</p>
+            <p className="text-2xl text-gray-700">NPS Score > than 70</p>
           </div>
           
-          <div className="col-span-8 bg-gray-100 p-6 rounded-lg">
+          <div className="col-span-8 border-2 border-emerald-100 p-6 rounded-3xl">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Achieved</h3>
-            <h4 className="text-2xl font-bold text-gray-900">NPS Score of 80</h4>
-            <p className=" mt-1">Indicating high user satisfaction</p>
+            <h4 className="text-2xl font-bold text-gray-800">NPS Score of 80</h4>
+            <p className=" mt-1 text-gray-700">Indicating high user satisfaction</p>
           </div>
         </div>
 
         {/* Revenue/Conversion */}
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4 border border-gray-200 p-5 rounded-lg">
+          <div className="col-span-4 border border-gray-200 p-5 rounded-3xl">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Wanted</h3>
-            <p className="text-2xl ">Reduced costs and risks</p>
+            <p className="text-2xl text-gray-700 ">Reduced costs and risks</p>
           </div>
           
-          <div className="col-span-8 bg-gray-100 p-6 rounded-lg">
+          <div className="col-span-8 border border-emerald-100 p-6 rounded-3xl">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Achieved</h3>
-            <h4 className="text-2xl font-bold text-gray-900">70% users converting to bank accounts</h4>
-            <p className=" mt-1">Reducing costly card transaction payments for the company</p>
+            <h4 className="text-2xl font-bold text-gray-800">70% users converting to bank accounts</h4>
+            <p className=" mt-1 text-gray-700">Reducing costly card transaction payments for the company</p>
           </div>
         </div>
 
         {/* Strategic Partnership */}
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4 border border-gray-200 p-5 rounded-lg">
+          <div className="col-span-4 border border-gray-200 p-5 rounded-3xl">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Wanted</h3>
-            <p className="text-2xl ">Increase in revenue generated</p>
+            <p className="text-2xl text-gray-700">Increase in revenue generated</p>
           </div>
           
-          <div className="col-span-8 bg-gray-100 p-6 rounded-lg">
+          <div className="col-span-8 border border-emerald-100 p-6 rounded-3xl">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Achieved</h3>
-            <h4 className="text-2xl font-bold text-gray-900">Partnership with Target</h4>
-            <p className=" mt-1">Increase in customer base</p>
+            <h4 className="text-2xl font-bold text-gray-800">Partnership with Target</h4>
+            <p className=" mt-1 text-gray-700">Increase in customer base</p>
           </div>
         </div>
       </div>
     </section>
-        
-        
-        
-        <h2 className="text-3xl font-bold mb-2">User testimonials</h2>
-        <img src="SezzleUpMock2.jpg" alt="Sezzle Up" className="w-full rounded-lg mb-8" />
 
+        {/* User Testimonials */}
         <section className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4">Impact & Learnings</h2>
-          <p className="text-xl leading-relaxed">
-          By combining a user-centered design approach with robust security measures and educational content, Sezzle Up successfully 
-          addressed a pressing user need while enhancing Sezzle's brand trust and engagement. The app not only helped users make sound 
-          financial decisions but also empowered them with tools to build credit responsibly.
-
-
-          </p>
+          <h2 className="text-2xl font-medium mb-8 text-gray-800">User testimonials</h2>
+          <img src="SezzleUpMock2.jpg" alt="User Testimonials" className="w-full rounded-lg" />
         </section>
 
+        {/* Impact & Learnings */}
         <section className="mb-32">
-          <a 
-            href="/aia" 
-            className="block group hover:opacity-90 transition-opacity"
-          >
-            
-            <div className="bg-gray-100 rounded-xl p-8 flex items-center justify-between">
-              <div>
-              <span className="text-sm text-gray-500">Next Project</span>
-              <span className="text-sm text-gray-500">→</span>
-                <h3 className="text-2xl font-bold mb-2 mt-4">Acrobat AI Assistant</h3>
-                <p className="text-gray-600">Designing Acrobat's AI Assistant</p>
-              </div>
-              <img 
-                src="AIA.jpg" 
-                alt="AI Assistant Preview" 
-                className="w-32 h-32 rounded-lg object-cover"
-              />
-            </div>
-          </a>
-        </section>
-
-        <section className="mb-16 mt-32 bg-gray-100 p-8 rounded-lg">
-          <h2 className="text-3xl font-semibold mb-8">Want to learn more?</h2>
+          <h2 className="text-2xl font-medium mb-8 text-gray-800">Impact & Learnings</h2>
           <div className="space-y-8">
-            <div>
-              <p className="text-xl mb-8">
-                Get in touch to learn more about the research, design process, and detailed outcomes of this project.
-              </p>
-              <div className="flex gap-4">
-                <button className="bg-slate-950 text-white px-8 py-3 rounded-lg text-lg">
-                  Email me
-                </button>
-                <button className="border-2 border-slate-800 text-slate-600 px-8 py-3 rounded-lg text-lg">
-                  Schedule a call
-                </button>
+            <p className="text-lg text-gray-700">
+              By combining a user-centered design approach with robust security measures and educational content, Sezzle Up successfully 
+              addressed a pressing user need while enhancing Sezzle's brand trust and engagement. The app not only helped users make sound 
+              financial decisions but also empowered them with tools to build credit responsibly.
+            </p>
+            
+            <div className="space-y-6">
+
+
+              <div className=" p-6 rounded-xl">
+                <ul className="space-y-3 text-gray-700">
+                  <li>• Security and trust are paramount when handling sensitive financial information</li>
+                  <li>• Educational content needs to be both informative and engaging</li>
+                  <li>• Step-by-step guidance significantly improves user confidence</li>
+                  <li>• Clear value proposition leads to higher user adoption</li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
+
+
+        {/* Next Project Section */}
+        <section className="py-24">
+          <div className="flex justify-end">
+            <a 
+              href="/aia"
+              className="inline-block px-8 py-2 rounded-full border-2 border-black text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300"
+            >
+              Next Project →
+            </a>
+          </div>
+        </section>
       </main>
 
-      <footer className="w-full bg-transparent">
-        <BottomNav activePage={activePage} onNavClick={handleNavClick} />
+      {/* Contact Section */}
+      <section className="bg-gray-950 text-white py-32">
+        <div className="container mx-auto px-8">
+          <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
+            Wanna chat about this case study?
+          </h2>
+          <p className="text-5xl text-gray-500 pl-12 font-normal">
+            <a 
+              href="https://calendly.com/your-calendar-link"
+              className="transition-colors duration-300 hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get in touch
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <footer className="w-full bg-transparent pb-8">
+        <BottomNav activePage={activePage} onNavClick={handleNavClick}
+        isCaseStudy={true} />
       </footer>
     </div>
   );

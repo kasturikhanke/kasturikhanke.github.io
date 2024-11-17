@@ -59,7 +59,7 @@ const ImpactSection = ({ impactItems }) => {
               <div className="max-w-md">
                 <h2 className="text-4xl font-medium mb-4 text-gray-800">Giving back</h2>
                 <p className="text-gray-600 text-lg">
-                  I'm dedicated to giving back to the design community by inspiring, educating, and mentoring the next generation of designers.
+                  I'm dedicated to giving back to the design community by inspiring, educating, and mentoring the next generation of designers
                 </p>
               </div>
             </div>
@@ -86,7 +86,7 @@ const ImpactSection = ({ impactItems }) => {
                       className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-300 relative bg-white p-12 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl"
                       style={{ transitionDelay: `${index * 200}ms` }}
                     >
-                      {/* Diffused circle gradient */}
+                      {/* Diffused circle gradient 
                       <div 
                         className="absolute w-48 h-48 bottom-0 right-0 rounded-full"
                         style={{
@@ -95,6 +95,7 @@ const ImpactSection = ({ impactItems }) => {
                           filter: 'blur(40px)'
                         }}
                       />
+                      */}
                       
                       <div className="relative flex items-start space-x-6">
                         <div className="text-4xl flex-shrink-0">{item.icon}</div>

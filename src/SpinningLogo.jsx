@@ -11,11 +11,16 @@ const SpinningLogo = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleClick = () => {
+    window.location.href = 'https://kasturi.live';
+  };
+
   return (
-    <div className="p-8 pl-32 mb-4 ">
+    <div className="p-8 pl-32">
       <img
         src="/LogoK.png"
         alt="Logo K"
+        onClick={handleClick}
         className={`w-12 h-12 cursor-pointer ${
           isInitialSpin ? 'animate-spin-three-times' : 'hover:animate-spin-three-times'
         }`}
