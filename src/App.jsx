@@ -10,10 +10,13 @@ import DesignSystem from './DesignSystem';
 import AIA from './AIA';
 import SezzleUp from './SezzleUp';
 import ImpactSection from './ImpactSection';
+import AppRoutes from './AppRoutes';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
   const sectionsRef = useRef({});
+
+  
 
   // Scroll handling logic remains the same
   useEffect(() => {
