@@ -323,6 +323,9 @@ const App = () => {
                     Get in touch
                   </a>
                 </p>
+                <p className="text-sm text-gray-500 pl-12 mt-8">
+                  Made with ♥ using Claude AI
+                </p>
               </div>
             </section>
 

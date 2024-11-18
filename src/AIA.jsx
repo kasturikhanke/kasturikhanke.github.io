@@ -223,7 +223,7 @@
        <section className="bg-gray-950 text-white py-32">
               <div className="container mx-auto px-8">
                 <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
-                  Wanna chat about this case study?
+                  Want to chat more about this case study?
                 </h2>
                 <p className="text-5xl text-gray-500 pl-12 font-normal">
                   <a 
@@ -234,6 +234,9 @@
                   >
                     Get in touch
                   </a>
+                </p>
+                <p className="text-sm text-gray-500 pl-12 mt-8">
+                  Made with ♥ using Claude AI
                 </p>
               </div>
             </section>
