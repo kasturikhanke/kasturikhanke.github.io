@@ -180,7 +180,7 @@ const DesignSystem = () => {
         <section className="py-24">
           <div className="flex justify-end">
             <a 
-              href="/next-project"
+              href="/aia"
               className="inline-block px-8 py-2 rounded-full border-2 border-black text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300"
             >
               Next Project →
