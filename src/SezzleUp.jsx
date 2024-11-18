@@ -120,20 +120,73 @@ const SezzleUp = () => {
           </p>
         </div>
       </div>
+      {/* Solution Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+      <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+        <div className="max-w-md">
+          <h2 className="text-2xl font-medium mb-12 text-gray-800">🛠️ Solution</h2>
+        </div>
+      </div>
+      <div className="space-y-8">
+        <ol className="list-decimal pl-6 space-y-4 text-lg text-gray-700">
+        <li>
+        <a 
+          href="#educational-onboarding" 
+          className="hover:text-blue-600 cursor-pointer transition-colors"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('educational-onboarding')?.scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          }}
+        >
+          Educational onboarding
+        </a>
+      </li>
+
+      <li>
+        <a 
+          href="#secure-information" 
+          className="hover:text-blue-600 cursor-pointer transition-colors"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('secure-information')?.scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          }}
+        >
+          Secure personal information collection
+        </a>
+      </li>
+      <li>
+        <a 
+          href="#link-bank" 
+          className="hover:text-blue-600 cursor-pointer transition-colors"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('link-bank')?.scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          }}
+        >
+          Link bank account
+        </a>
+      </li>
+        </ol>
+      </div>
+    </div>
     </section>
 
-        {/* Solution Section */}
-        <section className="relative py-12">
-        <h2 className="inline-flex px-4 py-2 text-sm font-medium rounded-full bg-gray-100 text-gray-800 mb-8">
-          The Solution
-        </h2>
-          
-          
-
+        {/* Final Section */}
+        <section className="relative py-12"> 
           <div className="space-y-24">
             {/* Solution 1 */}
-            <div className="border-b border-gray-200 pb-16">
-              <h3 className="text-2xl font-medium mb-8 text-gray-800">1. Educational Onboarding</h3>
+            <div 
+              id="educational-onboarding" 
+              className="border-b border-gray-200 pb-16"
+              style={{ scrollMarginTop: '8vh'}}               
+              >
+              <h3 className="text-2xl font-medium mb-8 text-gray-800">1. Educational onboarding</h3>
               <p className="text-lg text-gray-700">
                 The onboarding flow was designed to educate users on the value of Sezzle Up and how it can help them build their credit scores. It showed them clear steps on how to enroll for the program.
               </p>
@@ -178,8 +231,12 @@ const SezzleUp = () => {
             </div>
 
             {/* Solution 2 */}
-            <div className="border-b border-gray-200 pb-16">
-              <h3 className="text-2xl font-medium mb-8 text-gray-800">2. Secure Credit Building Input</h3>
+            <div 
+            id="secure-information" 
+            className="border-b border-gray-200 pb-16"
+            style={{ scrollMarginTop: '8vh'}}   
+            >
+              <h3 className="text-2xl font-medium mb-8 text-gray-800">2. Secure personal information collection </h3>
               <p className="text-lg text-gray-700">
                 Since users were entering their Social Security Number (SSN) into the form input fields when enrolling for Sezzle Up, handling the input in a secure manner was crucial. 
                 Gaining user's trust as they filled out the necessary information to enroll into Sezzle Up was one of the most important steps. We wanted to ensure that user's felt that someone was holding their hand throughout the signing up process in order to avoid them from feeling like they couldn't trust Sezzle.
@@ -225,8 +282,12 @@ const SezzleUp = () => {
             </div>
 
             {/* Solution 3 */}
-            <div className="border-b border-gray-200 pb-16">
-              <h3 className="text-2xl font-medium mb-8 text-gray-800">3. Linking Bank Account</h3>
+            <div 
+            id="link-bank" 
+            className="border-b border-gray-200 pb-16"
+            style={{ scrollMarginTop: '8vh'}}   
+            >
+              <h3 className="text-2xl font-medium mb-8 text-gray-800">3. Link bank account</h3>
               <p className="text-lg text-gray-700 mb-8">
                 Users needed to see all available banking options.
               </p>
@@ -271,59 +332,48 @@ const SezzleUp = () => {
           </div>
         </section>
         {/* Success Metrics */}
-        <section className="mb-16">
-      <h2 className="text-2xl font-medium mb-8 text-gray-800">Defining success</h2>
-      <p className=" mb-8">
-        It's deeply important to clearly define success so that we have a bar to measure against that the entire team is aligned on. This can be used as a gut check in discussions, for iterations, and ultimately for tracking impact post-launch.
-      </p>
-
-      <div className="space-y-6">
-        {/* NPS Score */}
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4 border border-gray-200 p-5 rounded-3xl">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Wanted</h3>
-            <p className="text-2xl text-gray-700">NPS Score {'>'} than 70</p>
-          </div>
-          
-          <div className="col-span-8 border-2 border-emerald-100 p-6 rounded-3xl">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Achieved</h3>
-            <h4 className="text-2xl font-bold text-gray-800">NPS Score of 80</h4>
-            <p className=" mt-1 text-gray-700">Indicating high user satisfaction</p>
-          </div>
+        <h2 className="text-2xl font-medium mb-8 text-gray-800">Results of key metrics </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl mx-auto py-12">
+      {/* NPS Score Column */}
+      
+      <div className="flex flex-col">
+        <div className="h-20"> {/* Fixed height container for headings */}
+          <h3 className="text-2xl font-bold text-gray-800">NPS score of 80</h3>
         </div>
-
-        {/* Revenue/Conversion */}
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4 border border-gray-200 p-5 rounded-3xl">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Wanted</h3>
-            <p className="text-2xl text-gray-700 ">Reduced costs and risks</p>
-          </div>
-          
-          <div className="col-span-8 border border-emerald-100 p-6 rounded-3xl">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Achieved</h3>
-            <h4 className="text-2xl font-bold text-gray-800">70% users converting to bank accounts</h4>
-            <p className=" mt-1 text-gray-700">Reducing costly card transaction payments for the company</p>
-          </div>
-        </div>
-
-        {/* Strategic Partnership */}
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4 border border-gray-200 p-5 rounded-3xl">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Wanted</h3>
-            <p className="text-2xl text-gray-700">Increase in revenue generated</p>
-          </div>
-          
-          <div className="col-span-8 border border-emerald-100 p-6 rounded-3xl">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Achieved</h3>
-            <h4 className="text-2xl font-bold text-gray-800">Partnership with Target</h4>
-            <p className=" mt-1 text-gray-700">Increase in customer base</p>
-          </div>
+        <div className="flex-1"> {/* Container for paragraph */}
+          <p className="text-gray-700">
+            10 point increase in NPS score indicating higher user satisfaction
+          </p>
         </div>
       </div>
-    </section>
+
+      {/* Reduced Costs Column */}
+      <div className="flex flex-col">
+        <div className="h-20"> {/* Fixed height container for headings */}
+          <h3 className="text-2xl font-bold text-gray-800">Reduced costs & risks</h3>
+        </div>
+        <div className="flex-1"> {/* Container for paragraph */}
+          <p className="text-gray-700">
+            70% users switched to direct bank account payments as opposed to credit card payments that cost more
+          </p>
+        </div>
+      </div>
+
+      {/* Revenue Column */}
+      <div className="flex flex-col">
+        <div className="h-20"> {/* Fixed height container for headings */}
+          <h3 className="text-2xl font-bold text-gray-800">Increase in revenue</h3>
+        </div>
+        <div className="flex-1"> {/* Container for paragraph */}
+          <p className="text-gray-700">
+            Increase in customer base due to partnership with Target
+          </p>
+        </div>
+      </div>
+    </div>
 
         {/* User Testimonials */}
-        <section className="mb-16">
+        <section className="mb-16 mt-12">
           <h2 className="text-2xl font-medium mb-8 text-gray-800">User testimonials</h2>
           <img src="SezzleUpMock2.jpg" alt="User Testimonials" className="w-full rounded-lg" />
         </section>

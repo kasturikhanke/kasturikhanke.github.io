@@ -22,9 +22,7 @@ const FrameworkSection = () => {
     <section className="relative py-12">
       <div className="max-w-7xl mx-auto">
         <div className="">
-        <h2 className="inline-flex px-4 py-2 text-sm font-medium rounded-full bg-gray-100 text-gray-800">
-    The Framework
-  </h2>
+        <h2 className="text-2xl font-medium mb-2 text-gray-800"> 🛠️ The framework</h2>
         </div>
 
         <div className="space-y-2">
