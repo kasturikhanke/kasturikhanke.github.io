@@ -94,7 +94,7 @@ const GridItem = memo(({ title, className, image, index }) => {
   return (
     <div 
       ref={itemRef} 
-      className={`rounded-3xl flex items-center justify-center p-4 ${className} ${!image ? 'bg-indigo-300' : ''} relative overflow-hidden hover:before:opacity-60`}
+      className={`rounded-xl md:rounded:3xl flex items-center justify-center p-4 ${className} ${!image ? 'bg-indigo-300' : ''} relative overflow-hidden hover:before:opacity-60`}
       style={style}
       onClick={handleClick}
     >

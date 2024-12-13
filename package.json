@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://kasturikhanke.github.io",
+  "homepage": "https://kasturi.live",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

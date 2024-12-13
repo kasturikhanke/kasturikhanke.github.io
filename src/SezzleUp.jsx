@@ -331,8 +331,17 @@ const SezzleUp = () => {
             </div>
           </div>
         </section>
+
+        {/* IA */}
+        <section className="mb-16 mt-12">
+          <h2 className="text-2xl font-medium mb-8 text-gray-800">Mapping out the User Flow</h2>
+          <img src="IA.png" alt="User Flow" className="w-full rounded-lg" />
+        </section>
+
+
         {/* Success Metrics */}
-        <h2 className="text-2xl font-medium mb-8 text-gray-800">Results of key metrics </h2>
+        <section className="mb-8 mt-2">
+        <h2 className="text-2xl font-medium mb-2 text-gray-800">Results of key metrics </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl mx-auto py-12">
       {/* NPS Score Column */}
       
@@ -371,6 +380,7 @@ const SezzleUp = () => {
         </div>
       </div>
     </div>
+    </section>
 
         {/* User Testimonials */}
         <section className="mb-16 mt-12">

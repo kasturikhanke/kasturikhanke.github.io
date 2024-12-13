@@ -169,20 +169,20 @@ const App = () => {
             >
               {/* Bottom left - AI Designer text */}
               <div>
-                <h1 className="text-6xl font-normal mb-4 leading-tight max-w-3xl">
+                <h1 className="text-3xl md:text-6xl font-normal mb-4 leading-tight max-w-3xl">
                   Crafting AI experiences that empower creativity
                 </h1>
               </div>
 
               {/* Center right - Main content */}
               <div className="absolute max-w-lg">
-                <p className="text-xl font-normal leading mb-8">
+                <p className="text-lg md:text-xl font-normal leading mb-8">
                   I specialize in human-centered AI design that bridges technological complexity 
                   with intuitive designs
                 </p>
 
                 {/* Status indicators */}
-                <div className="flex items-center gap-8 text-sm text-gray-500 mb-8">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-gray-500 mb-8">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                     Currently designing Gen AI for Adobe Acrobat
