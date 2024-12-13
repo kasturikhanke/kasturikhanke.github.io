@@ -101,7 +101,7 @@
          </section>
          {/* Solution Section */}
          <FrameworkSection />
-         <section className="">
+         {/* <section className="">
           <h2 className="text-2xl text-center font-medium mt-16 text-gray-800">Framework Before</h2>
 
          <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%]">
@@ -119,7 +119,7 @@
             className="w-full h-auto"
           />
         </div>
-         </section>
+         </section> */}
          
          <section className="mb-32">
           <h2 className="text-2xl font-medium mb-4 text-gray-800">Concluding thoughts</h2>
