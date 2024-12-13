@@ -193,7 +193,7 @@ const SezzleUp = () => {
               <img src="SezzleUpMock1.jpg" alt="Sezzle Up" className="w-full rounded-xl mb-12" />
               
               {/* Problem-Solution Grid */}
-              <div className="bg-gray-50 rounded-xl p-8">
+              <div className="border-2 border-gray-100 rounded-xl p-4 md:p-8">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
                   <div className="col-span-1 md:col-span-8">
                     <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
@@ -210,7 +210,7 @@ const SezzleUp = () => {
                     <div>
                       <h3 className="font-bold mb-2 text-gray-900">Insight</h3>
                       <p className="">
-                        Users thought the labels were clickable. Google analytics showed an uptick in rage clicks on the labels.
+                        User testing revealed that users thought the labels were clickable. In addition, Google analytics showed an uptick in rage clicks on the labels.
                       </p>
                     </div>
                     <div>
@@ -244,7 +244,7 @@ const SezzleUp = () => {
               <img src="SezzleUpMock4.jpg" alt="Sezzle Up" className="w-full rounded-xl mb-12" />
               
               {/* Problem-Solution Grid */}
-              <div className="bg-gray-50 rounded-xl p-8">
+              <div className="border-2 border-gray-100 rounded-xl p-4 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
                   <div className="col-span-1 md:col-span-8">
                     <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
@@ -293,7 +293,7 @@ const SezzleUp = () => {
               </p>
               
               {/* Problem-Solution Grid */}
-              <div className="bg-gray-50 rounded-xl p-8">
+              <div className="border-2 border-gray-100 rounded-xl p-4 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
                   <div className="col-span-1 md:col-span-8">
                     <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">

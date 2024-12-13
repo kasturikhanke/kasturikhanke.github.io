@@ -167,6 +167,37 @@ const FrameworkSection = () => {
               </div>
             </div>
           </div>
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-16">
+              <div className="border-2 border-gray-100 rounded-xl p-4 md:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                  <div className="col-span-1 md:col-span-8">
+                    <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
+                      <span className="font-emoji text-xl md:text-2xl font-medium mb-2">⚠️</span>
+                      <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">Why nudges?</span>
+                    </h4>
+                    <img 
+                      src="Nudges.png" 
+                      alt="Description" 
+                      className="w-full rounded-lg mt-4 md:mt-8"
+                    />
+                  </div>
+                  <div className="col-span-1 md:col-span-4 space-y-6 md:space-y-8 mt-4 md:mt-8">
+                    <div>
+                      <h3 className="font-medium mb-2 text-gray-800">Insight</h3>
+                      <p className="text-sm md:text-base text-gray-700">A User Research survey revealed that majority of the people found coachmarks unhelpful. People emphasized that they don't have time to read coachmarks that instruct them on how to use a tool.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-medium mb-2 text-gray-800">Solution</h3>
+                      <p className="text-sm md:text-base text-gray-700">Instead of creating an in-depth coachmark, prompting users with a subtle nudge based on intent would aide the user rather than disrupting their flow.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-medium mb-2 text-gray-800">Impact</h3>
+                      <p className="text-sm md:text-base text-gray-700">Users found the subtle nudges more helpful and in line with their task at hand.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
           {/* Feature 4: Text Contextualization */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">

@@ -1,9 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: './',  // Add this line for correct asset paths in production
+  base: '/',  // Changed to absolute path
   plugins: [react()],
-  assetsInclude: ['**/*.mov']
+  assetsInclude: ['**/*.mov'],
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'Topbar.png') {
+            return 'favicon/[name][extname]'
+          }
+          return 'assets/[name]-[hash][extname]'
+        }
+      }
+    }
+  }
 })
