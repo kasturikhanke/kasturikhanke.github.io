@@ -22,10 +22,10 @@ const ChallengesGoalsSection = () => {
     <section className="relative py-8">
       <div className="max-w-7xl mx-auto">
          {/* Context Section */}
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+         <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-8">
           <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
             <div className="max-w-md">
-              <h2 className="text-2xl font-medium mb-12 text-gray-800">📝 Context</h2>
+              <h2 className="text-2xl font-medium md:mb-12 mb-6 text-gray-800">📝 Context</h2>
             </div>
           </div>
 
@@ -42,12 +42,12 @@ const ChallengesGoalsSection = () => {
           </div>
         </div>
             
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 mb-8">
             
           {/* Challenges Section */}
           <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
             <div className="max-w-md">
-              <h2 className="text-2xl font-medium mb-12 text-gray-800">❗️Challenges</h2>
+              <h2 className="text-2xl font-medium md:mb-12 mb-6 text-gray-800">❗️Insights</h2>
             </div>
           </div>
 
@@ -67,10 +67,10 @@ const ChallengesGoalsSection = () => {
         </div>
 
         {/* Design Goals Section */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-8">
           <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
             <div className="max-w-md">
-              <h2 className="text-2xl font-medium mb-12 text-gray-800">🎯 Design goals</h2>
+              <h2 className="text-2xl font-medium md:mb-12 mb-6 text-gray-800">🎯 Design goals</h2>
             </div>
           </div>
 

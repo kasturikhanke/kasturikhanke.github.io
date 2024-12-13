@@ -26,11 +26,11 @@ const DesignSystem = () => {
       <main className="container mx-auto px-4 max-w-4xl">
         {/* Hero Section */}
         <section className="mb-16">
-          <h1 className="text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800">Adobe Acrobat Design System</h1>
-          <p className="text-xl font-normal mb-8 max-w-2xl text-gray-700">
+        <h1 className="text-3xl md:text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800 ">Adobe Acrobat Design System</h1>
+        <p className="text-lg md:text-xl font-normal leading mb-8 max-w-2xl text-gray-700">
             Self initiated project. Creating a comprehensive and flexible mobile design system to improve consistency, and streamline development.
           </p>
-          <div className="flex items-center gap-8 text-sm text-gray-500 mb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 text-sm text-gray-500 mb-6 md:mb-8">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
               Lead Designer
@@ -44,29 +44,29 @@ const DesignSystem = () => {
 
         {/* Impact Section */}
         <section className="mb-24">
-          <h2 className="text-2xl font-medium mb-8 text-gray-800">📈 Impact</h2>
-          <div className="grid grid-cols-2 gap-8">
+        <h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-gray-800">📈 Impact</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
               <div className="relative">
-                <h3 className="text-4xl font-semibold mb-6 text-gray-800">2x</h3>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-800">2x</h3>
                 <p className="text-lg text-gray-700">Faster design time</p>
               </div>
             </div>
             <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
               <div className="relative">
-                <h3 className="text-4xl font-semibold mb-6 text-gray-800">75%</h3>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-800">75%</h3>
                 <p className="text-lg text-gray-700">Daily adoption rate</p>
               </div>
             </div>
             <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
               <div className="relative">
-                <h3 className="text-4xl font-semibold mb-6 text-gray-800">100%</h3>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-800">100%</h3>
                 <p className="text-lg text-gray-700">Improvement in consistency and efficiency</p>
               </div>
             </div>
             <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
               <div className="relative">
-                <h3 className="text-4xl font-semibold mb-6 text-gray-800">75%</h3>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-800">75%</h3>
                 <p className="text-lg text-gray-700">Component utilization without detaching instances</p>
               </div>
             </div>
@@ -84,10 +84,10 @@ const DesignSystem = () => {
 
         <section className="relative py-8">
           {/* Context Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <div className="max-w-md">
-                <h2 className="text-2xl font-medium mb-12 text-gray-800">📝 Context</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-8">
+          <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+            <div className="max-w-md">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-gray-800">📝 Context</h2>
               </div>
             </div>
             <div className="space-y-8">
@@ -105,10 +105,10 @@ const DesignSystem = () => {
           </div>
 
           {/* Discovery Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <div className="max-w-md">
-                <h2 className="text-2xl font-medium mb-12 text-gray-800">🔍 Discovery</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-8">
+          <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+            <div className="max-w-md">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-gray-800">🔍 Discovery</h2>
               </div>
             </div>
             <div className="space-y-8">
@@ -125,10 +125,10 @@ const DesignSystem = () => {
           </div>
 
           {/* Challenges Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <div className="max-w-md">
-                <h2 className="text-2xl font-medium mb-12 text-gray-800">🚩 Challenges</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-12">
+          <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+            <div className="max-w-md">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-gray-800">🚩 Challenges</h2>
               </div>
             </div>
             <div className="space-y-8">
@@ -141,10 +141,10 @@ const DesignSystem = () => {
           </div>
 
           {/* Solution Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-8">
             <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
               <div className="max-w-md">
-                <h2 className="text-2xl font-medium mb-12 text-gray-800">🛠️ What I Did</h2>
+              <h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-gray-800">🛠️ What I Did</h2>
               </div>
             </div>
             <div className="space-y-8">
@@ -191,34 +191,30 @@ const DesignSystem = () => {
 
       {/* Contact Section */}
       <section className="bg-gray-950 text-white py-32">
-        <div className="container mx-auto px-8">
-          <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
-            Want to learn more about this case study?
-          </h2>
-          <p className="text-5xl text-gray-500 pl-12 font-normal">
-            <a 
-              href="https://calendly.com/your-calendar-link"
-              className="transition-colors duration-300 hover:text-white"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get in touch
-            </a>
-          </p>
-          <p className="text-sm text-gray-500 pl-12 mt-8">
+              <div className="container mx-auto px-8">
+                <h2 className="text-3xl md:text-6xl pl-12 mb-4 max-w-2xl font-normal">
+                  Want to chat more about this case study?
+                </h2>
+                <p className="text-5xl text-gray-500 pl-12 font-normal">
+                  <a 
+                    href="https://calendly.com/kasturi-khanke/30min?month=2024-11"
+                    className="text-2xl md:text-3xl transition-colors duration-300 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get in touch
+                  </a>
+                </p>
+                <p className="text-sm text-gray-500 pl-12 mt-8">
                   Made with ♥ using Claude AI
                 </p>
-        </div>
-      </section>
-
-      <footer className="w-full bg-transparent pb-8">
-        <BottomNav 
-          activePage={activePage} 
-          onNavClick={handleNavClick}
-          isCaseStudy={true} 
-        />
-      </footer>
-    </div>
+              </div>
+            </section>
+       <footer className="w-full bg-transparent pb-8">
+         <BottomNav activePage={activePage} onNavClick={handleNavClick}
+         isCaseStudy={true} />
+       </footer>
+     </div>
   );
 };
 

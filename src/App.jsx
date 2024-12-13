@@ -312,14 +312,14 @@ const App = () => {
 
 
             <section className="bg-gray-950 text-white py-32">
-              <div className="container mx-auto px-8">
-                <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
+              <div className="container mx-auto md:px-8">
+                <h2 className="text-3xl md:text-6xl pl-12 mb-4 max-w-2xl font-normal">
                   Let's build the future of AI design together
                 </h2>
                 <p className="text-5xl text-gray-500 pl-12 font-normal">
                   <a 
                     href="https://calendly.com/kasturi-khanke/30min?month=2024-11"
-                    className="transition-colors duration-300 hover:text-white"
+                    className="text-2xl md:text-3xl transition-colors duration-300 hover:text-white"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -30,11 +30,11 @@ const SezzleUp = () => {
       <main className="container mx-auto px-4 max-w-4xl">
         {/* Hero Section */}
         <section className="mb-16">
-          <h1 className="text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800">Sezzle Up</h1>
+        <h1 className="text-3xl md:text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800 ">Sezzle Up</h1>
           <p className="text-xl font-normal mb-8 max-w-2xl text-gray-700">
             First BNPL service to empower users with credit building.
           </p>
-          <div className="flex items-center gap-8 text-sm text-gray-500 mb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 text-sm text-gray-500 mb-6 md:mb-8">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
               Lead UX Designer
@@ -50,8 +50,8 @@ const SezzleUp = () => {
 
         {/* Impact Section */}
         <section className="mb-24">
-          <h2 className="text-2xl font-medium mb-8 text-gray-800">📈 Impact</h2>
-          <div className="grid grid-cols-2 gap-8">
+          <h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-gray-800">📈 Impact</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
             <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
               <div className="relative">
                 <h3 className="text-4xl font-semibold mb-6 text-gray-800">70%</h3>
@@ -89,13 +89,13 @@ const SezzleUp = () => {
 
         <section className="relative py-8">
       {/* Context Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-8">
         <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
           <div className="max-w-md">
-            <h2 className="text-2xl font-medium mb-12 text-gray-800">📝 Context</h2>
+            <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-8 text-gray-800">📝 Context</h2>
           </div>
         </div>
-        <div className="space-y-8">
+        <div className="space-y-2 md:space-y-8">
           <p className="text-lg text-gray-700">
             Sezzle's main mission is to financially empower the next generation. 
             Nearly 36% of Americans are not financially literate and roughly 28 million Americans have no credit score at all. 
@@ -105,10 +105,10 @@ const SezzleUp = () => {
       </div>
 
       {/* Goals Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12 mb-8">
         <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
           <div className="max-w-md">
-            <h2 className="text-2xl font-medium mb-12 text-gray-800">🎯 Goals</h2>
+            <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-8 text-gray-800">🎯 Goals</h2>
           </div>
         </div>
         <div className="space-y-8">
@@ -121,10 +121,10 @@ const SezzleUp = () => {
         </div>
       </div>
       {/* Solution Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-      <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-        <div className="max-w-md">
-          <h2 className="text-2xl font-medium mb-12 text-gray-800">🛠️ Solution</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 md:mb-12">
+        <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+          <div className="max-w-md">
+            <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-8 text-gray-800">🛠️ Solution</h2>
         </div>
       </div>
       <div className="space-y-8">
@@ -194,16 +194,16 @@ const SezzleUp = () => {
               
               {/* Problem-Solution Grid */}
               <div className="bg-gray-50 rounded-xl p-8">
-                <div className="grid grid-cols-12 gap-8 items-start">
-                  <div className="col-span-8">
-                    <h4 className="flex items-center gap-2 text-xl font-bold mb-6">
-                      <span className="font-emoji text-2xl leading-none">⚠️</span>
-                      <span className="text-gray-900">User Problem</span>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                  <div className="col-span-1 md:col-span-8">
+                    <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
+                      <span className="font-emoji text-xl md:text-2xl font-medium mb-2">⚠️</span>
+                      <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">User Problem</span>
                     </h4>
                     <img 
                       src="SezzleUpMock3.png" 
                       alt="Description" 
-                      className="w-full rounded-lg"
+                      className="w-full rounded-lg mt-4 md:mt-8"
                     />
                   </div>
                   <div className="col-span-4 space-y-8">
@@ -245,16 +245,16 @@ const SezzleUp = () => {
               
               {/* Problem-Solution Grid */}
               <div className="bg-gray-50 rounded-xl p-8">
-                <div className="grid grid-cols-12 gap-8 items-start">
-                  <div className="col-span-8">
-                    <h4 className="flex items-center gap-2 text-xl font-bold mb-6">
-                      <span className="font-emoji text-2xl leading-none">⚠️</span>
-                      <span className="text-gray-900">User Problem</span>
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                  <div className="col-span-1 md:col-span-8">
+                    <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
+                      <span className="font-emoji text-xl md:text-2xl font-medium mb-2">⚠️</span>
+                      <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">User Problem</span>
                     </h4>
                     <img 
                       src="SUserProblem2.png" 
                       alt="Description" 
-                      className="w-full rounded-lg"
+                      className="w-full rounded-lg mt-4 md:mt-8"
                     />
                   </div>
                   <div className="col-span-4 space-y-8">
@@ -294,16 +294,16 @@ const SezzleUp = () => {
               
               {/* Problem-Solution Grid */}
               <div className="bg-gray-50 rounded-xl p-8">
-                <div className="grid grid-cols-12 gap-8 items-start">
-                  <div className="col-span-8">
-                    <h4 className="flex items-center gap-2 text-xl font-bold mb-6">
-                      <span className="font-emoji text-2xl leading-none">⚠️</span>
-                      <span className="text-gray-900">User Problem</span>
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                  <div className="col-span-1 md:col-span-8">
+                    <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
+                      <span className="font-emoji text-xl md:text-2xl font-medium mb-2">⚠️</span>
+                      <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">User Problem</span>
                     </h4>
                     <img 
                       src="SezzleUpMock5.png" 
                       alt="Description" 
-                      className="w-full rounded-lg"
+                      className="w-full rounded-lg mt-4 md:mt-8"
                     />
                   </div>
                   <div className="col-span-4 space-y-8">
@@ -429,31 +429,30 @@ const SezzleUp = () => {
 
       {/* Contact Section */}
       <section className="bg-gray-950 text-white py-32">
-        <div className="container mx-auto px-8">
-          <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
-            Want to chat more about this case study?
-          </h2>
-          <p className="text-5xl text-gray-500 pl-12 font-normal">
-            <a 
-              href="https://calendly.com/your-calendar-link"
-              className="transition-colors duration-300 hover:text-white"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get in touch
-            </a>
-          </p>
-          <p className="text-sm text-gray-500 pl-12 mt-8">
+              <div className="container mx-auto px-8">
+                <h2 className="text-3xl md:text-6xl pl-12 mb-4 max-w-2xl font-normal">
+                  Want to chat more about this case study?
+                </h2>
+                <p className="text-5xl text-gray-500 pl-12 font-normal">
+                  <a 
+                    href="https://calendly.com/kasturi-khanke/30min?month=2024-11"
+                    className="text-2xl md:text-3xl transition-colors duration-300 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get in touch
+                  </a>
+                </p>
+                <p className="text-sm text-gray-500 pl-12 mt-8">
                   Made with ♥ using Claude AI
                 </p>
-        </div>
-      </section>
-
-      <footer className="w-full bg-transparent pb-8">
-        <BottomNav activePage={activePage} onNavClick={handleNavClick}
-        isCaseStudy={true} />
-      </footer>
-    </div>
+              </div>
+            </section>
+       <footer className="w-full bg-transparent pb-8">
+         <BottomNav activePage={activePage} onNavClick={handleNavClick}
+         isCaseStudy={true} />
+       </footer>
+     </div>
   );
 };
 

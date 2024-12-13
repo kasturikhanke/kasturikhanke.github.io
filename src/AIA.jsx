@@ -49,11 +49,11 @@
        <main className="container mx-auto px-4 max-w-4xl">
          {/* Hero Section */}
          <section className="mb-16">
-           <h1 className="text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800 ">Adobe Acrobat AI Assistant</h1>
-           <p className="text-xl font-normal leading mb-8 max-w-2xl text-gray-700">
+           <h1 className="text-3xl md:text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800 ">Adobe Acrobat AI Assistant</h1>
+           <p className="text-lg md:text-xl font-normal leading mb-8 max-w-2xl text-gray-700">
              Leading the design framework for promotion and discovery of the AI Assistant on mobile to increase retention. 
            </p>
-           <div className="flex items-center gap-8 text-sm text-gray-500 mb-8">
+           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 text-sm text-gray-500 mb-6 md:mb-8">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                     Product Design
@@ -67,101 +67,41 @@
            
          </section>
 
-  {/* <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%] mb-16">
-         <img 
-           src="AIAthumb.jpg" 
-           alt="Sezzle Up" 
-           className="w-full h-auto"
-         />
-       </div> */}
-       
-
-
-
-
-
-
-
-
-       
+     
       
          {/* Outcomes Section */}
-          <section id="impact" className="mb-24">
-       <h2 className="text-2xl font-medium mb-8 text-gray-800">📈 Impact</h2>
-       <div className="grid grid-cols-2 gap-8">
+         <section id="impact" className="mb-16 md:mb-24">
+         <h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-8 text-gray-800">📈 Impact</h2>
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
          <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
-           {/* Diffused circle gradient */}
-           <div 
-             className="absolute w-48 h-48 bottom-0 right-0 rounded-full"
-             // style={{
-             //   background: 'radial-gradient(circle at center, #E9D5FF 0%, rgba(233, 213, 255, 0) 70%)',
-             //   transform: 'translate(-100%, -20%)',
-             //   filter: 'blur(40px)'
-             // }}
-           />
+          
         
            <div className="relative">
-             <h3 className="text-4xl font-semibold mb-6  text-gray-800">38%</h3>
+           <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-800">38%</h3>
              <p className="text-lg text-gray-700">Increase in active usage of the AI Assistant after implementing the discovery framework</p>
            </div>
          </div>
       
          <div className="relative bg-white p-12 rounded-3xl border-2 border-gray-100 shadow-sm overflow-hidden">
-           {/* Diffused circle gradient */}
-           <div 
-             className="absolute w-48 h-48 bottom-0 right-0 rounded-full"
-             // style={{
-             //   background: 'radial-gradient(circle at center, #E9D5FF 0%, rgba(233, 213, 255, 0) 70%)',
-             //   transform: 'translate(20%, 20%)',
-             //   filter: 'blur(40px)'
-             // }}
-           />
+           
         
            <div className="relative">
-             <h3 className="text-4xl font-semibold mb-6 text-gray-800">32%</h3>
+           <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-800">32%</h3>
              <p className="text-lg  text-gray-700">Increase in conversion rate when users interacted with all the promotions</p>
            </div>
          </div>
        </div>
      </section>
-
-         {/* Context Section
-         <section className="mb-24">
-           <h2 className="text-4xl font-semibold mb-8">Context</h2>
-           <p className="text-xl">
-             As an experience designer for a tool on which more than 400 billion PDFs are opened, 
-             I was tasked with <span className="font-bold">designing the discovery and promotion </span> of the AI assistant. 
-             Our biggest challenge wasn't just building a new AI Assistant tool that users could rely on — it was ensuring that users 
-             could find it easily and understand how to use it in their daily workflow.
-        
-           </p>
-         </section> */}
-      
-         {/* Problem Statement Box
-         <section className="mb-24">
-           <div className="relative bg-white p-16 rounded-3xl shadow-lg overflow-hidden">
-             {/* Diffused circle gradient 
-             <div 
-               className="absolute w-48 h-48 bottom-0 right-0 rounded-full"
-               // style={{
-               //   background: 'radial-gradient(circle at center, #867dff 0%, rgba(233, 213, 255, 0) 70%)',
-               //   transform: 'translate(-400%, 20%)',
-               //   filter: 'blur(60px)',
-               // }}
-             />
-          
-          
-             <div className="relative">
-               <p className="text-xl font-semibold text-gray-700">
-               How might we drive user engagement and build habits around generative AI features so that users can seamlessly integrate them into their daily workflows?
-               </p>
-             </div>
-           </div>
-         </section> */}
          
          <ChallengesGoalsSection />
+         <section className="mb-6 md:mb-8">
+          <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
+          <h2 className="text-center text-lg md:text-2xl font-medium text-gray-800">How might we promote the discovery and value of the AI Assistant to users so they can accomplish tasks more efficiently?</h2>
+          </div> 
+         </section>
          {/* Solution Section */}
          <FrameworkSection />
+         
          <section className="mb-32">
           <h2 className="text-2xl font-medium mb-4 text-gray-800">Concluding thoughts</h2>
           <div className="space-y-8">
@@ -222,13 +162,13 @@
        {/* Contact Section */}
        <section className="bg-gray-950 text-white py-32">
               <div className="container mx-auto px-8">
-                <h2 className="text-6xl pl-12 mb-4 max-w-2xl font-normal">
+                <h2 className="text-3xl md:text-6xl pl-12 mb-4 max-w-2xl font-normal">
                   Want to chat more about this case study?
                 </h2>
                 <p className="text-5xl text-gray-500 pl-12 font-normal">
                   <a 
                     href="https://calendly.com/kasturi-khanke/30min?month=2024-11"
-                    className="transition-colors duration-300 hover:text-white"
+                    className="text-2xl md:text-3xl transition-colors duration-300 hover:text-white"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
