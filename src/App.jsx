@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     const handleScroll = () => {
       if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 100) {
-        setActivePage('words');
+        setActivePage('about');
         return;
       }
 
@@ -89,14 +89,14 @@ const App = () => {
       image: "AIA.jpg" 
     },
     { 
-      title: "Design System", 
-      className: "col-span-2 row-span-1 bg-yellow-400 text-white", 
-      image: "Designsystem.jpg" 
-    },
-    { 
       title: "Sezzle Up", 
       className: "col-span-2 row-span-1 bg-purple-500", 
       image: "SezzleUp.jpg" 
+    },
+    { 
+      title: "Design System", 
+      className: "col-span-2 row-span-1 bg-yellow-400 text-white", 
+      image: "Designsystem.jpg" 
     },
     { 
       title: "Prompt Categories", 

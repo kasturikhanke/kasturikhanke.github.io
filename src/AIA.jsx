@@ -49,7 +49,7 @@
        <main className="container mx-auto px-4 max-w-4xl">
          {/* Hero Section */}
          <section className="mb-16">
-           <h1 className="text-3xl md:text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800 ">Adobe Acrobat AI Assistant</h1>
+           <h1 className="text-3xl md:text-4xl font-normal mb-4 leading-tight max-w-3xl text-gray-800">Adobe Acrobat AI Assistant</h1>
            <p className="text-lg md:text-xl font-normal leading mb-8 max-w-2xl text-gray-700">
              Leading the design framework for promotion and discovery of the AI Assistant on mobile to increase retention. 
            </p>
@@ -101,12 +101,33 @@
          </section>
          {/* Solution Section */}
          <FrameworkSection />
+         <section className="">
+          <h2 className="text-2xl text-center font-medium mt-16 text-gray-800">Framework Before</h2>
+
+         <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%]">
+          <img 
+            src="FrameworkBeforeAIA.png" 
+            alt="Framework Before" 
+            className="w-full h-auto"
+          />
+        </div>
+        <h2 className="text-2xl font-medium text-center text-gray-800">Framework After</h2>
+        <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%]">
+          <img 
+            src="FrameworkAfterAIA.png" 
+            alt="Framework After" 
+            className="w-full h-auto"
+          />
+        </div>
+         </section>
          
          <section className="mb-32">
           <h2 className="text-2xl font-medium mb-4 text-gray-800">Concluding thoughts</h2>
           <div className="space-y-8">
             <p className="text-lg text-gray-700">
-              This project saw a huge impact on the retention of users. I continue iterating on the framework based on the data we see. I collaborate with my PM and content designer to create new experiements that test out differnt UIs and copy. 
+            The success of this project lies in its holistic approach to promoting and integrating the AI Assistant seamlessly into the user journey. 
+            By designing a framework that emphasized discovery, upfront value demonstration, and contextual nudges, we significantly increased both adoption and user satisfaction. 
+            The framework not only addressed immediate challenges but also established a foundation for future feature launches, enabling the team to iterate and innovate rapidly within tight timelines.
             </p>
           </div>
         </section>
@@ -141,6 +162,7 @@
              </div>
            </div>
          </section> */}
+         
         
        </main>
 
