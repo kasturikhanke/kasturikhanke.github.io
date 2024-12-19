@@ -212,7 +212,7 @@ const App = () => {
                 className="mt-16 lg:mt-24 mb-32 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-4xl font-medium mb-12 text-gray-800">Explore my work ↓</h2>
+                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-gray-800">Explore my work ↓</h2>
                   <div className="grid grid-cols-4 gap-6 aspect-square w-full">
                     {workItems.map((item, index) => (
                       <GridItem 
@@ -233,7 +233,7 @@ const App = () => {
                 className="mb-32 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-4xl font-medium mb-12 text-gray-800">Craft</h2>
+                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-gray-800">Craft</h2>
                   {/* <p className="text-xl text-gray-600 mb-12 max-w-2xl">
                     Exploring fun prototypes without learning how to code created using Claude AI.
                   </p> */}
@@ -274,7 +274,7 @@ const App = () => {
                 className="mb-16 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-4xl font-medium mb-8 text-gray-800">Some thoughts</h2>
+                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-gray-800">Some thoughts</h2>
                   <div className="space-y-8">
                     {wordLinks.map((link, index) => (
                       <div key={index}>

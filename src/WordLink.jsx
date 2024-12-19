@@ -9,7 +9,7 @@ const WordLink = ({ text, link }) => {
         rel="noopener noreferrer" 
         className="inline-block"
       >
-        <div className="group relative cursor-pointer overflow-hidden text-2xl md:text-xl lg:text-xl font-normal text-black">
+        <div className="group relative cursor-pointer overflow-hidden text-xl md:text-2xl font-normal text-black">
           <span className="inline-block transition duration-500 ease-out group-hover:-translate-y-[120%]">
             {text}
           </span>

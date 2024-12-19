@@ -57,8 +57,8 @@ const ImpactSection = ({ impactItems }) => {
             {/* Left Column - Sticky */}
             <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
               <div className="max-w-md">
-                <h2 className="text-4xl font-medium mb-4 text-gray-800">Giving back</h2>
-                <p className="text-gray-600 text-lg">
+                <h2 className="text-xl md:text-4xl font-medium mb-12 text-gray-800">Giving back</h2>
+                <p className="text-gray-600 text-lg md:text-lg">
                   I'm dedicated to giving back to the design community by inspiring, educating, and mentoring the next generation of designers
                 </p>
               </div>
@@ -86,22 +86,12 @@ const ImpactSection = ({ impactItems }) => {
                       className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-300 relative bg-white p-12 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl"
                       style={{ transitionDelay: `${index * 200}ms` }}
                     >
-                      {/* Diffused circle gradient 
-                      <div 
-                        className="absolute w-48 h-48 bottom-0 right-0 rounded-full"
-                        style={{
-                          background: 'radial-gradient(circle at center, #E9D5FF 0%, rgba(233, 213, 255, 0) 70%)',
-                          transform: 'translate(20%, 20%)',
-                          filter: 'blur(40px)'
-                        }}
-                      />
-                      */}
                       
                       <div className="relative flex items-start space-x-6">
-                        <div className="text-4xl flex-shrink-0">{item.icon}</div>
+                        <div className="text-3xl md:text-4xl flex-shrink-0">{item.icon}</div>
                         <div>
-                          <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                          <p className="text-gray-700 text-lg">{item.description}</p>
+                          <h3 className="text-lg md:text-xl font-semibold mb-4">{item.title}</h3>
+                          <p className="text-gray-700 text-base md:text-lg">{item.description}</p>
                         </div>
                       </div>
                     </div>

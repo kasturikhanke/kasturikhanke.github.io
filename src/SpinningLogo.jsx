@@ -16,7 +16,7 @@ const SpinningLogo = () => {
   };
 
   return (
-    <div className="p-8 pl-32">
+    <div className="p-8">
       <img
         src="/LogoK.png"
         alt="Logo K"
