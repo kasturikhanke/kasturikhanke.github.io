@@ -5,17 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Move cursor URL definition outside component to prevent recreation
-const lockCursorURL = `data:image/svg+xml;base64,${btoa(`
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-  <g fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="6" y="8.5" width="10" height="8" rx="1" stroke="white"/>
-    <path d="M7.5 8.5V6.5C7.5 4.567 9.067 3 11 3v0c1.933 0 3.5 1.567 3.5 3.5V8.5"/>
-  </g>
-</svg>
-`)}`;
-
-// Pre-define styles outside component
 const baseStyles = {
   transition: 'background-color 0.3s ease',
 };
@@ -66,14 +55,15 @@ const GridItem = memo(({ title, className, image, index }) => {
     const routes = {
       'Designsystem.jpg': '/design-system',
       'AIA.jpg': '/aia',
-      'SezzleUp.jpg': '/sezzle-up'
+      'SezzleUp.jpg': '/sezzle-up',
+      'Prompts.jpg': '/ic',
+      'Feedback.jpg': '/feedback'
     };
     const route = routes[image];
     if (route) navigate(route);
   };
 
-  const isNDAItem = image === 'Prompts.jpg' || image === 'Feedback.jpg';
-  const isProjectItem = image === 'Designsystem.jpg' || image === 'AIA.jpg' || image === 'SezzleUp.jpg';
+  const isProjectItem = image === 'Designsystem.jpg' || image === 'AIA.jpg' || image === 'SezzleUp.jpg' || image === 'Prompts.jpg' || image === 'Feedback.jpg';
 
   const style = {
     ...baseStyles,
@@ -82,13 +72,15 @@ const GridItem = memo(({ title, className, image, index }) => {
       backgroundSize: 'cover', 
       backgroundPosition: 'center',
     }),
-    cursor: isNDAItem ? `url(${lockCursorURL}) 10 10, not-allowed` : 'pointer',
+    cursor: 'pointer',
   };
 
   const projectTitles = {
-    'Designsystem.jpg': 'Adobe Acrobat Design System',
-    'AIA.jpg': 'Adobe Acrobat AI Assistant',
-    'SezzleUp.jpg': 'Sezzle Up'
+    'Designsystem.jpg': 'Acrobat Mobile Design System',
+    'AIA.jpg': 'Acrobat AI Engagement',
+    'SezzleUp.jpg': 'Sezzle Up',
+    'Prompts.jpg': 'AI Quick Prompts',
+    'Feedback.jpg': 'AI Feedback Discovery'
   };
 
   return (
@@ -112,18 +104,7 @@ const GridItem = memo(({ title, className, image, index }) => {
         </div>
       )}
       
-      {isNDAItem && (
-        <div 
-          className="opacity-0 hover:opacity-100 transition-opacity duration-300"
-          style={overlayStyles}
-        >
-          <h3 className="text-white text-center font-light text-2xl">
-            NDA
-          </h3>
-        </div>
-      )}
-      
-      {(!image || (!isProjectItem && !isNDAItem)) && (
+      {(!image || !isProjectItem) && (
         <h3 className="text-gray-900 text-center font-light">
           {title}
         </h3>

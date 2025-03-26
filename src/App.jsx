@@ -10,7 +10,9 @@ import DesignSystem from './DesignSystem';
 import AIA from './AIA';
 import SezzleUp from './SezzleUp';
 import ImpactSection from './ImpactSection';
+import IC from './ic';
 import AppRoutes from './AppRoutes';
+import Feedback from './Feedback';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -134,18 +136,18 @@ const App = () => {
   const wordLinks = [
     { 
       text: "The future of conversational interfaces", 
-      link: "https://uxbestie.substack.com/p/the-future-of-conversational-interfaces",
+      link: "https://beyondthefold.substack.com/p/the-future-of-conversational-interfaces",
       date: "2024-10-09"  // Add your actual publication date
     },
     { 
       text: "The rearview mirror syndrome", 
-      link: "https://uxbestie.substack.com/p/the-rearview-mirror-syndrome",
+      link: "https://beyondthefold.substack.com/p/the-rearview-mirror-syndrome",
       date: "2023-09-18"  // Add your actual publication date
     },
     { 
       
       text: "Unveiling user insights", 
-      link: "https://uxbestie.substack.com/p/unveiling-user-insights",
+      link: "https://beyondthefold.substack.com/p/unveiling-user-insights",
       date: "2023-06-21"  // Add your actual publication date
     }
   ];
@@ -161,49 +163,34 @@ const App = () => {
                  
             <main className="container mx-auto px-4 max-w-5xl pt-20">
 
-            {/* Hero Section */}
-            <section 
-              id="home" 
-              ref={el => sectionsRef.current['home'] = el} 
-              className="min-h-[400px] max-h-[160px] h-[64vh] text-black relative container mx-auto px-4 max-w-5xl"
-            >
-              {/* Bottom left - AI Designer text */}
-              <div>
-                <h1 className="text-3xl md:text-6xl font-normal mb-4 leading-tight max-w-3xl">
-                  Crafting AI experiences that empower creativity
-                </h1>
-              </div>
+{/* Hero Section */}
+<section 
+  id="home" 
+  ref={el => sectionsRef.current['home'] = el} 
+  className="min-h-[400px] max-h-[160px] h-[64vh] text-black relative container mx-auto px-4 max-w-5xl flex flex-col items-center justify-center"
+>
+  {/* Main header text - centered */}
+  <div className="text-center">
+    <h1 className="text-3xl md:text-6xl font-medium mb-4 leading-tight max-w-3xl font-serif">
+      Hi, I'm Kasturi! A <span className="font-sans font-bold">creative technologist</span> specializing in shipping 0→1 impact driven, user-centered <span className="font-sans font-bold">AI Products</span>
+    </h1>
+  </div>
 
-              {/* Center right - Main content */}
-              <div className="absolute max-w-lg">
-                <p className="text-lg md:text-xl font-normal leading mb-8">
-                  I specialize in human-centered AI design that bridges technological complexity 
-                  with intuitive designs
-                </p>
-
-                {/* Status indicators */}
-                <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-gray-500 mb-8">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    Currently designing Gen AI for Adobe Acrobat
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    Based in San Francisco
-                  </div>
-                </div>
-                <a 
-                  href="https://calendly.com/kasturi-khanke/30min"
-                  className="transition-colors duration-300 "
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                <button className="px-8 py-2 rounded-full border-2 border-black flex items-center gap-2 text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300">             
-                   Let's chat
-                </button>
-                </a>
-              </div>
-            </section>
+  {/* Get in touch button - centered */}
+  <div className="mt-8">
+    <a 
+      href="https://calendly.com/kasturi-khanke/30min"
+      className="transition-colors duration-300"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <button className="px-8 py-2 rounded-full border-2 border-black flex items-center gap-2 text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300">             
+        get in touch →
+      </button>
+    </a>
+  </div>
+</section>
+          
 
               {/* Work Section */}
               <section 
@@ -343,6 +330,8 @@ const App = () => {
         <Route path="/design-system" element={<DesignSystem />} />
         <Route path="/aia" element={<AIA />} />
         <Route path="/sezzle-up" element={<SezzleUp />} />
+        <Route path="/ic" element={<IC />} />
+        <Route path="/feedback" element={<Feedback />} />
       </Routes>
     </Router>
   );

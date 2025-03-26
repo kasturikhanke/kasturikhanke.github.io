@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Libre Franklin', 'sans-serif'],
+        'serif': ['Times New Roman', 'serif'],
+      },
       animation: {
         'spin-three-times': 'spin 0.6s ease-in 1',
       },
