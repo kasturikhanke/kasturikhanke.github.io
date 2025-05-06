@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const SpinningLogo = () => {
+const SpinningLogo = ({ onLogoClick }) => {
   const [isInitialSpin, setIsInitialSpin] = useState(true);
 
   useEffect(() => {
@@ -12,16 +12,20 @@ const SpinningLogo = () => {
   }, []);
 
   const handleClick = () => {
-    window.location.href = 'https://kasturi.live';
+    if (onLogoClick) {
+      onLogoClick();
+    } else {
+      window.location.href = 'https://kasturi.live';
+    }
   };
 
   return (
-    <div className="p-8">
+    <div className="p-4">
       <img
         src="/LogoK.png"
         alt="Logo K"
         onClick={handleClick}
-        className={`w-12 h-12 cursor-pointer ${
+        className={`w-8 aspect-square object-contain cursor-pointer ${
           isInitialSpin ? 'animate-spin-three-times' : 'hover:animate-spin-three-times'
         }`}
       />
