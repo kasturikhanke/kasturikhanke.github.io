@@ -202,40 +202,44 @@ const App = () => {
               <section 
                 id="home" 
                 ref={el => sectionsRef.current['home'] = el} 
-                className="min-h-[calc(100vh-100px)] flex items-center"
+                className="min-h-[calc(100vh-100px)] relative"
               >
-                <div className="w-full max-w-[90vw] mx-auto px-4 md:px-20 flex justify-between items-center">
+                <div className="w-full max-w-[90vw] mx-auto px-4 md:px-20 flex justify-between items-center absolute top-1/2 -translate-y-1/2">
                   {/* Left column with text */}
                   <div className="flex flex-col justify-right leading-relaxed max-w-[36%]">
-                    {/* Sticky heading that's always visible */}
-                    <h1 className="text-4xl md:text-5xl font-medium mb-4 text-stone-800">
-                      <span className="text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
-                      <span className="font-sans font-bold text-stone-800">designing what's&nbsp;next.</span> 
-                    </h1>
+                    {/* Fixed position heading */}
+                    <div className="relative">
+                      <h1 className="text-4xl md:text-5xl font-medium mb-4 text-stone-800">
+                        <span className="text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
+                        <span className="font-sans font-bold text-stone-800">designing what's&nbsp;next.</span> 
+                      </h1>
+                    </div>
 
-                    {/* Dynamic content that changes based on selection */}
-                    <div className="mt-4 text-xl md:text-2xl font-medium text-stone-800">
-                      {selectedImage === "AI Engagement" && (
-                        <span className="font-sans ">32% ↑ in conversion rate.</span>
-                      )}
-                      {selectedImage === "AI Quick Prompts" && (
-                        <span className="font-sans ">4% ↑ in active usage.</span>
-                      )}
-                      {selectedImage === "Credit reporting" && (
-                        <span className="font-sans ">70% ↑ in conversion rate</span>
-                      )}
-                      {selectedImage === "Referral program" && (
-                        <span className="font-sans ">give $5, get $5 for Sezzle</span>
-                      )}
-                      {selectedImage === "Checkout" && (
-                        <span className="font-sans ">reduced time from 14s to 7s</span>
-                      )}
-                      {selectedImage === "File selection" && (
-                        <span className="font-sans ">34% ↑ in active usage</span>
-                      )}
-                      {selectedImage === "Contextual selection" && (
-                        <span className="font-sans ">tbd</span>
-                      )}
+                    {/* Dynamic content container with fixed height */}
+                    <div className="h-[80px]"> {/* Add fixed height container */}
+                      <div className="mt-4 text-xl md:text-2xl font-medium text-stone-800">
+                        {selectedImage === "AI Engagement" && (
+                          <span className="font-sans">32% ↑ in conversion rate.</span>
+                        )}
+                        {selectedImage === "AI Quick Prompts" && (
+                          <span className="font-sans">4% ↑ in active usage.</span>
+                        )}
+                        {selectedImage === "Credit reporting" && (
+                          <span className="font-sans">70% ↑ in conversion rate</span>
+                        )}
+                        {selectedImage === "Referral program" && (
+                          <span className="font-sans">give $5, get $5 for Sezzle</span>
+                        )}
+                        {selectedImage === "Checkout" && (
+                          <span className="font-sans">reduced time from 14s to 7s</span>
+                        )}
+                        {selectedImage === "File selection" && (
+                          <span className="font-sans">34% ↑ in active usage</span>
+                        )}
+                        {selectedImage === "Contextual selection" && (
+                          <span className="font-sans">tbd</span>
+                        )}
+                      </div>
                     </div>
 
                     <div className="mt-8">
@@ -265,7 +269,7 @@ const App = () => {
                   {/* Image and list group */}
                   <div className="flex space-x-0 w-[55%]">
                     {/* Image container */}
-                    <div className="flex items-center justify-center w-[70%] h-[80vh]">
+                    <div className="flex items-center justify-center w-[70%] h-[80vh] animate-float">
                       <img 
                         src={currentImage}
                         alt="Profile"
@@ -293,7 +297,7 @@ const App = () => {
                       ))}
                     </div>
                   </div>
-                </div> 
+                </div>
               </section>
           
               {/* Work Section 
@@ -388,16 +392,16 @@ const App = () => {
                 </div>
               </section> */}
               
-              {/* Impact Section */}
+              {/* Impact Section 
               <section 
                 id="about"
                 ref={el => sectionsRef.current['about'] = el} 
               >
                 <ImpactSection impactItems={impactItems} />
-              </section>
+              </section>*/}
             </main>
 
-            <section className="bg-gray-950 text-white py-32">
+            {/*<section className="bg-gray-950 text-white py-32">
               <div className="container mx-auto md:px-8">
                 <h2 className="text-3xl md:text-6xl pl-12 mb-4 max-w-2xl font-normal">
                   Let's build the future of AI design together
@@ -416,7 +420,7 @@ const App = () => {
                   Made with ♥ using Claude AI
                 </p>
               </div>
-            </section>
+            </section>*/}
           </div>
         } />
         <Route path="/design-system" element={<DesignSystem />} />
