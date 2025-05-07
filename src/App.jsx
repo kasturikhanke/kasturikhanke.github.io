@@ -17,7 +17,19 @@ import Feedback from './Feedback';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
+  const [currentImage, setCurrentImage] = useState("Landing Page.jpg");
+  const [selectedImage, setSelectedImage] = useState("Landing page");
   const sectionsRef = useRef({});
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const imageMap = {
+    "Landing page": "Landing Page.jpg",
+    "Referral program": "Referral.jpg",
+    "Splash screen": "Splash.jpg",
+    "Checkout": "Checkout.jpg",
+    "File selection": "File.jpg",
+    "Contextual selection": "Contextual.jpg"
+  };
 
   // Scroll handling logic remains the same
   useEffect(() => {
@@ -46,6 +58,8 @@ const App = () => {
           setActivePage('home');
         }
       }
+
+      setIsScrolled(window.scrollY > 0);
     };
 
     let ticking = false;
@@ -64,6 +78,21 @@ const App = () => {
     
     return () => window.removeEventListener('scroll', scrollHandler);
   }, []);
+
+  // Add this near other useEffect hooks
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const imageKeys = Object.keys(imageMap);
+      const currentIndex = imageKeys.indexOf(selectedImage);
+      const nextIndex = (currentIndex + 1) % imageKeys.length;
+      const nextImage = imageKeys[nextIndex];
+      
+      setSelectedImage(nextImage);
+      setCurrentImage(imageMap[nextImage]);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [selectedImage, imageMap]); // Dependencies
 
   const handleNavClick = (page) => {
     setActivePage(page);
@@ -154,13 +183,17 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={
-          <div className="min-h-screen bg-white text-gray-800 font-sans">
-            <header className="w-full bg-white border-b border-gray-100 flex items-center py-2">
-              <SpinningLogo />
-              <StandardNavbar
-                activePage={activePage}
-                onNavClick={handleNavClick}
-              />
+          <div className="min-h-screen bg-white text-stone-800 font-sans">
+            <header className={`sticky top-0 bg-white z-50 transition-shadow duration-300 ${
+              isScrolled ? 'shadow-md' : ''
+            }`}>
+              <div className="container mx-auto px-4 max-w-5xl py-4 flex justify-between items-center">
+                <SpinningLogo />
+                <StandardNavbar
+                  activePage={activePage}
+                  onNavClick={handleNavClick}
+                />
+              </div>
             </header>
                  
             <main className="container mx-auto px-4 max-w-5xl pt-0">
@@ -168,50 +201,61 @@ const App = () => {
               <section 
                 id="home" 
                 ref={el => sectionsRef.current['home'] = el} 
-                className="min-h-[600px] py-4 text-black relative container mx-auto px-4 max-w-5xl flex items-center"
+                className="h-screen flex items-center"
               >
-                {/* Main content container - changing grid-cols-3 to grid-cols-5 */}
-                <div className="grid grid-cols-7 gap-8 w-full">
+                <div className="w-full max-w-[90vw] mx-auto px-4 md:px-20 flex justify-between items-center">
                   {/* Left column with text */}
-                  <div className="col-span-5 flex flex-col justify-center">
-                    <h1 className="text-5xl md:text-6xl font-medium mb-8 leading-tight font-serif text-gray-900">
-                      <span className="text-xl md:text-2xl block mb-2 text-gray-900">Hi, I'm Kasturi!</span>
-                      A <span className="font-sans font-bold text-gray-900">creative technologist</span> shipping 0→1 impact driven <span className="font-sans font-bold text-gray-900">AI Products</span>
+                  <div className="flex flex-col justify-right leading-relaxed max-w-[24%]">
+                    <h1 className="text-4xl md:text-5xl font-medium mb-8 text-stone-800">
+                      <span className="text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
+                      <span className="font-sans font-bold text-stone-800">designing what's&nbsp;next.</span> 
                     </h1>
 
                     <div className="mt-8">
                       <a 
                         href="https://calendly.com/kasturi-khanke/30min"
-                        className="transition-colors duration-300"
+                        className="inline-block"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <button className="px-8 py-2 rounded-full border-2 border-gray-900 flex items-center gap-2 text-lg font-medium hover:bg-gray-900 hover:text-white transition-colors duration-300">             
+                        <button className="px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300">             
                           get in touch →
                         </button>
                       </a>
                     </div>
                   </div>
 
-                  {/* Middle column with image
-                  <div className="col-span-2 flex items-center justify-center">
-                    <img 
-                      src="hw__bpmis1v46k2u_medium_2x.png"
-                      alt="Profile"
-                      className="w-full h-full object-contain rounded-lg"
-                    />
-                  </div> */}
+                  {/* Image and list group */}
+                  <div className="flex space-x-0 w-[55%]">
+                    {/* Image container */}
+                    <div className="flex items-center justify-center w-[70%] h-[80vh]">
+                      <img 
+                        src={currentImage}
+                        alt="Profile"
+                        className="w-full h-full object-contain"
+                      />
+                    </div> 
 
-                  {/* New right column with text items
-                  <div className="col-span-2 flex flex-col justify-center space-y-8">
-                    <div className="text-sm font-medium text-gray-800">Growth</div>
-                    <div className="text-sm font-medium text-gray-800">Referral program</div>
-                    <div className="text-sm font-medium text-gray-800">Prototype</div>
-                    <div className="text-sm font-medium text-gray-800">Landing page</div>
-                    <div className="text-sm font-medium text-gray-800">Splash screen</div>
-                    <div className="text-sm font-medium text-gray-800">Discovery</div>
-                    <div className="text-sm font-medium text-gray-800">File selection</div>
-                  </div>*/}
+                    {/* List container */}
+                    <div className="flex flex-col justify-center space-y-4 w-[30%]">
+                      {Object.keys(imageMap).map((text) => (
+                        <div
+                          key={text}
+                          className={`text-sm font-medium cursor-pointer transition-all duration-500 ease-in-out ${
+                            selectedImage === text 
+                              ? 'text-indigo-600 opacity-100 translate-x-2' 
+                              : 'text-stone-800 hover:text-stone-600 opacity-50'
+                          }`}
+                          onClick={() => {
+                            setSelectedImage(text);
+                            setCurrentImage(imageMap[text]);
+                          }}
+                        >
+                          {text}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div> 
               </section>
           
@@ -222,7 +266,7 @@ const App = () => {
                 className="mt-16 lg:mt-24 mb-32 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-2xl md:text-4xl font-sans font-medium mb-12 text-gray-800">Explore my work ↓</h2>
+                  <h2 className="text-2xl md:text-4xl font-sans font-medium mb-12 text-stone-800">Explore my work</h2>
                   <div className="grid grid-cols-4 gap-6 aspect-square w-full">
                     {workItems.map((item, index) => (
                       <GridItem 
@@ -243,7 +287,7 @@ const App = () => {
                 className="mb-32 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-gray-800">Craft</h2>
+                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-stone-800">Craft</h2>
                   <div className="grid grid-cols-12 grid-rows-8 gap-6">
                     <div className="col-span-6 row-span-4 bg-gray-950 shadow-xl rounded-3xl overflow-hidden">
                       <VercelProject />
@@ -281,7 +325,7 @@ const App = () => {
                 className="mb-16 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-gray-800">Some thoughts</h2>
+                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-stone-800">Some thoughts</h2>
                   <div className="space-y-8">
                     {wordLinks.map((link, index) => (
                       <div key={index}>

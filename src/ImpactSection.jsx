@@ -57,8 +57,8 @@ const ImpactSection = ({ impactItems }) => {
             {/* Left Column - Sticky */}
             <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
               <div className="max-w-md">
-                <h2 className="text-xl md:text-4xl font-medium mb-12 text-gray-800">Giving back</h2>
-                <p className="text-gray-600 text-lg md:text-lg">
+                <h2 className="text-xl md:text-4xl font-sans font-medium mb-12 text-black">Giving back</h2>
+                <p className="text-black font-sans font-medium text-lg md:text-lg">
                   I'm dedicated to giving back to the design community by inspiring, educating, and mentoring the next generation of designers
                 </p>
               </div>

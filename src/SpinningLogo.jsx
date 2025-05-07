@@ -25,7 +25,7 @@ const SpinningLogo = ({ onLogoClick }) => {
         src="/LogoK.png"
         alt="Logo K"
         onClick={handleClick}
-        className={`w-8 aspect-square object-contain cursor-pointer ${
+        className={`w-10 aspect-square object-contain cursor-pointer ${
           isInitialSpin ? 'animate-spin-three-times' : 'hover:animate-spin-three-times'
         }`}
       />
