@@ -23,12 +23,13 @@ const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const imageMap = {
-    "Landing page": "Landing Page.jpg",
+    "AI Engagement": "Splash.jpg",
+    "AI Quick Prompts": "Landing Page.jpg",
+    "Credit reporting": "Sezzle Up.jpg",
     "Referral program": "Referral.jpg",
-    "Splash screen": "Splash.jpg",
     "Checkout": "Checkout.jpg",
     "File selection": "File.jpg",
-    "Contextual selection": "Contextual.jpg"
+    "Contextual selection": "Contextual.jpg"    
   };
 
   // Scroll handling logic remains the same
@@ -196,30 +197,66 @@ const App = () => {
               </div>
             </header>
                  
-            <main className="container mx-auto px-4 max-w-5xl pt-0">
+            <main className="container mx-auto px-4 max-w-5xl">
               {/* Hero Section */}
               <section 
                 id="home" 
                 ref={el => sectionsRef.current['home'] = el} 
-                className="h-screen flex items-center"
+                className="min-h-[calc(100vh-100px)] flex items-center"
               >
                 <div className="w-full max-w-[90vw] mx-auto px-4 md:px-20 flex justify-between items-center">
                   {/* Left column with text */}
-                  <div className="flex flex-col justify-right leading-relaxed max-w-[24%]">
-                    <h1 className="text-4xl md:text-5xl font-medium mb-8 text-stone-800">
+                  <div className="flex flex-col justify-right leading-relaxed max-w-[36%]">
+                    {/* Sticky heading that's always visible */}
+                    <h1 className="text-4xl md:text-5xl font-medium mb-4 text-stone-800">
                       <span className="text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
                       <span className="font-sans font-bold text-stone-800">designing what's&nbsp;next.</span> 
                     </h1>
 
+                    {/* Dynamic content that changes based on selection */}
+                    <div className="mt-4 text-xl md:text-2xl font-medium text-stone-800">
+                      {selectedImage === "AI Engagement" && (
+                        <span className="font-sans ">32% ↑ in conversion rate.</span>
+                      )}
+                      {selectedImage === "AI Quick Prompts" && (
+                        <span className="font-sans ">4% ↑ in active usage.</span>
+                      )}
+                      {selectedImage === "Credit reporting" && (
+                        <span className="font-sans ">70% ↑ in conversion rate</span>
+                      )}
+                      {selectedImage === "Referral program" && (
+                        <span className="font-sans ">give $5, get $5 for Sezzle</span>
+                      )}
+                      {selectedImage === "Checkout" && (
+                        <span className="font-sans ">reduced time from 14s to 7s</span>
+                      )}
+                      {selectedImage === "File selection" && (
+                        <span className="font-sans ">34% ↑ in active usage</span>
+                      )}
+                      {selectedImage === "Contextual selection" && (
+                        <span className="font-sans ">tbd</span>
+                      )}
+                    </div>
+
                     <div className="mt-8">
                       <a 
-                        href="https://calendly.com/kasturi-khanke/30min"
+                        href={selectedImage === "AI Engagement"
+                          ? "/aia"
+                          : selectedImage === "AI Quick Prompts"
+                          ? "/ic"
+                          : selectedImage === "Credit reporting"
+                          ? "/sezzle-up"
+                          : "https://calendly.com/kasturi-khanke/30min"
+                        }
                         className="inline-block"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <button className="px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300">             
-                          get in touch →
+                          {(selectedImage === "AI Engagement" || selectedImage === "AI Quick Prompts" || selectedImage === "Credit reporting") 
+                            ? "read case study →" 
+                            : "get in touch →"
+                          }
                         </button>
                       </a>
                     </div>
@@ -259,7 +296,7 @@ const App = () => {
                 </div> 
               </section>
           
-              {/* Work Section */}
+              {/* Work Section 
               <section 
                 id="work" 
                 ref={el => sectionsRef.current['work'] = el} 
@@ -278,7 +315,7 @@ const App = () => {
                     ))}
                   </div>
                 </div>
-              </section>
+              </section>*/}
 
               {/* Craft Section
               <section 
