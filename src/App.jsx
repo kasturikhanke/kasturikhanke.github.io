@@ -14,6 +14,7 @@ import IC from './ic';
 import AppRoutes from './AppRoutes';
 import './assets/fonts.css';
 import Feedback from './Feedback';
+import { FaPause, FaPlay } from 'react-icons/fa';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -23,6 +24,7 @@ const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const imageMap = {
     "AI Assistant Discovery": "Splash.jpg",
@@ -96,6 +98,8 @@ const App = () => {
 
   // Modify the existing image rotation useEffect
   useEffect(() => {
+    if (isPaused) return; // Don't set interval if paused
+
     const interval = setInterval(() => {
       const imageKeys = Object.keys(imageMap);
       const currentIndex = imageKeys.indexOf(selectedImage);
@@ -120,7 +124,7 @@ const App = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [selectedImage, imageMap]);
+  }, [selectedImage, imageMap, isPaused]);
 
   const handleNavClick = (page) => {
     setActivePage(page);
@@ -215,7 +219,7 @@ const App = () => {
             <header className={`sticky top-0 bg-white z-50 transition-shadow duration-300 ${
               isScrolled ? 'shadow-md' : ''
             }`}>
-              <div className="container mx-auto px-4 max-w-5xl py-4 flex justify-between items-center">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-4 flex justify-between items-center">
                 <SpinningLogo />
                 <StandardNavbar
                   activePage={activePage}
@@ -224,36 +228,34 @@ const App = () => {
               </div>
             </header>
                  
-            <main className="h-[calc(100vh-2px)] overflow-hidden container mx-auto px-4 max-w-5xl">
+            <main className="h-screen overflow-hidden container mx-auto px-1 sm:px-2 lg:px-4 max-w-5xl">
               {/* Hero Section */}
               <section 
                 id="home" 
                 ref={el => sectionsRef.current['home'] = el} 
                 className="h-full relative"
               >
-                <div className="w-full max-w-[90vw] mx-auto px-2 md:px-8 flex justify-between items-center absolute top-[40%] -translate-y-1/2">
-                  {/* Left column with text - adjust width */}
-                  <div className="flex flex-col justify-right leading-relaxed w-[30%]">
-                    {/* Fixed position heading */}
+                <div className="w-full max-w-[90vw] mx-auto px-2 md:px-8 flex flex-col md:flex-row justify-between items-center absolute top-[40%] -translate-y-1/2">
+                  {/* Left column */}
+                  <div className="flex flex-col justify-right leading-relaxed w-full md:w-[30%] mb-8 md:mb-0 z-10">
                     <div className="relative">
-                      <h1 className="text-4xl md:text-4xl font-medium mb-4 text-stone-800 opacity-0 animate-fade-in-1">
-                        <span className="text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
-                        <span className="font-sans font-bold text-stone-800 leading-tight">
-                          designing
+                      <h1 className="text-3xl sm:text-4xl font-medium mb-4 text-stone-800 opacity-0 animate-fade-in-1">
+                        <span className="text-base sm:text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
+                        <span className="font-sans font-bold text-stone-800 leading-none">
+                          designing for
                           <br />
-                          for{" "}
                           {isTyping ? (
                             <span className={`inline-block ${isTyping ? 'typing' : ''}`}>{displayText}</span>
                           ) : (
                             <span className={`inline-block ${isTyping ? 'fade-out' : ''}`}>
-                              {selectedImage === "AI Assistant Discovery" ? "discovery" :
-                               selectedImage === "Overcoming AI Cold Start" ? "momentum" :
-                               selectedImage === "Credit reporting" ? "trust" :
-                               selectedImage === "Referral flow optimization" ? "growth" :
-                               selectedImage === "Checkout flow redesign" ? "streamlining" :
-                               selectedImage === "Smarter File Selection" ? "ease" :
-                               selectedImage === "Context-Aware AI" ? "intention" :
-                               "what's next"}
+                              {selectedImage === "AI Assistant Discovery" ? "discovery." :
+                               selectedImage === "Overcoming AI Cold Start" ? "momentum." :
+                               selectedImage === "Credit reporting" ? "trust." :
+                               selectedImage === "Referral flow optimization" ? "growth." :
+                               selectedImage === "Checkout flow redesign" ? "streamlining." :
+                               selectedImage === "Smarter File Selection" ? "ease." :
+                               selectedImage === "Context-Aware AI" ? "intention." :
+                               "what's next."}
                             </span>
                           )}
                         </span>
@@ -289,7 +291,7 @@ const App = () => {
                         )}
                         {selectedImage === "Referral flow optimization" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">Boosted user acquisition via peer invites</span>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">↑ acquisition via invites</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Simplified and redesigned referral entry points to increase user-driven growth.
                             </p>
@@ -297,7 +299,7 @@ const App = () => {
                         )}
                         {selectedImage === "Checkout flow redesign" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">reduced time from 14s to 7s</span>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">↓ time from 14s to 7s</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Cut friction in the purchasing journey by reducing steps from 14 to 7.
                             </p>
@@ -313,7 +315,7 @@ const App = () => {
                         )}
                         {selectedImage === "Context-Aware AI" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">Increased successful task completions</span>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">↑ engagement</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Introduced in-document text selection to power more precise, relevant AI conversations.
                             </p>
@@ -349,36 +351,42 @@ const App = () => {
                     </div>
                   </div>
 
-                  {/* Image and list group - adjust spacing and widths */}
-                  <div className="flex space-x-12 w-[60%]">
-                    {/* Image container - increased width */}
-                    <div className="flex items-center justify-center w-[70%] h-[80vh] animate-float">
-                      <img 
-                        src={currentImage}
-                        alt="Profile"
-                        className="w-full h-full object-contain"
-                      />
-                    </div> 
+                  {/* Center image section - absolute positioning */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[85vh] flex items-center justify-center animate-float">
+                    <img 
+                      src={currentImage}
+                      alt="Profile"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
 
-                    {/* List container - adjusted width and text size */}
-                    <div className="flex flex-col justify-center space-y-4 w-[25%]">
-                      {Object.keys(imageMap).map((text) => (
-                        <div
-                          key={text}
-                          className={`text-sm whitespace-nowrap font-medium cursor-pointer transition-all duration-500 ease-in-out ${
-                            selectedImage === text 
-                              ? 'text-indigo-600 opacity-100 translate-x-2' 
-                              : 'text-stone-800 hover:text-stone-600 opacity-50'
-                          }`}
-                          onClick={() => {
-                            setSelectedImage(text);
-                            setCurrentImage(imageMap[text]);
-                          }}
-                        >
-                          {text}
-                        </div>
-                      ))}
+                  {/* Right section - list */}
+                  <div className="hidden md:flex flex-col justify-center space-y-4 w-[20%] ml-auto z-10">
+                    <div className="flex justify-end mb-2">
+                      <button
+                        onClick={() => setIsPaused(!isPaused)}
+                        className="p-2 text-stone-800 hover:text-indigo-600 transition-colors"
+                        aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
+                      >
+                        {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
+                      </button>
                     </div>
+                    {Object.keys(imageMap).map((text) => (
+                      <div
+                        key={text}
+                        className={`text-sm whitespace-nowrap font-medium cursor-pointer transition-all duration-500 ease-in-out ${
+                          selectedImage === text 
+                            ? 'text-indigo-600 opacity-100 translate-x-2' 
+                            : 'text-stone-800 hover:text-stone-600 opacity-50'
+                        }`}
+                        onClick={() => {
+                          setSelectedImage(text);
+                          setCurrentImage(imageMap[text]);
+                        }}
+                      >
+                        {text}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </section>

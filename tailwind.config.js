@@ -15,7 +15,7 @@ export default {
       },
       animation: {
         'spin-three-times': 'spin 0.6s ease-in 1',
-        float: 'float 3s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'fade-in-1': 'fadeIn 0.8s ease-out forwards',
         'fade-in-2': 'fadeIn 0.8s ease-out 0.3s forwards',
         'fade-in-3': 'fadeIn 0.8s ease-out 0.6s forwards',
@@ -28,8 +28,8 @@ export default {
           '100%': { transform: 'rotate(500deg)' },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '0%, 100%': { transform: 'translate(-50%, -50%) translateY(-8px)' },
+          '50%': { transform: 'translate(-50%, -50%) translateY(8px)' }
         },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
