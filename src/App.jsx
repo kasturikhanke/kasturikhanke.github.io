@@ -21,15 +21,17 @@ const App = () => {
   const [selectedImage, setSelectedImage] = useState("Landing page");
   const sectionsRef = useRef({});
   const [isScrolled, setIsScrolled] = useState(false);
+  const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
   const imageMap = {
-    "AI Engagement": "Splash.jpg",
-    "AI Quick Prompts": "Landing Page.jpg",
+    "AI Assistant Discovery": "Splash.jpg",
+    "Overcoming AI Cold Start": "Landing Page.jpg",
     "Credit reporting": "Sezzle Up.jpg",
-    "Referral program": "Referral.jpg",
-    "Checkout": "Checkout.jpg",
-    "File selection": "File.jpg",
-    "Contextual selection": "Contextual.jpg"    
+    "Referral flow optimization": "Referral.jpg",
+    "Checkout flow redesign": "Checkout.jpg",
+    "Smarter File Selection": "File.jpg",
+    "Context-Aware AI": "Contextual.jpg"    
   };
 
   // Scroll handling logic remains the same
@@ -80,7 +82,19 @@ const App = () => {
     return () => window.removeEventListener('scroll', scrollHandler);
   }, []);
 
-  // Add this near other useEffect hooks
+  // Add this new function near the top of the component
+  const typeWriter = async (text, delay = 50) => {
+    setIsTyping(true);
+    setDisplayText("");
+    
+    for (let i = 0; i < text.length; i++) {
+      await new Promise(resolve => setTimeout(resolve, delay));
+      setDisplayText(prev => prev + text[i]);
+    }
+    setIsTyping(false);
+  };
+
+  // Modify the existing image rotation useEffect
   useEffect(() => {
     const interval = setInterval(() => {
       const imageKeys = Object.keys(imageMap);
@@ -90,10 +104,23 @@ const App = () => {
       
       setSelectedImage(nextImage);
       setCurrentImage(imageMap[nextImage]);
-    }, 3000); // Change image every 3 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [selectedImage, imageMap]); // Dependencies
+      // Start typing animation when image changes - only the last word
+      const textMap = {
+        "AI Assistant Discovery": "discovery",
+        "Overcoming AI Cold Start": "momentum",
+        "Credit reporting": "trust",
+        "Referral flow optimization": "growth",
+        "Checkout flow redesign": "streamlining",
+        "Smarter File Selection": "ease",
+        "Context-Aware AI": "intention"
+      };
+      
+      typeWriter(textMap[nextImage]);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [selectedImage, imageMap]);
 
   const handleNavClick = (page) => {
     setActivePage(page);
@@ -184,7 +211,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={
-          <div className="min-h-screen bg-white text-stone-800 font-sans">
+          <div className="h-screen overflow-hidden bg-white text-stone-800 font-sans">
             <header className={`sticky top-0 bg-white z-50 transition-shadow duration-300 ${
               isScrolled ? 'shadow-md' : ''
             }`}>
@@ -197,78 +224,118 @@ const App = () => {
               </div>
             </header>
                  
-            <main className="container mx-auto px-4 max-w-5xl">
+            <main className="h-[calc(100vh-2px)] overflow-hidden container mx-auto px-4 max-w-5xl">
               {/* Hero Section */}
               <section 
                 id="home" 
                 ref={el => sectionsRef.current['home'] = el} 
-                className="min-h-[calc(100vh-100px)] relative"
+                className="h-full relative"
               >
-                <div className="w-full max-w-[90vw] mx-auto px-4 md:px-20 flex justify-between items-center absolute top-1/2 -translate-y-1/2">
-                  {/* Left column with text */}
-                  <div className="flex flex-col justify-right leading-relaxed max-w-[36%]">
+                <div className="w-full max-w-[90vw] mx-auto px-2 md:px-8 flex justify-between items-center absolute top-[40%] -translate-y-1/2">
+                  {/* Left column with text - adjust width */}
+                  <div className="flex flex-col justify-right leading-relaxed w-[30%]">
                     {/* Fixed position heading */}
                     <div className="relative">
-                      <h1 className="text-4xl md:text-5xl font-medium mb-4 text-stone-800">
+                      <h1 className="text-4xl md:text-4xl font-medium mb-4 text-stone-800 opacity-0 animate-fade-in-1">
                         <span className="text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
-                        <span className="font-sans font-bold text-stone-800">designing what's&nbsp;next.</span> 
+                        <span className="font-sans font-bold text-stone-800 leading-tight">
+                          designing
+                          <br />
+                          for{" "}
+                          {isTyping ? (
+                            <span className={`inline-block ${isTyping ? 'typing' : ''}`}>{displayText}</span>
+                          ) : (
+                            <span className="inline-block">
+                              {selectedImage === "AI Assistant Discovery" ? "discovery" :
+                               selectedImage === "Overcoming AI Cold Start" ? "momentum" :
+                               selectedImage === "Credit reporting" ? "trust" :
+                               selectedImage === "Referral flow optimization" ? "growth" :
+                               selectedImage === "Checkout flow redesign" ? "streamlining" :
+                               selectedImage === "Smarter File Selection" ? "ease" :
+                               selectedImage === "Context-Aware AI" ? "intention" :
+                               "what's next"}
+                            </span>
+                          )}.
+                        </span>
                       </h1>
                     </div>
 
-                    {/* Dynamic content container with fixed height */}
-                    <div className="h-[80px]"> {/* Add fixed height container */}
-                      <div className="mt-4 text-xl md:text-2xl font-medium text-stone-800">
-                        {selectedImage === "AI Engagement" && (
-                          <span className="font-sans">32% ↑ in conversion rate.</span>
+                    {/* Dynamic content container */}
+                    <div className="h-[200px] mt-4 flex flex-col">
+                      <div className="text-xl md:text-2xl font-medium text-stone-800 h-[120px] opacity-0 animate-fade-in-2">
+                        {selectedImage === "AI Assistant Discovery" && (
+                          <div>
+                            <span className="font-sans">32% ↑ in conversion rate</span>
+                            <p className="text-base font-normal mt-2">Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion</p>
+                          </div>
                         )}
-                        {selectedImage === "AI Quick Prompts" && (
-                          <span className="font-sans">4% ↑ in active usage.</span>
+                        {selectedImage === "Overcoming AI Cold Start" && (
+                          <div>
+                            <span className="font-sans">4% ↑ in active usage</span>
+                            <p className="text-base font-normal mt-2">Redesigned the assistant's landing experience to help users start faster with contextual quick prompts.</p>
+                          </div>
                         )}
                         {selectedImage === "Credit reporting" && (
-                          <span className="font-sans">70% ↑ in conversion rate</span>
+                          <div>
+                            <span className="font-sans">70% ↑ in conversion rate</span>
+                            <p className="text-base font-normal mt-2">Led end-to-end design for the first BNPL credit reporting flow—key to landing a partnership with Target.</p>
+                          </div>
                         )}
-                        {selectedImage === "Referral program" && (
-                          <span className="font-sans">give $5, get $5 for Sezzle</span>
+                        {selectedImage === "Referral flow optimization" && (
+                          <div>
+                            <span className="font-sans">Boosted user acquisition via peer invites</span>
+                            <p className="text-base font-normal mt-2">Simplified and redesigned referral entry points to increase user-driven growth.</p>
+                          </div>
                         )}
-                        {selectedImage === "Checkout" && (
-                          <span className="font-sans">reduced time from 14s to 7s</span>
+                        {selectedImage === "Checkout flow redesign" && (
+                          <div>
+                            <span className="font-sans">reduced time from 14s to 7s</span>
+                            <p className="text-base font-normal mt-2">Cut friction in the purchasing journey by reducing steps from 14 to 7.</p>
+                          </div>
                         )}
-                        {selectedImage === "File selection" && (
-                          <span className="font-sans">34% ↑ in active usage</span>
+                        {selectedImage === "Smarter File Selection" && (
+                          <div>
+                            <span className="font-sans">34% ↑ in active usage</span>
+                            <p className="text-base font-normal mt-2">Enabled seamless file access to improve task initiation inside the AI assistant.</p>
+                          </div>
                         )}
-                        {selectedImage === "Contextual selection" && (
-                          <span className="font-sans">tbd</span>
+                        {selectedImage === "Context-Aware AI" && (
+                          <div>
+                            <span className="font-sans">Increased successful task completions</span>
+                            <p className="text-base font-normal mt-2">Introduced in-document text selection to power more precise, relevant AI conversations.</p>
+                          </div>
                         )}
                       </div>
-                    </div>
-
-                    <div className="mt-8">
-                      <a 
-                        href={selectedImage === "AI Engagement"
-                          ? "/aia"
-                          : selectedImage === "AI Quick Prompts"
-                          ? "/ic"
-                          : selectedImage === "Credit reporting"
-                          ? "/sezzle-up"
-                          : "https://calendly.com/kasturi-khanke/30min"
-                        }
-                        className="inline-block"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <button className="px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300">             
-                          {(selectedImage === "AI Engagement" || selectedImage === "AI Quick Prompts" || selectedImage === "Credit reporting") 
-                            ? "read case study →" 
-                            : "get in touch →"
+                      
+                      {/* Fixed position CTA button */}
+                      <div className="mt-auto">
+                        <a 
+                          href={selectedImage === "AI Assistant Discovery"
+                            ? "/aia"
+                            : selectedImage === "Overcoming AI Cold Start"
+                            ? "/ic"
+                            : selectedImage === "Credit reporting"
+                            ? "/sezzle-up"
+                            : "https://calendly.com/kasturi-khanke/30min"
                           }
-                        </button>
-                      </a>
+                          className="inline-block"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <button className="px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 opacity-0 animate-fade-in-3">             
+                            {(selectedImage === "AI Assistant Discovery" || selectedImage === "Overcoming AI Cold Start" || selectedImage === "Credit reporting") 
+                              ? "read case study →" 
+                              : "get in touch →"
+                            }
+                          </button>
+                        </a>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Image and list group */}
-                  <div className="flex space-x-0 w-[55%]">
-                    {/* Image container */}
+                  {/* Image and list group - adjust spacing and widths */}
+                  <div className="flex space-x-12 w-[60%]">
+                    {/* Image container - increased width */}
                     <div className="flex items-center justify-center w-[70%] h-[80vh] animate-float">
                       <img 
                         src={currentImage}
@@ -277,12 +344,12 @@ const App = () => {
                       />
                     </div> 
 
-                    {/* List container */}
-                    <div className="flex flex-col justify-center space-y-4 w-[30%]">
+                    {/* List container - adjusted width and text size */}
+                    <div className="flex flex-col justify-center space-y-4 w-[25%]">
                       {Object.keys(imageMap).map((text) => (
                         <div
                           key={text}
-                          className={`text-sm font-medium cursor-pointer transition-all duration-500 ease-in-out ${
+                          className={`text-sm whitespace-nowrap font-medium cursor-pointer transition-all duration-500 ease-in-out ${
                             selectedImage === text 
                               ? 'text-indigo-600 opacity-100 translate-x-2' 
                               : 'text-stone-800 hover:text-stone-600 opacity-50'

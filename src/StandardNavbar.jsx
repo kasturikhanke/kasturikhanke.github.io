@@ -9,8 +9,15 @@ const StandardNavbar = () => {
   ];
 
   return (
-    <nav className="w-full py-4 px-4 md:px-6 flex justify-end items-center">
-      {/* External links only */}
+    <nav className="w-full py-4 px-4 md:px-6 flex justify-between items-center">
+      {/* Internal links */}
+      <div className="flex items-center">
+        <a href="/about" className="text-sm font-medium text-stone-800 hover:text-indigo-500 transition-colors duration-200">
+          About Me
+        </a>
+      </div>
+
+      {/* External links */}
       <div className="flex items-center space-x-6">
         {externalLinks.map((link, index) => (
           <React.Fragment key={link.label}>
