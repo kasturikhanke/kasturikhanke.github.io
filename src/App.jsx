@@ -236,11 +236,11 @@ const App = () => {
                 className="h-full relative"
               >
                 <div className="w-full max-w-[90vw] mx-auto px-2 md:px-8 flex flex-col md:flex-row justify-between items-center absolute top-[40%] -translate-y-1/2">
-                  {/* Left column */}
-                  <div className="flex flex-col justify-right leading-relaxed w-full md:w-[30%] mb-8 md:mb-0 z-10">
+                  {/* Left column - adjust width */}
+                  <div className="flex flex-col justify-right leading-relaxed w-full md:w-[25%] mb-8 md:mb-0 z-10">
                     <div className="relative">
                       <h1 className="text-3xl sm:text-4xl font-medium mb-4 text-stone-800 opacity-0 animate-fade-in-1">
-                        <span className="text-base sm:text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
+                        <span className="text-base font-sans font-medium sm:text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
                         <span className="font-sans font-bold text-stone-800 leading-none">
                           designing for
                           <br />
@@ -263,19 +263,19 @@ const App = () => {
                     </div>
 
                     {/* Dynamic content container */}
-                    <div className="h-[200px] mt-4 flex flex-col">
+                    <div className="h-[240px] mt-4 flex flex-col justify-between">
                       <div className="text-xl md:text-2xl font-medium text-stone-800 h-[120px]">
                         {selectedImage === "AI Assistant Discovery" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">32% ↑ in conversion rate</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">32% ↑ in conversion rate</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion
+                              Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion.
                             </p>
                           </div>
                         )}
                         {selectedImage === "Overcoming AI Cold Start" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">4% ↑ in active usage</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">4% ↑ in active usage</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Redesigned the assistant's landing experience to help users start faster with contextual quick prompts.
                             </p>
@@ -283,7 +283,7 @@ const App = () => {
                         )}
                         {selectedImage === "Credit reporting" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">70% ↑ in conversion rate</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">70% ↑ in conversion rate</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Led end-to-end design for the first BNPL credit reporting flow—key to landing a partnership with Target.
                             </p>
@@ -291,7 +291,7 @@ const App = () => {
                         )}
                         {selectedImage === "Referral flow optimization" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">↑ acquisition via invites</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">↑ acquisition via invites</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Simplified and redesigned referral entry points to increase user-driven growth.
                             </p>
@@ -299,7 +299,7 @@ const App = () => {
                         )}
                         {selectedImage === "Checkout flow redesign" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">↓ time from 14s to 7s</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">↓ time from 14s to 7s</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Cut friction in the purchasing journey by reducing steps from 14 to 7.
                             </p>
@@ -307,7 +307,7 @@ const App = () => {
                         )}
                         {selectedImage === "Smarter File Selection" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">34% ↑ in active usage</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">34% ↑ in active usage</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Enabled seamless file access to improve task initiation inside the AI assistant.
                             </p>
@@ -315,7 +315,7 @@ const App = () => {
                         )}
                         {selectedImage === "Context-Aware AI" && (
                           <div>
-                            <span className="font-sans opacity-0 animate-fade-in-stat">↑ engagement</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">↑ engagement</span>
                             <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Introduced in-document text selection to power more precise, relevant AI conversations.
                             </p>
@@ -323,8 +323,8 @@ const App = () => {
                         )}
                       </div>
                       
-                      {/* Fixed position CTA button */}
-                      <div className="mt-auto">
+                      {/* CTA button - added mt-8 for more spacing */}
+                      <div className="mt-8">
                         <a 
                           href={selectedImage === "AI Assistant Discovery"
                             ? "/aia"
@@ -335,8 +335,6 @@ const App = () => {
                             : "https://calendly.com/kasturi-khanke/30min"
                           }
                           className="inline-block"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           <button className={`px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 opacity-0 ${
                             !isTyping ? 'animate-fade-in-3' : ''
@@ -351,8 +349,8 @@ const App = () => {
                     </div>
                   </div>
 
-                  {/* Center image section - absolute positioning */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] h-[85vh] flex items-center justify-center animate-float">
+                  {/* Center image section - adjust width */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[55%] h-[85vh] flex items-center justify-center animate-float">
                     <img 
                       src={currentImage}
                       alt="Profile"
@@ -360,17 +358,8 @@ const App = () => {
                     />
                   </div>
 
-                  {/* Right section - list */}
-                  <div className="hidden md:flex flex-col justify-center space-y-4 w-[20%] ml-auto z-10">
-                    <div className="flex justify-end mb-2">
-                      <button
-                        onClick={() => setIsPaused(!isPaused)}
-                        className="p-2 text-stone-800 hover:text-indigo-600 transition-colors"
-                        aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
-                      >
-                        {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
-                      </button>
-                    </div>
+                  {/* Right section - adjust width and add margin */}
+                  <div className="hidden md:flex flex-col justify-center space-y-4 w-[25%] z-10 md:-ml-8">
                     {Object.keys(imageMap).map((text) => (
                       <div
                         key={text}
@@ -387,6 +376,15 @@ const App = () => {
                         {text}
                       </div>
                     ))}
+                    <div className="flex justify-start mt-2">
+                      <button
+                        onClick={() => setIsPaused(!isPaused)}
+                        className="p-2 text-stone-800 hover:text-indigo-600 transition-colors"
+                        aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
+                      >
+                        {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </section>
