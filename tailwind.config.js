@@ -19,6 +19,8 @@ export default {
         'fade-in-1': 'fadeIn 0.8s ease-out forwards',
         'fade-in-2': 'fadeIn 0.8s ease-out 0.3s forwards',
         'fade-in-3': 'fadeIn 0.8s ease-out 0.6s forwards',
+        'fade-in-stat': 'fadeIn 0.5s ease-in forwards 0.5s',
+        'fade-in-description': 'fadeIn 0.5s ease-in forwards 1s',
       },
       keyframes: {
         spin: {

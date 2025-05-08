@@ -245,7 +245,7 @@ const App = () => {
                           {isTyping ? (
                             <span className={`inline-block ${isTyping ? 'typing' : ''}`}>{displayText}</span>
                           ) : (
-                            <span className="inline-block">
+                            <span className={`inline-block ${isTyping ? 'fade-out' : ''}`}>
                               {selectedImage === "AI Assistant Discovery" ? "discovery" :
                                selectedImage === "Overcoming AI Cold Start" ? "momentum" :
                                selectedImage === "Credit reporting" ? "trust" :
@@ -255,54 +255,68 @@ const App = () => {
                                selectedImage === "Context-Aware AI" ? "intention" :
                                "what's next"}
                             </span>
-                          )}.
+                          )}
                         </span>
                       </h1>
                     </div>
 
                     {/* Dynamic content container */}
                     <div className="h-[200px] mt-4 flex flex-col">
-                      <div className="text-xl md:text-2xl font-medium text-stone-800 h-[120px] opacity-0 animate-fade-in-2">
+                      <div className="text-xl md:text-2xl font-medium text-stone-800 h-[120px]">
                         {selectedImage === "AI Assistant Discovery" && (
                           <div>
-                            <span className="font-sans">32% ↑ in conversion rate</span>
-                            <p className="text-base font-normal mt-2">Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion</p>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">32% ↑ in conversion rate</span>
+                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion
+                            </p>
                           </div>
                         )}
                         {selectedImage === "Overcoming AI Cold Start" && (
                           <div>
-                            <span className="font-sans">4% ↑ in active usage</span>
-                            <p className="text-base font-normal mt-2">Redesigned the assistant's landing experience to help users start faster with contextual quick prompts.</p>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">4% ↑ in active usage</span>
+                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Redesigned the assistant's landing experience to help users start faster with contextual quick prompts.
+                            </p>
                           </div>
                         )}
                         {selectedImage === "Credit reporting" && (
                           <div>
-                            <span className="font-sans">70% ↑ in conversion rate</span>
-                            <p className="text-base font-normal mt-2">Led end-to-end design for the first BNPL credit reporting flow—key to landing a partnership with Target.</p>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">70% ↑ in conversion rate</span>
+                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Led end-to-end design for the first BNPL credit reporting flow—key to landing a partnership with Target.
+                            </p>
                           </div>
                         )}
                         {selectedImage === "Referral flow optimization" && (
                           <div>
-                            <span className="font-sans">Boosted user acquisition via peer invites</span>
-                            <p className="text-base font-normal mt-2">Simplified and redesigned referral entry points to increase user-driven growth.</p>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">Boosted user acquisition via peer invites</span>
+                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Simplified and redesigned referral entry points to increase user-driven growth.
+                            </p>
                           </div>
                         )}
                         {selectedImage === "Checkout flow redesign" && (
                           <div>
-                            <span className="font-sans">reduced time from 14s to 7s</span>
-                            <p className="text-base font-normal mt-2">Cut friction in the purchasing journey by reducing steps from 14 to 7.</p>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">reduced time from 14s to 7s</span>
+                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Cut friction in the purchasing journey by reducing steps from 14 to 7.
+                            </p>
                           </div>
                         )}
                         {selectedImage === "Smarter File Selection" && (
                           <div>
-                            <span className="font-sans">34% ↑ in active usage</span>
-                            <p className="text-base font-normal mt-2">Enabled seamless file access to improve task initiation inside the AI assistant.</p>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">34% ↑ in active usage</span>
+                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Enabled seamless file access to improve task initiation inside the AI assistant.
+                            </p>
                           </div>
                         )}
                         {selectedImage === "Context-Aware AI" && (
                           <div>
-                            <span className="font-sans">Increased successful task completions</span>
-                            <p className="text-base font-normal mt-2">Introduced in-document text selection to power more precise, relevant AI conversations.</p>
+                            <span className="font-sans opacity-0 animate-fade-in-stat">Increased successful task completions</span>
+                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Introduced in-document text selection to power more precise, relevant AI conversations.
+                            </p>
                           </div>
                         )}
                       </div>
@@ -322,7 +336,9 @@ const App = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className="px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 opacity-0 animate-fade-in-3">             
+                          <button className={`px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 opacity-0 ${
+                            !isTyping ? 'animate-fade-in-3' : ''
+                          }`}>             
                             {(selectedImage === "AI Assistant Discovery" || selectedImage === "Overcoming AI Cold Start" || selectedImage === "Credit reporting") 
                               ? "read case study →" 
                               : "get in touch →"
