@@ -347,6 +347,7 @@ const App = () => {
                         </a>
                       </div>
                     </div>
+                    
                   </div>
 
                   {/* Center image section - adjust width */}
