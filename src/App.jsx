@@ -111,11 +111,11 @@ const App = () => {
 
       // Start typing animation when image changes - only the last word
       const textMap = {
-        "AI Assistant Discovery": "discovery",
-        "Overcoming AI Cold Start": "momentum",
+        "AI Assistant Discovery": "conversion",
+        "Overcoming AI Cold Start": "adoption",
         "Credit reporting": "trust",
         "Referral flow optimization": "growth",
-        "Checkout flow redesign": "streamlining",
+        "Checkout flow redesign": "usability",
         "Smarter File Selection": "ease",
         "Context-Aware AI": "intention"
       };
@@ -248,11 +248,11 @@ const App = () => {
                             <span className={`inline-block ${isTyping ? 'typing' : ''}`}>{displayText}</span>
                           ) : (
                             <span className={`inline-block ${isTyping ? 'fade-out' : ''}`}>
-                              {selectedImage === "AI Assistant Discovery" ? "discovery." :
-                               selectedImage === "Overcoming AI Cold Start" ? "momentum." :
+                              {selectedImage === "AI Assistant Discovery" ? "conversion." :
+                               selectedImage === "Overcoming AI Cold Start" ? "adoption." :
                                selectedImage === "Credit reporting" ? "trust." :
                                selectedImage === "Referral flow optimization" ? "growth." :
-                               selectedImage === "Checkout flow redesign" ? "streamlining." :
+                               selectedImage === "Checkout flow redesign" ? "usability." :
                                selectedImage === "Smarter File Selection" ? "ease." :
                                selectedImage === "Context-Aware AI" ? "intention." :
                                "what's next."}
@@ -379,7 +379,7 @@ const App = () => {
                     <div className="flex justify-start mt-2">
                       <button
                         onClick={() => setIsPaused(!isPaused)}
-                        className="p-2 text-stone-800 hover:text-indigo-600 transition-colors"
+                        className="p-2 text-stone-800 opacity-50 hover:text-stone-600 hover:opacity-50 active:text-indigo-600 active:opacity-100 transition-colors"
                         aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
                       >
                         {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
