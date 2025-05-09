@@ -23,4 +23,18 @@
     animation: fadeOut 0.3s forwards;
   }
 
+  @keyframes slotMachine {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-slot-machine {
+    animation: slotMachine 0.1s ease-in-out;
+  }
   

@@ -25,6 +25,7 @@ const App = () => {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   const imageMap = {
     "AI Assistant Discovery": "Splash.jpg",
@@ -95,6 +96,30 @@ const App = () => {
     }
     setIsTyping(false);
   };
+
+  // Modify the existing image rotation useEffect and add a new one for initial animation
+  useEffect(() => {
+    if (isInitialLoad) {
+      const imageValues = Object.values(imageMap);
+      let currentIndex = 0;
+
+      const animationInterval = setInterval(() => {
+        if (currentIndex < imageValues.length) {
+          setCurrentImage(imageValues[currentIndex]);
+          currentIndex++;
+        } else {
+          clearInterval(animationInterval);
+          setIsInitialLoad(false);
+          setCurrentImage("Splash.jpg");  // Set to first image
+          setSelectedImage("AI Assistant Discovery");  // Set to first item
+          // Trigger typewriter for initial word
+          typeWriter("conversion");
+        }
+      }, 200);
+
+      return () => clearInterval(animationInterval);
+    }
+  }, []);
 
   // Modify the existing image rotation useEffect
   useEffect(() => {
@@ -347,16 +372,22 @@ const App = () => {
                         </a>
                       </div>
                     </div>
-                    
                   </div>
 
                   {/* Center image section - adjust width */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[55%] h-[85vh] flex items-center justify-center animate-float">
-                    <img 
-                      src={currentImage}
-                      alt="Profile"
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[55%] h-[85vh] flex items-center justify-center">
+                    <div className="relative w-full h-full">
+                      <img 
+                        src={currentImage}
+                        alt="Profile"
+                        className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full ${
+                          isInitialLoad ? 'animate-slot-machine' : 'animate-float'
+                        }`}
+                        style={{
+                          transition: isInitialLoad ? 'none' : 'all 0.3s ease-in-out'
+                        }}
+                      />
+                    </div>
                   </div>
 
                   {/* Right section - adjust width and add margin */}

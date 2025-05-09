@@ -15,7 +15,7 @@ export default {
       },
       animation: {
         'spin-three-times': 'spin 0.6s ease-in 1',
-        float: 'float 6s ease-in-out infinite',
+        float: 'float 3s ease-in-out infinite',
         'fade-in-1': 'fadeIn 0.8s ease-out forwards',
         'fade-in-2': 'fadeIn 0.8s ease-out 0.3s forwards',
         'fade-in-3': 'fadeIn 0.8s ease-out 0.6s forwards',
@@ -25,6 +25,7 @@ export default {
         'fade-in-up-delay-1': 'fadeInUp 0.8s ease-out 0.2s forwards',
         'fade-in-up-delay-2': 'fadeInUp 0.8s ease-out 0.4s forwards',
         'fade-in-up-delay-3': 'fadeInUp 0.8s ease-out 0.6s forwards',
+        'slot-machine': 'slot-machine 0.3s ease-out forwards',
       },
       keyframes: {
         spin: {
@@ -32,8 +33,8 @@ export default {
           '100%': { transform: 'rotate(500deg)' },
         },
         float: {
-          '0%, 100%': { transform: 'translate(-50%, -50%) translateY(-8px)' },
-          '50%': { transform: 'translate(-50%, -50%) translateY(8px)' }
+          '0%, 100%': { transform: 'translate(-50%, -50%) translateY(0px)' },
+          '50%': { transform: 'translate(-50%, -50%) translateY(-10px)' },
         },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
@@ -48,7 +49,11 @@ export default {
             opacity: '1',
             transform: 'translateY(0)'
           }
-        }
+        },
+        slotMachine: {
+          '0%': { transform: 'translate(-50%, -200%)' },
+          '100%': { transform: 'translate(-50%, -50%)' }
+        },
       },
       fontFamily: {
         'emoji': [
@@ -67,3 +72,5 @@ export default {
   },
   plugins: []
 }
+
+
