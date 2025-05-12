@@ -348,26 +348,25 @@ const App = () => {
                       
                       {/* CTA button - added mt-8 for more spacing */}
                       <div className="mt-8">
-                        <a 
-                          href={selectedImage === "AI Assistant Discovery"
-                            ? "/aia"
-                            : selectedImage === "Overcoming AI Cold Start"
-                            ? "/ic"
-                            : selectedImage === "Credit reporting"
-                            ? "/sezzle-up"
-                            : "https://calendly.com/kasturi-khanke/30min"
-                          }
-                          className="inline-block"
-                        >
-                          <button className={`px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 opacity-0 ${
-                            !isTyping ? 'animate-fade-in-3' : ''
-                          }`}>             
-                            {(selectedImage === "AI Assistant Discovery" || selectedImage === "Overcoming AI Cold Start" || selectedImage === "Credit reporting") 
-                              ? "read case study →" 
-                              : "get in touch →"
+                        {(selectedImage === "AI Assistant Discovery" ||
+                          selectedImage === "Overcoming AI Cold Start" ||
+                          selectedImage === "Credit reporting") && (
+                          <a 
+                            href={selectedImage === "AI Assistant Discovery"
+                              ? "/aia"
+                              : selectedImage === "Overcoming AI Cold Start"
+                              ? "/ic"
+                              : "/sezzle-up"
                             }
-                          </button>
-                        </a>
+                            className="inline-block"
+                          >
+                            <button className={`px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 opacity-0 ${
+                              !isTyping ? 'animate-fade-in-3' : ''
+                            }`}>             
+                              read case study →
+                            </button>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </motion.div>
@@ -379,7 +378,7 @@ const App = () => {
                       opacity: isContentLoaded ? 1 : 0,
                       scale: isContentLoaded ? 1 : 0.95
                     }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
                     className="w-[55%] h-[85vh] flex items-center justify-center"
                   >
                     <div className="relative w-full h-full">
@@ -390,7 +389,7 @@ const App = () => {
                           'animate-float'
                         }`}
                         style={{
-                          transition: 'all 0.3s ease-in-out'
+                          transition: 'all 0.4s ease-in-out'
                         }}
                       />
                     </div>
