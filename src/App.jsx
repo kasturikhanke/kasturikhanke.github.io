@@ -15,6 +15,8 @@ import AppRoutes from './AppRoutes';
 import './assets/fonts.css';
 import Feedback from './Feedback';
 import { FaPause, FaPlay } from 'react-icons/fa';
+import About from './About'; // Add this import at the top with other imports
+import { motion } from 'framer-motion'; // Add this import at the top
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -26,6 +28,7 @@ const App = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
 
   const imageMap = {
     "AI Assistant Discovery": "Splash.jpg",
@@ -88,36 +91,26 @@ const App = () => {
   // Add this new function near the top of the component
   const typeWriter = async (text, delay = 50) => {
     setIsTyping(true);
-    setDisplayText("");
+    setDisplayText('');
     
     for (let i = 0; i < text.length; i++) {
       await new Promise(resolve => setTimeout(resolve, delay));
-      setDisplayText(prev => prev + text[i]);
+      setDisplayText(text.substring(0, i + 1));  // Use substring instead of concatenating
     }
     setIsTyping(false);
   };
 
-  // Modify the existing image rotation useEffect and add a new one for initial animation
+  // Modify this useEffect to remove the initial animation
   useEffect(() => {
     if (isInitialLoad) {
-      const imageValues = Object.values(imageMap);
-      let currentIndex = 0;
-
-      const animationInterval = setInterval(() => {
-        if (currentIndex < imageValues.length) {
-          setCurrentImage(imageValues[currentIndex]);
-          currentIndex++;
-        } else {
-          clearInterval(animationInterval);
-          setIsInitialLoad(false);
-          setCurrentImage("Splash.jpg");  // Set to first image
-          setSelectedImage("AI Assistant Discovery");  // Set to first item
-          // Trigger typewriter for initial word
-          typeWriter("conversion");
-        }
-      }, 200);
-
-      return () => clearInterval(animationInterval);
+      setIsInitialLoad(false);
+      // Wait for initial animation before showing other columns
+      setTimeout(() => {
+        setIsContentLoaded(true);
+        setCurrentImage("Splash.jpg");
+        setSelectedImage("AI Assistant Discovery");
+        typeWriter("conversion");
+      }, 3000);
     }
   }, []);
 
@@ -261,8 +254,13 @@ const App = () => {
                 className="h-full relative"
               >
                 <div className="w-full max-w-[90vw] mx-auto px-2 md:px-8 flex flex-col md:flex-row justify-between items-center absolute top-[40%] -translate-y-1/2">
-                  {/* Left column - adjust width */}
-                  <div className="flex flex-col justify-right leading-relaxed w-full md:w-[25%] mb-8 md:mb-0 z-10">
+                  {/* Left column */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col justify-right leading-relaxed w-full md:w-[25%] mb-8 md:mb-0 z-10"
+                  >
                     <div className="relative">
                       <h1 className="text-3xl sm:text-4xl font-medium mb-4 text-stone-800 opacity-0 animate-fade-in-1">
                         <span className="text-base font-sans font-medium sm:text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
@@ -372,26 +370,42 @@ const App = () => {
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  {/* Center image section - adjust width */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[55%] h-[85vh] flex items-center justify-center">
+                  {/* Center image section */}
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ 
+                      opacity: isContentLoaded ? 1 : 0,
+                      scale: isContentLoaded ? 1 : 0.95
+                    }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="w-[55%] h-[85vh] flex items-center justify-center"
+                  >
                     <div className="relative w-full h-full">
                       <img 
                         src={currentImage}
                         alt="Profile"
                         className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full ${
-                          isInitialLoad ? 'animate-slot-machine' : 'animate-float'
+                          'animate-float'
                         }`}
                         style={{
-                          transition: isInitialLoad ? 'none' : 'all 0.3s ease-in-out'
+                          transition: 'all 0.3s ease-in-out'
                         }}
                       />
                     </div>
-                  </div>
+                  </motion.div>
 
-                  {/* Right section - adjust width and add margin */}
-                  <div className="hidden md:flex flex-col justify-center space-y-4 w-[25%] z-10 md:-ml-8">
+                  {/* Right section */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ 
+                      opacity: isContentLoaded ? 1 : 0,
+                      x: isContentLoaded ? 0 : 20
+                    }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="hidden md:flex flex-col justify-center space-y-4 w-[25%] z-10 md:-ml-8"
+                  >
                     {Object.keys(imageMap).map((text) => (
                       <div
                         key={text}
@@ -417,7 +431,7 @@ const App = () => {
                         {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
                       </button>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </section>
           
@@ -549,6 +563,7 @@ const App = () => {
         <Route path="/sezzle-up" element={<SezzleUp />} />
         <Route path="/ic" element={<IC />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );

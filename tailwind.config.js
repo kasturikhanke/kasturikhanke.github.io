@@ -26,6 +26,7 @@ export default {
         'fade-in-up-delay-2': 'fadeInUp 0.8s ease-out 0.4s forwards',
         'fade-in-up-delay-3': 'fadeInUp 0.8s ease-out 0.6s forwards',
         'slot-machine': 'slot-machine 0.3s ease-out forwards',
+        'typewriter': 'typing 3.5s steps(40, end)',
       },
       keyframes: {
         spin: {
@@ -54,6 +55,10 @@ export default {
           '0%': { transform: 'translate(-50%, -200%)' },
           '100%': { transform: 'translate(-50%, -50%)' }
         },
+        typing: {
+          'from': { width: '0' },
+          'to': { width: '100%' }
+        }
       },
       fontFamily: {
         'emoji': [
