@@ -3,6 +3,7 @@ import React from 'react';
 const StandardNavbar = () => {
   // External links only
   const externalLinks = [
+    { label: 'About Me', url: '/about' },
     { label: 'Resume', url: 'https://drive.google.com/file/d/1dAJ-4VSPawBBLOyyQcjp6Am6y79rM9E9/view?usp=sharing' },
     { label: 'Blog', url: 'https://beyondthefold.substack.com/' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/kasturikhanke/' }
@@ -10,13 +11,6 @@ const StandardNavbar = () => {
 
   return (
     <nav className="w-full py-4 px-4 md:px-6 flex justify-between items-center">
-      {/* Internal links */}
-      <div className="flex items-center">
-        <a href="/about" className="text-sm font-medium text-stone-800 hover:text-indigo-500 transition-colors duration-200">
-          About Me
-        </a>
-      </div>
-
       {/* External links */}
       <div className="flex items-center space-x-6">
         {externalLinks.map((link, index) => (

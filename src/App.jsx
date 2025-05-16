@@ -29,15 +29,16 @@ const App = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [isContentLoaded, setIsContentLoaded] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   const imageMap = {
-    "AI Assistant Discovery": "Splash.jpg",
-    "Overcoming AI Cold Start": "Landing Page.jpg",
-    "Credit reporting": "Sezzle Up.jpg",
-    "Referral flow optimization": "Referral.jpg",
-    "Checkout flow redesign": "Checkout.jpg",
-    "Smarter File Selection": "File.jpg",
-    "Context-Aware AI": "Contextual.jpg"    
+    "AI Assistant Discovery": "splash.jpg",
+    "Overcoming AI Cold Start": "landing-page.jpg",
+    "Credit reporting": "sezzle-up.jpg",
+    "Referral flow optimization": "referral.jpg",
+    "Checkout flow redesign": "checkout.jpg",
+    "Smarter File Selection": "file.jpg",
+    "Context-Aware AI": "contextual.jpg"    
   };
 
   // Scroll handling logic remains the same
@@ -88,31 +89,78 @@ const App = () => {
     return () => window.removeEventListener('scroll', scrollHandler);
   }, []);
 
-  // Add this new function near the top of the component
+  // Modify this useEffect to handle the initial animation and nav timing
+  useEffect(() => {
+    if (isInitialLoad) {
+      setIsInitialLoad(false);
+      
+      setTimeout(() => {
+        setShowNav(true);
+        typeWriter("what's next.", 80)
+          .then(() => {
+            return new Promise(resolve => setTimeout(resolve, 800));
+          })
+          .then(() => {
+            return eraseText("what's next.", 50);
+          })
+          .then(() => {
+            setTimeout(() => {
+              typeWriter("conversion.", 80)
+                .then(() => {
+                  // Show image, title and description first
+                  setTimeout(() => {
+                    setIsContentLoaded(true);
+                    setCurrentImage("splash.jpg");
+                    setSelectedImage("AI Assistant Discovery");
+                    
+                    // Add a delay before showing the CTA button
+                    setTimeout(() => {
+                      const ctaButton = document.querySelector('.animate-fade-in-3');
+                      if (ctaButton) {
+                        ctaButton.style.opacity = '1';
+                      }
+                    }, 800); // Delay after content loads
+                  }, 160);
+                });
+            }, 400);
+          });
+      }, 1200);
+    }
+  }, []);
+
+  // Update the typeWriter function to return a Promise
   const typeWriter = async (text, delay = 50) => {
     setIsTyping(true);
     setDisplayText('');
     
-    for (let i = 0; i < text.length; i++) {
-      await new Promise(resolve => setTimeout(resolve, delay));
-      setDisplayText(text.substring(0, i + 1));  // Use substring instead of concatenating
-    }
-    setIsTyping(false);
+    return new Promise(resolve => {
+      let i = 0;
+      const interval = setInterval(() => {
+        setDisplayText(text.substring(0, i + 1));
+        i++;
+        if (i >= text.length) {
+          clearInterval(interval);
+          // Don't set isTyping to false - keep cursor blinking
+          resolve();
+        }
+      }, delay);
+    });
   };
 
-  // Modify this useEffect to remove the initial animation
-  useEffect(() => {
-    if (isInitialLoad) {
-      setIsInitialLoad(false);
-      // Wait for initial animation before showing other columns
-      setTimeout(() => {
-        setIsContentLoaded(true);
-        setCurrentImage("Splash.jpg");
-        setSelectedImage("AI Assistant Discovery");
-        typeWriter("conversion");
-      }, 3000);
-    }
-  }, []);
+  // Add new eraseText function
+  const eraseText = async (text, delay = 50) => {
+    return new Promise(resolve => {
+      let i = text.length;
+      const interval = setInterval(() => {
+        setDisplayText(text.substring(0, i));
+        i--;
+        if (i < 0) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, delay);
+    });
+  };
 
   // Modify the existing image rotation useEffect
   useEffect(() => {
@@ -129,13 +177,13 @@ const App = () => {
 
       // Start typing animation when image changes - only the last word
       const textMap = {
-        "AI Assistant Discovery": "conversion",
-        "Overcoming AI Cold Start": "adoption",
-        "Credit reporting": "trust",
-        "Referral flow optimization": "growth",
-        "Checkout flow redesign": "usability",
-        "Smarter File Selection": "ease",
-        "Context-Aware AI": "intention"
+        "AI Assistant Discovery": "conversion.",
+        "Overcoming AI Cold Start": "adoption.",
+        "Credit reporting": "trust.",
+        "Referral flow optimization": "growth.",
+        "Checkout flow redesign": "usability.",
+        "Smarter File Selection": "ease.",
+        "Context-Aware AI": "intention."
       };
       
       typeWriter(textMap[nextImage]);
@@ -239,14 +287,20 @@ const App = () => {
             }`}>
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-4 flex justify-between items-center">
                 <SpinningLogo />
-                <StandardNavbar
-                  activePage={activePage}
-                  onNavClick={handleNavClick}
-                />
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: showNav ? 0 : 20, opacity: showNav ? 1 : 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <StandardNavbar
+                    activePage={activePage}
+                    onNavClick={handleNavClick}
+                  />
+                </motion.div>
               </div>
             </header>
                  
-            <main className="h-screen overflow-hidden container mx-auto px-1 sm:px-2 lg:px-4 max-w-5xl">
+            <main className="h-screen overflow-hidden contaxiner mx-auto px-1 sm:px-2 lg:px-4 max-w-5xl">
               {/* Hero Section */}
               <section 
                 id="home" 
@@ -254,39 +308,58 @@ const App = () => {
                 className="h-full relative"
               >
                 <div className="w-full max-w-[90vw] mx-auto px-2 md:px-8 flex flex-col md:flex-row justify-between items-center absolute top-[40%] -translate-y-1/2">
-                  {/* Left column */}
+                  {/* Left column - increased width from 25% to 30% */}
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="flex flex-col justify-right leading-relaxed w-full md:w-[25%] mb-8 md:mb-0 z-10"
+                    className="flex flex-col justify-right leading-relaxed w-[30%] mb-8 md:mb-0 z-10"
+                    style={{ minWidth: '30%', maxWidth: '30%' }}
                   >
                     <div className="relative">
-                      <h1 className="text-3xl sm:text-4xl font-medium mb-4 text-stone-800 opacity-0 animate-fade-in-1">
-                        <span className="text-base font-sans font-medium sm:text-lg md:text-xl block mb-2 text-stone-800">Kasturi is</span>
-                        <span className="font-sans font-bold text-stone-800 leading-none">
+                      <h1 className="text-3xl sm:text-4xl font-medium mb-4 text-stone-800">
+                        <motion.span 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.8 }}
+                          className="text-base font-sans font-medium sm:text-lg md:text-xl block mb-2 text-stone-800"
+                        >
+                          Kasturi is
+                        </motion.span>
+                        <motion.span 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.8, delay: 0.4 }}
+                          className="font-sans font-bold text-stone-800 leading-none"
+                        >
                           designing for
                           <br />
-                          {isTyping ? (
-                            <span className={`inline-block ${isTyping ? 'typing' : ''}`}>{displayText}</span>
-                          ) : (
-                            <span className={`inline-block ${isTyping ? 'fade-out' : ''}`}>
-                              {selectedImage === "AI Assistant Discovery" ? "conversion." :
-                               selectedImage === "Overcoming AI Cold Start" ? "adoption." :
-                               selectedImage === "Credit reporting" ? "trust." :
-                               selectedImage === "Referral flow optimization" ? "growth." :
-                               selectedImage === "Checkout flow redesign" ? "usability." :
-                               selectedImage === "Smarter File Selection" ? "ease." :
-                               selectedImage === "Context-Aware AI" ? "intention." :
-                               "what's next."}
-                            </span>
-                          )}
-                        </span>
+                          <span className="inline-block">
+                            {displayText}
+                            {isTyping && (
+                              <motion.span
+                                animate={{ opacity: [1, 0] }}
+                                transition={{
+                                  duration: 0.5,
+                                  repeat: Infinity,
+                                  repeatType: "reverse"
+                                }}
+                                style={{ 
+                                  display: 'inline-block',
+                                  marginLeft: '2px',
+                                  fontWeight: 'normal'
+                                }}
+                              >
+                                |
+                              </motion.span>
+                            )}
+                          </span>
+                        </motion.span>
                       </h1>
                     </div>
 
-                    {/* Dynamic content container */}
-                    <div className="h-[240px] mt-4 flex flex-col justify-between">
+                    {/* Dynamic content container - add overflow handling */}
+                    <div className="h-[240px] mt-4 flex flex-col justify-between overflow-hidden">
                       <div className="text-xl md:text-2xl font-medium text-stone-800 h-[120px]">
                         {selectedImage === "AI Assistant Discovery" && (
                           <div>
@@ -360,7 +433,7 @@ const App = () => {
                             }
                             className="inline-block"
                           >
-                            <button className={`px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 opacity-0 ${
+                            <button className={`px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 ${
                               !isTyping ? 'animate-fade-in-3' : ''
                             }`}>             
                               read case study →
@@ -371,7 +444,7 @@ const App = () => {
                     </div>
                   </motion.div>
 
-                  {/* Center image section */}
+                  {/* Center image section - adjusted width to maintain proportions */}
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ 
@@ -379,7 +452,7 @@ const App = () => {
                       scale: isContentLoaded ? 1 : 0.95
                     }}
                     transition={{ duration: 0.3, delay: 0.2 }}
-                    className="w-[55%] h-[85vh] flex items-center justify-center"
+                    className="w-[50%] h-[85vh] flex items-center justify-center"
                   >
                     <div className="relative w-full h-full">
                       <img 
@@ -395,7 +468,7 @@ const App = () => {
                     </div>
                   </motion.div>
 
-                  {/* Right section */}
+                  {/* Right section - removed negative margin */}
                   <motion.div 
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ 
@@ -403,7 +476,7 @@ const App = () => {
                       x: isContentLoaded ? 0 : 20
                     }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="hidden md:flex flex-col justify-center space-y-4 w-[25%] z-10 md:-ml-8"
+                    className="hidden md:flex flex-col justify-center space-y-4 w-[20%] z-10"
                   >
                     {Object.keys(imageMap).map((text) => (
                       <div
@@ -416,6 +489,16 @@ const App = () => {
                         onClick={() => {
                           setSelectedImage(text);
                           setCurrentImage(imageMap[text]);
+                          const textMap = {
+                            "AI Assistant Discovery": "conversion.",
+                            "Overcoming AI Cold Start": "adoption.",
+                            "Credit reporting": "trust.",
+                            "Referral flow optimization": "growth.",
+                            "Checkout flow redesign": "usability.",
+                            "Smarter File Selection": "ease.",
+                            "Context-Aware AI": "intention."
+                          };
+                          typeWriter(textMap[text]);
                         }}
                       >
                         {text}
