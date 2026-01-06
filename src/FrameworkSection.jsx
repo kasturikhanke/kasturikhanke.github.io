@@ -21,8 +21,86 @@ const FrameworkSection = () => {
   return (
     <section className="relative py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="mb-8">
-          <h2 className="text-2xl font-medium md:mb-12 mb-2 text-gray-800">🛠️ The framework</h2>
+        <div className="mb-8 md:mb-12">
+          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Framework</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">The discovery system</h2>
+        </div>
+
+        {/* 3-Stage Discovery System Table */}
+        <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
+          <div>
+            <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8">
+              I designed a 3 stage discovery system that meets users at different points in their journey while using Acrobat:
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
+              {/* Stage 1: Awareness */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100/50">
+                <div className="mb-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-blue-600 font-semibold text-lg mb-3">
+                    1
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">Awareness</h3>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Goal</p>
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">Let users know AI Assistant exists</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Touchpoint</p>
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">Push-notification</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stage 2: Understanding */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100/50">
+                <div className="mb-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-purple-50 text-purple-600 font-semibold text-lg mb-3">
+                    2
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">Understanding</h3>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Goal</p>
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">Show what AI Assistant does and why it's valuable</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Touchpoint</p>
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">Update announcement</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stage 3: Activation */}
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100/50">
+                <div className="mb-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-50 text-green-600 font-semibold text-lg mb-3">
+                    3
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">Activation</h3>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Goal</p>
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">Prompt usage at the moment of need</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Touchpoints</p>
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">Contextual nudge, text selection shortcuts</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8 md:pt-4  border-gray-200/50">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
+                Traditional discovery assumes linear adoption where the feature is announced first and the user tries it. Research shows that users need multiple exposures across different contexts before they internalize a new capability. Each stage builds on the last. <span className="text-gray-900">Awareness</span> creates familiarity. <span className="text-gray-900">Understanding</span> creates intent. <span className="text-gray-900">Activation</span> creates habit.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-8 md:space-y-12">
@@ -31,10 +109,30 @@ const FrameworkSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-medium mb-2 text-gray-800">Letting users know a new feature is available</h3>
-                  <p className="text-base md:text-lg text-gray-700">
-                    I designed a push notification to alert users about the AI Assistant's availability. I collaborated with our content designer and our PM to test out 3 different variations in the copy. Testing out the copy would help us understand which messaging resonated more strongly with our users.
-                  </p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-100 text-blue-600 font-semibold text-xs">1</span>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Awareness</p>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-800">The Notification Problem</h3>
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The challenge:</span> How do you notify users about AI without making it feel like spam?
+                    </p>
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">My approach:</span> I collaborated with our Content Strategist and Product Marketing Manager to A/B test 3 message frames:
+                    </p>
+                    <ul className="space-y-2 text-base md:text-lg text-gray-700 pl-4">
+                      <li><span className="font-medium">Version A:</span> "Chat with your docs" — Feature focused</li>
+                      <li><span className="font-medium">Version B:</span> "Say hi to AI Assistant" — Feature focused</li>
+                      <li><span className="font-medium">Version C:</span> "Ask questions about a document with AI" — Benefit focused</li>
+                    </ul>
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">Version C won</span> with the highest open rate.
+                    </p>
+                    {/* <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">Learning:</span> Users respond to pain points, not feature announcements. Looking back, I wish we had incorporated more variations — a feature focused, benefit focused, and problem focused variation would have provided clearer insights.
+                    </p> */}
+                  </div>
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
@@ -59,10 +157,24 @@ const FrameworkSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-medium mb-2 text-gray-800">Showing the value proposition upfront</h3>
-                  <p className="text-base md:text-lg text-gray-700">
-                    The update announcement showed the top 3 features of the AI Assistant along with a video showcasing the Assistant in action. This helped users see the immediate value and possible use cases of the AI Assistant.
-                  </p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-purple-100 text-purple-600 font-semibold text-xs">2</span>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Understanding</p>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-800">The Value Proposition Challenge</h3>
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The challenge:</span> Users who tapped the notification needed to understand what AI Assistant does fast or they would leave.
+                    </p>
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The solution:</span> Show, don't tell. Instead of describing features, I designed a splash screen that:
+                    </p>
+                    <ul className="space-y-2 text-base md:text-lg text-gray-700 pl-4">
+                      <li>Shows the top 3 use cases</li>
+                      <li>Includes a quick 7-second video of AI in action</li>
+                      <li>Provides an immediate "Try now" CTA</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
@@ -88,7 +200,7 @@ const FrameworkSection = () => {
                   <div className="col-span-1 md:col-span-8">
                     <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
                       <span className="font-emoji text-xl md:text-2xl font-medium mb-2">⚠️</span>
-                      <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">Why splash screen?</span>
+                      <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">The pivot</span>
                     </h4>
                     <img 
                       src="BeforeUA.png" 
@@ -99,15 +211,15 @@ const FrameworkSection = () => {
                   <div className="col-span-1 md:col-span-4 space-y-6 md:space-y-8 mt-4 md:mt-8">
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Insight</h3>
-                      <p className="text-sm md:text-base text-gray-700">During design reviews, we hypothesized that there would be a drop-off between showing users an update announcement and then picking a file.</p>
+                      <p className="text-sm md:text-base text-gray-700">During design reviews, we identified a drop-off risk: asking users to pick a file creates friction.</p>
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Solution</h3>
-                      <p className="text-sm md:text-base text-gray-700">Instead of taking users to a file picking menu, I ideated around showing top 3 recent files in the AI Assistant directly after user sees the splash screen.</p>
+                      <p className="text-sm md:text-base text-gray-700">"Try now" routes directly to AI Assistant with 3 recent files already loaded in the chat. Users can start asking questions immediately.</p>
                     </div>
                     <div>
-                      <h3 className="font-medium mb-2 text-gray-800">Impact</h3>
-                      <p className="text-sm md:text-base text-gray-700">There was less drop-off between users tapping on "Try now" and picking a file as tapping on 'Try now' led directly to the AI Assistant.</p>
+                      <h3 className="font-medium mb-2 text-gray-800">Why this worked</h3>
+                      <p className="text-sm md:text-base text-gray-700">Removed decision-making friction. Users expereinced value before having to commit to learning a new tool.</p>
                     </div>
                   </div>
                 </div>
@@ -128,7 +240,7 @@ const FrameworkSection = () => {
                       <span className="font-emoji text-lg md:text-xl font-medium mb-2 text-gray-800">📖</span>
                       <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">UI evolution</span>
                     </h4>
-                    <p className="mb-4 md:mb-8 text-sm md:text-base text-gray-700">The Gen AI core design team met twice a week to give design feedback. Through multiple prototypes and iterations on Figma, we landed on a final UI for the splash screen. I then collaborated with our motion designers to create a strong visual video for the splash screen.</p>
+                    <p className="mb-4 md:mb-8 text-sm md:text-base text-gray-700">I worked with the Gen AI design team (bi-weekly critiques) and motion designers to iterate on the splash screen. In version 1, it felt more like a feature list with static image. In version 2, the video was more for a single use case. In the final version, I collaborated with the motion team to incorporate 3 use cases and simplified the UI to have just one primary CTA. </p>
                     <img 
                       src="SplashUI.png" 
                       alt="Description" 
@@ -145,10 +257,23 @@ const FrameworkSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-medium mb-2 text-gray-800">Nudging users on longer documents</h3>
-                  <p className="text-base md:text-lg text-gray-700">
-                    Subtle in-app nudges only when users are in a document to educate users on prompts they can use. My goal here was to balance user education with main flow tasks.
-                  </p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-100 text-green-600 font-semibold text-xs">3</span>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Activation</p>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-800">Contextual Activation</h3>
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The challenge:</span> Splash screens create awareness but not habits. We needed prompts that reminded users AI exists when they actually need it.
+                    </p>
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">My approach:</span> Instead of generic "Try AI" messages, I designed nudges that appear based on user behavior:
+                    </p>
+                    <ul className="space-y-2 text-base md:text-lg text-gray-700 pl-4">
+                      <li>Opens document longer than 20 pages → "Summarize this document?"</li>
+                      <li>Scrolls to the end of the document → "Want a summary of what you just read?"</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
@@ -184,15 +309,15 @@ const FrameworkSection = () => {
                   <div className="col-span-1 md:col-span-4 space-y-6 md:space-y-8 mt-4 md:mt-8">
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Insight</h3>
-                      <p className="text-sm md:text-base text-gray-700">A User Research survey revealed that majority of the people found coachmarks unhelpful. People emphasized that they don't have time to read coachmarks that instruct them on how to use a tool.</p>
+                      <p className="text-sm md:text-base text-gray-700"> User research insights and product reviews showed that users were frustrated with coachmarks and tooltips. </p>
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Solution</h3>
-                      <p className="text-sm md:text-base text-gray-700">Instead of creating an in-depth coachmark, prompting users with a subtle nudge based on intent would aide the user rather than disrupting their flow.</p>
+                      <p className="text-sm md:text-base text-gray-700">Prompting users with a subtle nudge based on intent would help the user rather than disrupting their flow.</p>
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Impact</h3>
-                      <p className="text-sm md:text-base text-gray-700">Users found the subtle nudges more helpful and in line with their task at hand.</p>
+                      <p className="text-sm md:text-base text-gray-700">Users found the subtle nudges more helpful and in line with their task at hand. Users could tap to use the nudges.</p>
                     </div>
                   </div>
                 </div>
@@ -204,10 +329,20 @@ const FrameworkSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-medium mb-2 text-gray-800">AI powered text contexualization</h3>
-                  <p className="text-base md:text-lg text-gray-700">
-                    Upon selecting text, users could now ask the AI Assistant a question related to the selected text.
-                  </p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-100 text-green-600 font-semibold text-xs">3</span>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Activation</p>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-800">Text selection contextualization</h3>
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The insight:</span> When users select text, they signal: "this part matters to me". What if AI could act on that intent?
+                    </p>
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The solution:</span> Contextual AI is powerful as it knows exactly what you're asking about. <br>
+                      </br>iOS and Android have different text selection systems. I worked with engineers to create a unified experience that felt native to each platform.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">

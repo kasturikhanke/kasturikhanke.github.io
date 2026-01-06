@@ -19,17 +19,21 @@ import About from './About'; // Add this import at the top with other imports
 import { motion } from 'framer-motion'; // Add this import at the top
 
 const App = () => {
+  // Check if coming from case study page
+  const urlParams = new URLSearchParams(window.location.search);
+  const fromCaseStudy = urlParams.get('fromCaseStudy') === 'true';
+  
   const [activePage, setActivePage] = useState('home');
   const [currentImage, setCurrentImage] = useState("Landing Page.jpg");
   const [selectedImage, setSelectedImage] = useState("Landing page");
   const sectionsRef = useRef({});
   const [isScrolled, setIsScrolled] = useState(false);
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(fromCaseStudy ? "conversion." : "");
   const [isTyping, setIsTyping] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
-  const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [showNav, setShowNav] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(!fromCaseStudy);
+  const [isContentLoaded, setIsContentLoaded] = useState(fromCaseStudy);
+  const [showNav, setShowNav] = useState(fromCaseStudy);
 
   const imageMap = {
     "AI Assistant Discovery": "splash.jpg",
@@ -91,6 +95,22 @@ const App = () => {
 
   // Modify this useEffect to handle the initial animation and nav timing
   useEffect(() => {
+    // If coming from case study, skip all animations and show content immediately
+    if (fromCaseStudy) {
+      setCurrentImage("splash.jpg");
+      setSelectedImage("AI Assistant Discovery");
+      // Show CTA button immediately
+      setTimeout(() => {
+        const ctaButton = document.querySelector('.animate-fade-in-3');
+        if (ctaButton) {
+          ctaButton.style.opacity = '1';
+        }
+      }, 100);
+      // Remove query parameter from URL without reload
+      window.history.replaceState({}, '', '/');
+      return;
+    }
+    
     if (isInitialLoad) {
       setIsInitialLoad(false);
       
@@ -126,7 +146,7 @@ const App = () => {
           });
       }, 1200);
     }
-  }, []);
+  }, [fromCaseStudy, isInitialLoad]);
 
   // Update the typeWriter function to return a Promise
   const typeWriter = async (text, delay = 50) => {
@@ -164,18 +184,15 @@ const App = () => {
 
   // Modify the existing image rotation useEffect
   useEffect(() => {
-    if (isPaused) return; // Don't set interval if paused
+    if (isPaused) return;
 
-    const interval = setInterval(() => {
+    const interval = setInterval(async () => {
       const imageKeys = Object.keys(imageMap);
       const currentIndex = imageKeys.indexOf(selectedImage);
       const nextIndex = (currentIndex + 1) % imageKeys.length;
       const nextImage = imageKeys[nextIndex];
       
-      setSelectedImage(nextImage);
-      setCurrentImage(imageMap[nextImage]);
-
-      // Start typing animation when image changes - only the last word
+      // Text mapping for the words
       const textMap = {
         "AI Assistant Discovery": "conversion.",
         "Overcoming AI Cold Start": "adoption.",
@@ -185,12 +202,49 @@ const App = () => {
         "Smarter File Selection": "ease.",
         "Context-Aware AI": "intention."
       };
+
+      // First erase the current text
+      await eraseText(textMap[selectedImage]);
       
-      typeWriter(textMap[nextImage]);
-    }, 3000);
+      // Update image after erasing text
+      setSelectedImage(nextImage);
+      setCurrentImage(imageMap[nextImage]);
+
+      // Short pause before typing new text
+      await new Promise(resolve => setTimeout(resolve, 200));
+      
+      // Type the new text
+      await typeWriter(textMap[nextImage]);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [selectedImage, imageMap, isPaused]);
+
+  // Update the click handler in the right section to include erase effect
+  const handleImageClick = async (text) => {
+    const textMap = {
+      "AI Assistant Discovery": "conversion.",
+      "Overcoming AI Cold Start": "adoption.",
+      "Credit reporting": "trust.",
+      "Referral flow optimization": "growth.",
+      "Checkout flow redesign": "usability.",
+      "Smarter File Selection": "ease.",
+      "Context-Aware AI": "intention."
+    };
+
+    // Erase current text first
+    await eraseText(textMap[selectedImage]);
+    
+    // Update image
+    setSelectedImage(text);
+    setCurrentImage(imageMap[text]);
+    
+    // Short pause before typing new text
+    await new Promise(resolve => setTimeout(resolve, 200));
+    
+    // Type new text
+    await typeWriter(textMap[text]);
+  };
 
   const handleNavClick = (page) => {
     setActivePage(page);
@@ -281,7 +335,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={
-          <div className="h-screen overflow-hidden bg-white text-stone-800 font-sans">
+          <div className="h-screen overflow-y-auto md:overflow-hidden bg-white text-stone-800 font-sans">
             <header className={`sticky top-0 bg-white z-50 transition-shadow duration-300 ${
               isScrolled ? 'shadow-md' : ''
             }`}>
@@ -300,29 +354,29 @@ const App = () => {
               </div>
             </header>
                  
-            <main className="h-screen overflow-hidden contaxiner mx-auto px-1 sm:px-2 lg:px-4 max-w-5xl">
+            <main className="min-h-screen md:h-screen md:overflow-hidden container mx-auto px-1 sm:px-2 lg:px-4 max-w-5xl">
               {/* Hero Section */}
               <section 
                 id="home" 
                 ref={el => sectionsRef.current['home'] = el} 
-                className="h-full relative"
+                className="min-h-screen md:h-full relative"
               >
-                <div className="w-full max-w-[90vw] mx-auto px-2 md:px-8 flex flex-col md:flex-row justify-between items-center absolute top-[40%] -translate-y-1/2">
+                <div className="w-full max-w-[90vw] mx-auto px-4 sm:px-6 md:px-8 flex flex-col md:flex-row justify-between items-center absolute top-8 md:top-[40%] md:-translate-y-1/2 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0">
                   {/* Left column - increased width from 25% to 30% */}
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="flex flex-col justify-right leading-relaxed w-[30%] mb-8 md:mb-0 z-10"
-                    style={{ minWidth: '30%', maxWidth: '30%' }}
+                    className="flex flex-col justify-right leading-relaxed w-full md:w-[30%] mb-2 md:mb-0 z-10"
+                    style={{ minWidth: 'auto', maxWidth: '100%' }}
                   >
                     <div className="relative">
-                      <h1 className="text-3xl sm:text-4xl font-medium mb-4 text-stone-800">
+                      <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 text-stone-800 text-center md:text-left">
                         <motion.span 
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.8 }}
-                          className="text-base font-sans font-medium sm:text-lg md:text-xl block mb-2 text-stone-800"
+                          className="text-sm sm:text-base md:text-lg font-sans font-medium block mb-1 md:mb-2 text-stone-800"
                         >
                           Kasturi is
                         </motion.span>
@@ -330,7 +384,7 @@ const App = () => {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.8, delay: 0.4 }}
-                          className="font-sans font-bold text-stone-800 leading-none"
+                          className="font-sans font-bold text-stone-800 leading-tight md:leading-none"
                         >
                           designing for
                           <br />
@@ -359,60 +413,60 @@ const App = () => {
                     </div>
 
                     {/* Dynamic content container - add overflow handling */}
-                    <div className="h-[240px] mt-4 flex flex-col justify-between overflow-hidden">
-                      <div className="text-xl md:text-2xl font-medium text-stone-800 h-[120px]">
+                    <div className="min-h-[200px] md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-hidden">
+                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-stone-800 min-h-[100px] md:h-[120px] text-center md:text-left">
                         {selectedImage === "AI Assistant Discovery" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">32% ↑ in conversion rate</span>
-                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">32% ↑ in conversion rate</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion.
                             </p>
                           </div>
                         )}
                         {selectedImage === "Overcoming AI Cold Start" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">4% ↑ in active usage</span>
-                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">4% ↑ in active usage</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Redesigned the assistant's landing experience to help users start faster with contextual quick prompts.
                             </p>
                           </div>
                         )}
                         {selectedImage === "Credit reporting" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">70% ↑ in conversion rate</span>
-                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">70% ↑ in conversion rate</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Led end-to-end design for the first BNPL credit reporting flow—key to landing a partnership with Target.
                             </p>
                           </div>
                         )}
                         {selectedImage === "Referral flow optimization" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">↑ acquisition via invites</span>
-                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↑ acquisition via invites</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Simplified and redesigned referral entry points to increase user-driven growth.
                             </p>
                           </div>
                         )}
                         {selectedImage === "Checkout flow redesign" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">↓ time from 14s to 7s</span>
-                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↓ time from 14s to 7s</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Cut friction in the purchasing journey by reducing steps from 14 to 7.
                             </p>
                           </div>
                         )}
                         {selectedImage === "Smarter File Selection" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">34% ↑ in active usage</span>
-                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">34% ↑ in active usage</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Enabled seamless file access to improve task initiation inside the AI assistant.
                             </p>
                           </div>
                         )}
                         {selectedImage === "Context-Aware AI" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap">↑ engagement</span>
-                            <p className="text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↑ engagement</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Introduced in-document text selection to power more precise, relevant AI conversations.
                             </p>
                           </div>
@@ -420,7 +474,7 @@ const App = () => {
                       </div>
                       
                       {/* CTA button - added mt-8 for more spacing */}
-                      <div className="mt-8">
+                      <div className="mt-2 md:mt-8 text-center md:text-left">
                         {(selectedImage === "AI Assistant Discovery" ||
                           selectedImage === "Overcoming AI Cold Start" ||
                           selectedImage === "Credit reporting") && (
@@ -433,7 +487,7 @@ const App = () => {
                             }
                             className="inline-block"
                           >
-                            <button className={`px-6 py-3 rounded-full border border-black text-black flex items-center gap-2 text-base hover:bg-black hover:text-white transition-colors duration-300 ${
+                            <button className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-black text-black flex items-center gap-2 text-sm sm:text-base hover:bg-black hover:text-white transition-colors duration-300 ${
                               !isTyping ? 'animate-fade-in-3' : ''
                             }`}>             
                               read case study →
@@ -452,13 +506,13 @@ const App = () => {
                       scale: isContentLoaded ? 1 : 0.95
                     }}
                     transition={{ duration: 0.3, delay: 0.2 }}
-                    className="w-[50%] h-[85vh] flex items-center justify-center"
+                    className="w-full md:w-[50%] h-[40vh] sm:h-[50vh] md:h-[85vh] flex items-center justify-center mt-2 mb-4 md:my-0"
                   >
                     <div className="relative w-full h-full">
                       <img 
                         src={currentImage}
                         alt="Profile"
-                        className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full ${
+                        className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full object-contain ${
                           'animate-float'
                         }`}
                         style={{
@@ -486,20 +540,7 @@ const App = () => {
                             ? 'text-indigo-600 opacity-100 translate-x-2' 
                             : 'text-stone-800 hover:text-stone-600 opacity-50'
                         }`}
-                        onClick={() => {
-                          setSelectedImage(text);
-                          setCurrentImage(imageMap[text]);
-                          const textMap = {
-                            "AI Assistant Discovery": "conversion.",
-                            "Overcoming AI Cold Start": "adoption.",
-                            "Credit reporting": "trust.",
-                            "Referral flow optimization": "growth.",
-                            "Checkout flow redesign": "usability.",
-                            "Smarter File Selection": "ease.",
-                            "Context-Aware AI": "intention."
-                          };
-                          typeWriter(textMap[text]);
-                        }}
+                        onClick={() => handleImageClick(text)}
                       >
                         {text}
                       </div>
@@ -511,6 +552,40 @@ const App = () => {
                         aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
                       >
                         {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
+                      </button>
+                    </div>
+                  </motion.div>
+
+                  {/* Mobile navigation for image selection */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ 
+                      opacity: isContentLoaded ? 1 : 0,
+                      y: isContentLoaded ? 0 : 20
+                    }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="md:hidden w-full mt-4 pb-12 z-10"
+                  >
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {Object.keys(imageMap).map((text) => (
+                        <button
+                          key={text}
+                          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+                            selectedImage === text 
+                              ? 'text-indigo-600 bg-indigo-50 border border-indigo-200' 
+                              : 'text-stone-600 bg-stone-50 border border-stone-200'
+                          }`}
+                          onClick={() => handleImageClick(text)}
+                        >
+                          {text}
+                        </button>
+                      ))}
+                      <button
+                        onClick={() => setIsPaused(!isPaused)}
+                        className="px-3 py-1.5 rounded-full text-xs font-medium text-stone-600 bg-stone-50 border border-stone-200 transition-colors"
+                        aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
+                      >
+                        {isPaused ? <FaPlay size={12} /> : <FaPause size={12} />}
                       </button>
                     </div>
                   </motion.div>

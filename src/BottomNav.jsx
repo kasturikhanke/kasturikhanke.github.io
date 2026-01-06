@@ -17,6 +17,22 @@ const MenuIcon = () => (
   </svg>
 );
 
+const HomeIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className="w-6 h-6"
+  >
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+  </svg>
+);
+
 const BottomNav = ({ activePage, onNavClick, isTabTap, isCaseStudy = false }) => {
   const navContainerRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,31 +56,49 @@ const BottomNav = ({ activePage, onNavClick, isTabTap, isCaseStudy = false }) =>
     setIsMenuOpen(false);
   };
 
-  const MobileNav = () => (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
-      <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="bg-black/20 backdrop-blur-md rounded-full p-3 shadow-lg"
-      >
-        <MenuIcon />
-      </button>
-      {isMenuOpen && (
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-[16px] p-2 shadow-lg w-48">
-          {navItems.map((page) => (
-            <button
-              key={page}
-              className={`w-full px-4 py-2 text-sm font-medium rounded-[12px] text-left ${
-                activePage === page ? 'bg-black text-white' : 'text-gray-200 hover:text-gray-300'
-              }`}
-              onClick={() => handleNavClick(page)}
-            >
-              {page.charAt(0).toUpperCase() + page.slice(1)}
-            </button>
-          ))}
+  const MobileNav = () => {
+    // For case studies on mobile, show just a Home icon
+    if (isCaseStudy) {
+      return (
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+          <button
+            onClick={() => handleNavClick('home')}
+            className="bg-black/20 backdrop-blur-md rounded-full p-3 shadow-lg"
+            aria-label="Home"
+          >
+            <HomeIcon />
+          </button>
         </div>
-      )}
-    </div>
-  );
+      );
+    }
+
+    // For non-case studies, show the hamburger menu
+    return (
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="bg-black/20 backdrop-blur-md rounded-full p-3 shadow-lg"
+        >
+          <MenuIcon />
+        </button>
+        {isMenuOpen && (
+          <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-[16px] p-2 shadow-lg w-48">
+            {navItems.map((page) => (
+              <button
+                key={page}
+                className={`w-full px-4 py-2 text-sm font-medium rounded-[12px] text-left ${
+                  activePage === page ? 'bg-black text-white' : 'text-gray-200 hover:text-gray-300'
+                }`}
+                onClick={() => handleNavClick(page)}
+              >
+                {page.charAt(0).toUpperCase() + page.slice(1)}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const DesktopNav = () => (
     <div
