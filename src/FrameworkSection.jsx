@@ -219,7 +219,7 @@ const FrameworkSection = () => {
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Why this worked</h3>
-                      <p className="text-sm md:text-base text-gray-700">Removed decision-making friction. Users expereinced value before having to commit to learning a new tool.</p>
+                      <p className="text-sm md:text-base text-gray-700">Removed decision-making friction. Users experienced value before having to commit to learning a new tool.</p>
                     </div>
                   </div>
                 </div>
@@ -309,7 +309,7 @@ const FrameworkSection = () => {
                   <div className="col-span-1 md:col-span-4 space-y-6 md:space-y-8 mt-4 md:mt-8">
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Insight</h3>
-                      <p className="text-sm md:text-base text-gray-700"> User research insights and product reviews showed that users were frustrated with coachmarks and tooltips. </p>
+                      <p className="text-sm md:text-base text-gray-700"> User research showed coachmarks had low completion rates. Users said that they don't have time to read tooltips.</p>
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Solution</h3>

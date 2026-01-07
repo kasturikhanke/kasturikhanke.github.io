@@ -34,7 +34,7 @@ const ChallengesGoalsSection = () => {
               <p className="text-base sm:text-lg text-gray-700">
                 
                 
-                We launched Acrobat's AI Assistant in May 2024 with capabilities that could revolutionize how users interact with PDFs: instant summarization, intelligent QnA, citation extraction. But 6 weeks post-launch, a very small number of users had tried it even once.</p>
+                We launched Acrobat's AI Assistant in May 2024 with capabilities that could revolutionize how users interact with PDFs: instant summarization, intelligent Q&A, citation extraction. But 6 weeks post-launch, adoption remained critically low.</p>
             </div>
           </div>
         </div>
