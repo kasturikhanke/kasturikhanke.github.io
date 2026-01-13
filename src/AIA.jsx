@@ -187,10 +187,9 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
               <div className="flex items-start gap-4 mb-4">
                 
-                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-lg font-semibold">1</span>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">Discovery is a system, not a feature</h3>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed pl-14">
+              <p className="text-base text-gray-600 leading-relaxed">
                 Each touchpoint worked because they were designed as an interconnected system, not isolated features.
               </p>
             </div>
@@ -198,10 +197,9 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             {/* Learning 2 */}
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
               <div className="flex items-start gap-4 mb-4">
-                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-lg font-semibold">2</span>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">AI needs different discovery patterns</h3>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed pl-14">
+              <p className="text-base text-gray-600 leading-relaxed">
                 Traditional "new feature" announcements don't work for AI. Users need to see concrete use cases and experience value immediately.
               </p>
             </div>
@@ -209,10 +207,9 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             {/* Learning 3 */}
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
               <div className="flex items-start gap-4 mb-4">
-                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-lg font-semibold">3</span>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">Mobile AI requires new interaction patterns</h3>
               </div>
-              <ul className="text-base text-gray-600 leading-relaxed pl-14 space-y-2">
+              <ul className="text-base text-gray-600 leading-relaxed space-y-2">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
                   Suggested prompts (tap, don't type)
@@ -227,10 +224,9 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             {/* Learning 4 */}
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
               <div className="flex items-start gap-4 mb-4">
-                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-lg font-semibold">4</span>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">Design for habit formation</h3>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed pl-14">
+              <p className="text-base text-gray-600 leading-relaxed">
                 We focused on discovery and activation, but in retrospect, we didn't design enough for habit formation. Reccuring prompts or features and solutions that turn first-time users into regular users. I would look more into mechanisms to keep bringing back users to use something that adds value to their lives. 
               </p>
             </div>
@@ -252,8 +248,8 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
           {/* Key Takeaways */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 md:mb-8">
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 rounded-2xl md:rounded-3xl shadow-sm">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 mb-4">
-                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full  mb-4">
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -261,8 +257,8 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
               <p className="text-sm text-gray-600">Designed a framework that brought users to AI at the right moment</p>
             </div>
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 rounded-2xl md:rounded-3xl shadow-sm">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-purple-50 mb-4">
-                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full mb-4">
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
@@ -270,8 +266,8 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
               <p className="text-sm text-gray-600">Users experienced AI's capabilities before committing to learn</p>
             </div>
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 rounded-2xl md:rounded-3xl shadow-sm">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-50 mb-4">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full  mb-4">
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
