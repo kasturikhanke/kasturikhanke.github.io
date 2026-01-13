@@ -63,7 +63,7 @@ const ChallengesGoalsSection = () => {
                 </li>
                 <li className="flex items-start gap-3 text-base sm:text-lg text-gray-700">
                   <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                  <span>Existing entry point was buried in menus</span>
+                  <span>Existing entry point - FAB was not discoverable</span>
                 </li>
               </ul>
             </div>
@@ -93,7 +93,7 @@ const ChallengesGoalsSection = () => {
               <ul className="space-y-2">
                 <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
                   <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                  <span>Users complained about over-messaging</span>
+                  <span>Users complained about over-messaging throughout the app</span>
                 </li>
                 <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
                   <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
@@ -101,7 +101,7 @@ const ChallengesGoalsSection = () => {
                 </li>
                 <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
                   <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                  <span>Traditional existing discovery patterns weren't working</span>
+                  <span>Traditional existing discovery patterns such as a "what's new" modal weren't working</span>
                 </li>
               </ul>
             </div>
@@ -120,7 +120,7 @@ const ChallengesGoalsSection = () => {
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Contextual over promotional</h3>
               <p className="text-base sm:text-lg text-gray-600">
-                Show value in the moment of need, not generically
+                Show value in the moment of need
               </p>
             </div>
 
@@ -132,9 +132,9 @@ const ChallengesGoalsSection = () => {
             </div>
 
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Education through action</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Show, not tell</h3>
               <p className="text-base sm:text-lg text-gray-600">
-                Users learn by doing, not by reading explanations
+                Let users use the product instead of reading instructions on how to use it  
               </p>
             </div>
 

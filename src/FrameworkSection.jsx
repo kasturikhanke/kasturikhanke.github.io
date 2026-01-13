@@ -100,6 +100,12 @@ const FrameworkSection = () => {
                 Traditional discovery assumes linear adoption where the feature is announced first and the user tries it. Research shows that users need multiple exposures across different contexts before they internalize a new capability. Each stage builds on the last. <span className="text-gray-900">Awareness</span> creates familiarity. <span className="text-gray-900">Understanding</span> creates intent. <span className="text-gray-900">Activation</span> creates habit.
               </p>
             </div>
+
+            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-12">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3">Why this approach?</h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
+              We considered onboarding tutorials and proactive AI suggestions, but both created problems: tutorials blocked users from their work, and proactive suggestions felt presumptuous. Progressive contextual discovery won because it worked with user behavior, not against it.              </p>
+            </div>
           </div>
         </div>
 
@@ -300,16 +306,23 @@ const FrameworkSection = () => {
                       <span className="font-emoji text-xl md:text-2xl font-medium mb-2">⚠️</span>
                       <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">Why nudges?</span>
                     </h4>
-                    <img 
-                      src="Nudges.png" 
-                      alt="Description" 
+                    <img
+                      src="Nudges.png"
+                      alt="Description"
                       className="w-full rounded-lg mt-4 md:mt-8"
                     />
                   </div>
                   <div className="col-span-1 md:col-span-4 space-y-6 md:space-y-8 mt-4 md:mt-8">
                     <div>
+                      <h3 className="font-medium mb-2 text-gray-800">Contextual</h3>
+                      <span className="space-y-2 text-sm md:text-base text-gray-700">
+                      
+                          <span>Nudges appear at the moment of intent (e.g., when opening a long document) and eliminate the "what should I ask?" friction by suggesting relevant actions</span>
+                    </span>
+                    </div>
+                    <div>
                       <h3 className="font-medium mb-2 text-gray-800">Insight</h3>
-                      <p className="text-sm md:text-base text-gray-700"> User research showed coachmarks had low completion rates. Users said that they don't have time to read tooltips.</p>
+                      <p className="text-sm md:text-base text-gray-700">User research showed coachmarks had low completion rates. Users said that they don't have time to read tooltips.</p>
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-800">Solution</h3>
