@@ -11,6 +11,7 @@ import AIA from './AIA';
 import SezzleUp from './SezzleUp';
 import ImpactSection from './ImpactSection';
 import IC from './ic';
+import PDFSpaces from './PDFSpaces';
 import AppRoutes from './AppRoutes';
 import './assets/fonts.css';
 import Feedback from './Feedback';
@@ -36,13 +37,14 @@ const App = () => {
   const [showNav, setShowNav] = useState(fromCaseStudy);
 
   const imageMap = {
+    "PDF Spaces": "Spaces.jpg",
     "AI Assistant Discovery": "splash.jpg",
     "Overcoming AI Cold Start": "landing-page.jpg",
     "Credit reporting": "sezzle-up.jpg",
     "Referral flow optimization": "referral.jpg",
     "Checkout flow redesign": "checkout.jpg",
     "Smarter File Selection": "file.jpg",
-    "Context-Aware AI": "contextual.jpg"    
+    "Context-Aware AI": "contextual.jpg"
   };
 
   // Scroll handling logic remains the same
@@ -97,8 +99,8 @@ const App = () => {
   useEffect(() => {
     // If coming from case study, skip all animations and show content immediately
     if (fromCaseStudy) {
-      setCurrentImage("splash.jpg");
-      setSelectedImage("AI Assistant Discovery");
+      setCurrentImage("Spaces.jpg");
+      setSelectedImage("PDF Spaces");
       // Show CTA button immediately
       setTimeout(() => {
         const ctaButton = document.querySelector('.animate-fade-in-3');
@@ -130,8 +132,8 @@ const App = () => {
                   // Show image, title and description first
                   setTimeout(() => {
                     setIsContentLoaded(true);
-                    setCurrentImage("splash.jpg");
-                    setSelectedImage("AI Assistant Discovery");
+                    setCurrentImage("Spaces.jpg");
+                    setSelectedImage("PDF Spaces");
                     
                     // Add a delay before showing the CTA button
                     setTimeout(() => {
@@ -194,6 +196,7 @@ const App = () => {
       
       // Text mapping for the words
       const textMap = {
+        "PDF Spaces": "collaboration.",
         "AI Assistant Discovery": "conversion.",
         "Overcoming AI Cold Start": "adoption.",
         "Credit reporting": "trust.",
@@ -223,6 +226,7 @@ const App = () => {
   // Update the click handler in the right section to include erase effect
   const handleImageClick = async (text) => {
     const textMap = {
+      "PDF Spaces": "collaboration.",
       "AI Assistant Discovery": "conversion.",
       "Overcoming AI Cold Start": "adoption.",
       "Credit reporting": "trust.",
@@ -415,6 +419,14 @@ const App = () => {
                     {/* Dynamic content container - add overflow handling */}
                     <div className="min-h-[200px] md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-hidden">
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-stone-800 min-h-[100px] md:h-[120px] text-center md:text-left">
+                        {selectedImage === "PDF Spaces" && (
+                          <div>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">50,000+ beta users</span>
+                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
+                              Designed permission systems and custom AI agents for Adobe's collaborative document workspace.
+                            </p>
+                          </div>
+                        )}
                         {selectedImage === "AI Assistant Discovery" && (
                           <div>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">32% ↑ in conversion rate</span>
@@ -475,11 +487,14 @@ const App = () => {
                       
                       {/* CTA button - added mt-8 for more spacing */}
                       <div className="mt-2 md:mt-8 text-center md:text-left">
-                        {(selectedImage === "AI Assistant Discovery" ||
+                        {(selectedImage === "PDF Spaces" ||
+                          selectedImage === "AI Assistant Discovery" ||
                           selectedImage === "Overcoming AI Cold Start" ||
                           selectedImage === "Credit reporting") && (
-                          <a 
-                            href={selectedImage === "AI Assistant Discovery"
+                          <a
+                            href={selectedImage === "PDF Spaces"
+                              ? "/pdf-spaces"
+                              : selectedImage === "AI Assistant Discovery"
                               ? "/aia"
                               : selectedImage === "Overcoming AI Cold Start"
                               ? "/ic"
@@ -719,6 +734,7 @@ const App = () => {
         <Route path="/aia" element={<AIA />} />
         <Route path="/sezzle-up" element={<SezzleUp />} />
         <Route path="/ic" element={<IC />} />
+        <Route path="/pdf-spaces" element={<PDFSpaces />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/about" element={<About />} />
       </Routes>

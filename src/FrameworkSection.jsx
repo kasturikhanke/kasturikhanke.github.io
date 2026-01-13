@@ -374,6 +374,86 @@ const FrameworkSection = () => {
               </div>
             </div>
           </div>
+
+          {/* Feature 5: Cold Start Solution */}
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
+              <div className="pt-4 md:pt-16">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-100 text-green-600 font-semibold text-xs">3</span>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Activation</p>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-800">Cold Start Solution</h3>
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The challenge:</span>
+                       What happens when users open AI Assistant directly with no specific task in mind? They face a blank chat interface and leave.
+                    </p>
+                    <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">The insight:</span>
+                      Another drop-off point we discovered post-launch through analytics was the Chat. Users would open the AI Assistant but barely anyone would ask a question. <br>
+                      </br>
+                      Research revealed that "I don't know what to ask" was the #1 barrier to engagement after users found the AI Assistnt. The empty state was a dead.
+                      </p>
+                      <p className="text-base md:text-lg text-gray-700">
+                      <span className="font-bold">My approach:</span>
+                      I designed AI Quick Prompts which were a structured prompt library that appears when users open the AI Assistant. Instead of a blank chat, users see actionable starting points organized into three intuitive categories:
+                      1. Ask: What are the key points in this document?
+                      2. Analyze: Compare the terms in section 3 vs section 7
+                      3. Create: Draft a summary email of this contract
+
+                      Research revealed that "I don't know what to ask" was the #1 barrier to engagement after users found the AI Assistnt. The empty state was a dead.
+                      </p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative h-[400px] md:h-[600px]">
+                <video
+                  className="w-full h-full object-cover rounded-lg shadow-sm"
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
+                  playsInline={true}
+                  src="IC.mov"
+                  type="video/quicktime"
+                  preload="auto"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-16">
+            <div className="border-2 border-gray-100 rounded-xl p-4 md:p-8">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                <div className="col-span-1 md:col-span-8">
+                  <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
+                    <span className="font-emoji text-xl md:text-2xl font-medium mb-2">⚠️</span>
+                    <span className="text-lg md:text-xl font-medium mb-2 text-gray-800">Why categories?</span>
+                  </h4>
+                  <img src="ICfinal.png" alt="Intuitive Categories solution" className="w-full rounded-xl mb-6 md:mb-12" />
+                </div>
+                <div className="col-span-1 md:col-span-4 space-y-6 md:space-y-8 mt-4 md:mt-8">
+                  <div>
+                    <h3 className="font-medium mb-2 text-gray-800">Insight</h3>
+                    <p className="text-sm md:text-base text-gray-700">
+                      Early explorations showed a flat list of 3 prompts. Users scrolled but didn't tap on the prompts as they were not relevant to them.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-2 text-gray-800">Solution</h3>
+                    <p className="text-sm md:text-base text-gray-700">Grouping prompts into Ask, Analyze, and Create reduced cognitive load. Users could quickly identify what kind of task they wanted, then picked a sepcific prompt.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-2 text-gray-800">Impact</h3>
+                    <p className="text-sm md:text-base text-gray-700">Quick prompts increased first-session engagement by 4%. More importantly, users who interacted with Quick Prompts were more likely to return and trype their own prompts. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
