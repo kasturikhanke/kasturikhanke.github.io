@@ -84,13 +84,13 @@ const PDFSpaces = () => {
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 text-sm text-gray-500 mb-6 md:mb-8">
             <span>Product Design</span>
             <span className="hidden sm:inline text-gray-300">·</span>
-            <span>Dec '24 – Mar '25</span>
+            <span>Jan '25 – Aug '25</span>
             <span className="hidden sm:inline text-gray-300">·</span>
-            <span>Mobile Design Lead</span>
+            <span>Mobile Design Lead for Collaboration</span>
           </div>
         </section>
 
-        {/* Impact Section */}
+        {/* Impact Section 
         <section id="impact" className="mb-12 md:mb-24">
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Impact</p>
@@ -99,18 +99,19 @@ const PDFSpaces = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
               <div className="relative">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-6 text-gray-800">50,000+</h3>
-                <p className="text-base sm:text-lg text-gray-700">Beta users launched in December 2024 with multi-user collaboration and custom AI agents</p>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-6 text-gray-800">0→1 Product</h3>
+                <p className="text-base sm:text-lg text-gray-700">Launched in just 7 months</p>
               </div>
             </div>
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl border-2 border-gray-100 shadow-sm overflow-hidden">
+              
               <div className="relative">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-6 text-gray-800">8+</h3>
                 <p className="text-base sm:text-lg text-gray-700">Designers adopted the cross-platform collaboration component library for mobile, desktop, and web</p>
               </div>
             </div>
           </div>
-        </section>
+        </section>*/}
 
         {/* Context Section */}
         <section className="mb-12 md:mb-24">
@@ -156,15 +157,16 @@ const PDFSpaces = () => {
                 </ul>
               </div>
 
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+    {/*        <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Validation</h3>
                 <p className="text-base sm:text-lg text-gray-600">
                   User research with knowledge workers revealed they don't work with files in isolation. Early prototype testing with 50 enterprise teams confirmed users wanted AI that understood document relationships and could adapt its communication style to different contexts.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
+              </div> */}
+              
+            </div> 
+          </div> 
+        </section> 
 
         {/* Insights Section */}
         <section className="mb-12 md:mb-24">
@@ -223,10 +225,7 @@ const PDFSpaces = () => {
                     <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
                     <span>Different interaction patterns across platforms</span>
                   </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-700">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>No unified collaboration component system existed</span>
-                  </li>
+              
                 </ul>
               </div>
             </div>

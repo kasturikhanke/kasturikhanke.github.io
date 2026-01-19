@@ -103,10 +103,10 @@ const SezzleUp = () => {
           </div>
         </section>
         {/* Full bleed image */}
-        <div className="relative w-screen -mx-4 sm:-mx-[50vw] left-1/2 -translate-x-1/2 right-auto mb-8 md:mb-16 overflow-hidden">
-          <img 
-            src="SezzleUpMock0.jpg" 
-            alt="Sezzle Up" 
+        <div className="relative w-screen left-1/2 -translate-x-1/2 mb-8 md:mb-16">
+          <img
+            src="/SezzleUpMock0.jpg"
+            alt="Sezzle Up"
             className="w-full h-auto"
           />
         </div>

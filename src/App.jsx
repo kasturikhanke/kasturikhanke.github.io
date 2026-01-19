@@ -29,7 +29,7 @@ const App = () => {
   const [selectedImage, setSelectedImage] = useState("Landing page");
   const sectionsRef = useRef({});
   const [isScrolled, setIsScrolled] = useState(false);
-  const [displayText, setDisplayText] = useState(fromCaseStudy ? "conversion." : "");
+  const [displayText, setDisplayText] = useState(fromCaseStudy ? "collaboration." : "");
   const [isTyping, setIsTyping] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(!fromCaseStudy);
@@ -40,11 +40,7 @@ const App = () => {
     "PDF Spaces": "Spaces.jpg",
     "AI Assistant Discovery": "splash.jpg",
     "Overcoming AI Cold Start": "landing-page.jpg",
-    "Credit reporting": "sezzle-up.jpg",
-    "Referral flow optimization": "referral.jpg",
-    "Checkout flow redesign": "checkout.jpg",
-    "Smarter File Selection": "file.jpg",
-    "Context-Aware AI": "contextual.jpg"
+    "Credit reporting": "sezzle-up.jpg"
   };
 
   // Scroll handling logic remains the same
@@ -127,7 +123,7 @@ const App = () => {
           })
           .then(() => {
             setTimeout(() => {
-              typeWriter("conversion.", 80)
+              typeWriter("collaboration.", 80)
                 .then(() => {
                   // Show image, title and description first
                   setTimeout(() => {
@@ -199,11 +195,7 @@ const App = () => {
         "PDF Spaces": "collaboration.",
         "AI Assistant Discovery": "conversion.",
         "Overcoming AI Cold Start": "adoption.",
-        "Credit reporting": "trust.",
-        "Referral flow optimization": "growth.",
-        "Checkout flow redesign": "usability.",
-        "Smarter File Selection": "ease.",
-        "Context-Aware AI": "intention."
+        "Credit reporting": "trust."
       };
 
       // First erase the current text
@@ -229,11 +221,7 @@ const App = () => {
       "PDF Spaces": "collaboration.",
       "AI Assistant Discovery": "conversion.",
       "Overcoming AI Cold Start": "adoption.",
-      "Credit reporting": "trust.",
-      "Referral flow optimization": "growth.",
-      "Checkout flow redesign": "usability.",
-      "Smarter File Selection": "ease.",
-      "Context-Aware AI": "intention."
+      "Credit reporting": "trust."
     };
 
     // Erase current text first
@@ -421,9 +409,9 @@ const App = () => {
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-stone-800 min-h-[100px] md:h-[120px] text-center md:text-left">
                         {selectedImage === "PDF Spaces" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">50,000+ beta users</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">0 → 1 Notebook LM competitor</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Designed permission systems and custom AI agents for Adobe's collaborative document workspace.
+                              Designed collaboration systems and custom AI agents for Adobe's collaborative document workspace.
                             </p>
                           </div>
                         )}
@@ -448,38 +436,6 @@ const App = () => {
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">70% ↑ in conversion rate</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Led end-to-end design for the first BNPL credit reporting flow—key to landing a partnership with Target.
-                            </p>
-                          </div>
-                        )}
-                        {selectedImage === "Referral flow optimization" && (
-                          <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↑ acquisition via invites</span>
-                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Simplified and redesigned referral entry points to increase user-driven growth.
-                            </p>
-                          </div>
-                        )}
-                        {selectedImage === "Checkout flow redesign" && (
-                          <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↓ time from 14s to 7s</span>
-                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Cut friction in the purchasing journey by reducing steps from 14 to 7.
-                            </p>
-                          </div>
-                        )}
-                        {selectedImage === "Smarter File Selection" && (
-                          <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">34% ↑ in active usage</span>
-                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Enabled seamless file access to improve task initiation inside the AI assistant.
-                            </p>
-                          </div>
-                        )}
-                        {selectedImage === "Context-Aware AI" && (
-                          <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↑ engagement</span>
-                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Introduced in-document text selection to power more precise, relevant AI conversations.
                             </p>
                           </div>
                         )}
