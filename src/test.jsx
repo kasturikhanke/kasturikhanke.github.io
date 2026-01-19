@@ -15,7 +15,7 @@ const AIA = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-950 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
       <header className="w-full bg-transparent pt-8 pb-16">
         <SpinningLogo />
       </header>
@@ -40,14 +40,14 @@ const AIA = () => {
 
         {/* Overview Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-medium mb-4 text-gray-800">Overview</h2>
+          <h2 className="text-2xl font-medium mb-4 text-gray-900">Overview</h2>
           <div className="space-y-8">
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-600">
               Upon beta launch, we noticed that less than 10% of users were interacting with the AI Assistant. 
               There was no framework in place to promote the AI Assistant to users and users had no idea how 
               they could integrate AI into their daily workflows.
             </p>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-600">
               I led the design framework for the discovery of the AI Assistant on mobile. Within a month of 
               launching the framework, user retention and conversion rates increased.
             </p>
@@ -55,9 +55,9 @@ const AIA = () => {
         </section>
 
         <section className="mb-16">
-      <h2 className="text-2xl font-medium mb-4 text-gray-800">Existing framework</h2>
+      <h2 className="text-2xl font-medium mb-4 text-gray-900">Existing framework</h2>
       <div className="space-y-8">
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-gray-600">
           Before getting into how I could help users discover the AI Assistant, I first had to map out 
           how other tools are promoted within the Acrobat mobile ecosystem. I mapped out all the existing 
           promotions and discovery points.
@@ -68,7 +68,7 @@ const AIA = () => {
         </div>
   
         <div className="space-y-4">
-          <h3 className="text-lg font-medium mb-4 text-gray-800">Some challenges with the existing framework were:</h3>
+          <h3 className="text-lg font-medium mb-4 text-gray-900">Some challenges with the existing framework were:</h3>
         </div>
 
       <div className="container mx-auto">
@@ -78,7 +78,7 @@ const AIA = () => {
           <div className="flex">
             <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
             <div className="flex flex-col space-y-4">
-              <span className="text-gray-700">
+              <span className="text-gray-600">
                 The What's New framework lacked delight. If we added the AI Assistant's capabilities to the existing framework, we would see drop-off and the problem would persist.
               </span>
               <div className="aspect-square relative bg-gray-100 rounded-lg overflow-hidden pl-0">
@@ -93,7 +93,7 @@ const AIA = () => {
           <div className="flex">
             <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
             <div className="flex flex-col space-y-4">
-              <span className="text-gray-700">
+              <span className="text-gray-600">
                 Users were tired of seeing various nudges and coach marks that promoted tools. We were getting negative feedback via App Store and PlayStore ratings about excessive messaging.
               </span>
               <div className="aspect-square relative bg-gray-100 rounded-lg overflow-hidden pl-0">
@@ -105,7 +105,7 @@ const AIA = () => {
       </div>
     </div>
 
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-gray-600">
           This led to the creation of a new framework designed specifically to promote the discovery of 
           the AI Assistant without hindering users' workflow. The goal was to ensure that the nudges were 
           intent-based and did not disrupt any flow.
@@ -114,20 +114,20 @@ const AIA = () => {
     </section>
 
     <section className="mb-16">
-      <h2 className="text-2xl font-medium mb-4 text-gray-800">New framework</h2>
+      <h2 className="text-2xl font-medium mb-4 text-gray-900">New framework</h2>
       <div className="space-y-8">
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-gray-600">
           The new framework was designed specifically to promote the AI Assistant's values and capabilities while ensuring that it works in the existing ecosystem. The goal was to ensure that no other messaging within the app clashed with the AI Assistant nudges. 
         </p>
 
         <div className="aspect-square w-full relative bg-gray-100 rounded-lg overflow-hidden">
           <img src="/api/placeholder/400/400" alt="Placeholder" className="w-full h-full object-cover" />
         </div>
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-gray-600">
               Based on the Hooked model, I created a framework that would bring users back to the AI Assistant. 
         </p>
-        <h2 className="text-xl font-medium mb-4 text-gray-800">1. First time user experience</h2>
-                 <p className="text-lg mb-8 text-gray-700">
+        <h2 className="text-xl font-medium mb-4 text-gray-900">1. First time user experience</h2>
+                 <p className="text-lg mb-8 text-gray-600">
                   I designed a push notification to alert users about the AI Assistant's availability. I collaborated with our content designer and our PM to test out 3 different variations in the copy. Testing out the copy would help us understand which messaging resonated more strongly with our users.
                 </p>
                 <div className="relative">
@@ -145,7 +145,7 @@ const AIA = () => {
                 </video>
                 </div>
 
-                <p className="text-lg mb-8 text-gray-700">
+                <p className="text-lg mb-8 text-gray-600">
                 The update announcement showed the top 3 features of the AI Assistant along with a video showcasing the Assistant in action. This helped users see the immediate value and possible use cases of the AI Assistant.                </p>
                 <div className="relative">
                 <video
@@ -168,7 +168,7 @@ const AIA = () => {
           <div className="flex">
             
             <div className="flex flex-col space-y-4">
-              <span className="text-gray-700">
+              <span className="text-gray-600">
                 Before              
               </span>
               <div className="aspect-square relative bg-gray-100 rounded-lg overflow-hidden pl-0">
@@ -183,7 +183,7 @@ const AIA = () => {
           <div className="flex">
             
             <div className="flex flex-col space-y-4">
-              <span className="text-gray-700">
+              <span className="text-gray-600">
                 After              
               </span>
               <div className="aspect-square relative bg-gray-100 rounded-lg overflow-hidden pl-0">
@@ -193,28 +193,28 @@ const AIA = () => {
           </div>
         </div>
       </div>
-        <p className="text-lg text-gray-700 mt-4">
+        <p className="text-lg text-gray-600 mt-4">
         I worked with the engineers to come up with a solution to showcase the top 3 recent files in the AI Assistant instead of taking users to the file picking menu which led to drop-off. </p>
         <img 
            src="SplashUI.png" 
            alt="Description" 
            className="w-full rounded-lg mt-16"
          />
-         <p className="text-lg text-gray-700 mt-4">
+         <p className="text-lg text-gray-600 mt-4">
         After multiple iterations </p>   
     </div>
 
                 
 
 
-        <h2 className="text-xl font-medium mb-4 text-gray-800">2. Returning user experience</h2>
+        <h2 className="text-xl font-medium mb-4 text-gray-900">2. Returning user experience</h2>
       </div>
     </section>
 
     <section className="mb-56">
-          <h2 className="text-2xl font-medium mb-4 text-gray-800">Concluding thoughts</h2>
+          <h2 className="text-2xl font-medium mb-4 text-gray-900">Concluding thoughts</h2>
           <div className="space-y-8">
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-600">
               This project saw a huge impact on the retention of users. I continue iterating on the framework based on the data we see. I collaborate with my PM and content designer to create new experiements that test out differnt UIs and copy. 
             </p>
           </div>
@@ -269,7 +269,7 @@ const SezzleUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-950 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
       <header className="w-full bg-transparent">
         <SpinningLogo />
       </header>

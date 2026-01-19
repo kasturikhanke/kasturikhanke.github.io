@@ -23,6 +23,23 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
    const [activePage, setActivePage] = React.useState('aia');
   const [isScrolled, setIsScrolled] = useState(false);
   const [showNav, setShowNav] = useState(true);
+  const [sfTime, setSfTime] = useState('');
+
+  // Update San Francisco time
+  useEffect(() => {
+    const updateSfTime = () => {
+      const time = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'America/Los_Angeles',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+      setSfTime(time);
+    };
+    updateSfTime();
+    const interval = setInterval(updateSfTime, 60000);
+    return () => clearInterval(interval);
+  }, []);
    const videoRef = React.useRef(null);
    // Scroll to top before browser paints
    useLayoutEffect(() => {
@@ -80,9 +97,9 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
 
    return (
     
-     <div className="min-h-screen bg-white text-gray-950 font-sans">
-       <header className={`sticky top-0 bg-white z-50 transition-shadow duration-300 ${
-         isScrolled ? 'shadow-md' : ''
+     <div className="min-h-screen bg-white text-gray-900 font-sans">
+       <header className={`sticky top-0 z-50 transition-all duration-300 ${
+         isScrolled ? 'bg-white/70 backdrop-blur-md border-b border-white/20' : 'bg-white'
        }`}>
          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-4 flex justify-between items-center">
            <SpinningLogo />
@@ -99,8 +116,8 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
       <main className="container mx-auto px-8 sm:px-6 max-w-4xl">
         {/* Hero Section */}
         <section className="mb-12 md:mb-16">
-          <h1 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 leading-tight max-w-3xl text-gray-800">Making AI Discoverable: Adobe Acrobat AI</h1>
-          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 text-base sm:text-lg md:text-xl font-normal leading mb-6 md:mb-8 max-w-2xl text-gray-700">
+          <h1 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 leading-tight text-gray-900">Making AI Discoverable: Adobe Acrobat AI</h1>
+          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 text-base sm:text-lg md:text-xl font-normal leading mb-6 md:mb-8 text-gray-600">
             How I designed a contextual discovery system that increased AI Assistant adoption by 38% while reducing notification fatigue.
           </p>
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 md:gap-8 text-xs sm:text-sm text-gray-500 mb-6 md:mb-8">
@@ -121,43 +138,58 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
 
      
       
-         {/* Outcomes Section */}
-         <section id="impact" className="mb-12 md:mb-24">
-         <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-16 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Impact</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Measuring success</h2>
+        {/* Impact Section */}
+        <section id="impact" className="relative py-6 md:py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-6 md:mb-8">
+              <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+                <div className="max-w-md">
+                  <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium md:mb-12 mb-3 md:mb-6 text-gray-900">Impact</h2>
+                </div>
+              </div>
+
+              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 flex items-start gap-8 md:gap-16">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">38%</h3>
+                  <p className="text-base sm:text-lg text-gray-600">Increase in active usage</p>
+                </div>
+                <div className="w-px bg-gray-200 self-stretch min-h-[80px]"></div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">32%</h3>
+                  <p className="text-base sm:text-lg text-gray-600">Increase in conversion rate when users interacted with all touchpoints</p>
+                </div>
+              </div>
+            </div>
           </div>
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-         <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
-          
-        
-           <div className="relative">
-           <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-6 text-gray-800">38%</h3>
-             <p className="text-base sm:text-lg text-gray-700">Increase in active usage of the AI Assistant after implementing the discovery framework</p>
-           </div>
-         </div>
-      
-         <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl border-2 border-gray-100 shadow-sm overflow-hidden">
-
-
-           <div className="relative">
-           <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-6 text-gray-800">32%</h3>
-             <p className="text-base sm:text-lg  text-gray-700">Increase in conversion rate when users interacted with all the promotions</p>
-           </div>
-         </div>
-       </div>
-     </section>
+        </section>
          
          <ChallengesGoalsSection />
          <section className="mb-6 md:mb-8">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
-          <h2 className="text-center text-base sm:text-lg md:text-2xl font-medium text-gray-800">How might we increase AI awareness without increasing notification fatigue?</h2>
+          {/* Outer container with dots */}
+          <div 
+            className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10"
+            style={{
+              backgroundColor: '#0f0f0f',
+              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+              backgroundSize: '24px 24px'
+            }}
+          >
+            {/* Inner bordered container - transparent so dots show through */}
+            <div 
+              className="rounded-xl md:rounded-2xl p-8 sm:p-12 md:p-16"
+              style={{
+                border: '1px solid rgba(255,255,255,0.12)',
+                backgroundColor: 'transparent'
+              }}
+            >
+              <h2 className="text-base sm:text-lg md:text-2xl font-medium text-white">How might we increase AI awareness without increasing notification fatigue?</h2>
+            </div>
           </div>
          </section>
          {/* Solution Section */}
          <FrameworkSection />
          {/* <section className="">
-          <h2 className="text-2xl text-center font-medium mt-16 text-gray-800">Framework Before</h2>
+          <h2 className="text-2xl text-center font-medium mt-16 text-gray-900">Framework Before</h2>
 
          <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%]">
           <img 
@@ -166,7 +198,7 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             className="w-full h-auto"
           />
         </div>
-        <h2 className="text-2xl font-medium text-center text-gray-800">Framework After</h2>
+        <h2 className="text-2xl font-medium text-center text-gray-900">Framework After</h2>
         <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%]">
           <img 
             src="FrameworkAfterAIA.png" 
@@ -182,54 +214,91 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">What I learned</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {/* Learning 1 */}
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
-              <div className="flex items-start gap-4 mb-4">
-                
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">Discovery is a system, not a feature</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            {/* Learning 1 - Dark */}
+            <motion.div 
+              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-gray-950 p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[320px] md:min-h-[380px] flex flex-col justify-between"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <div>
+                <span className="text-2xl md:text-3xl font-light text-white/80 mb-3 block">01</span>
+                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">Discovery is a system, not a feature</h3>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed">
+              <p className="text-sm md:text-base text-white/70 leading-relaxed">
                 Each touchpoint worked because they were designed as an interconnected system, not isolated features.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Learning 2 */}
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
-              <div className="flex items-start gap-4 mb-4">
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">AI needs different discovery patterns</h3>
+            {/* Learning 2 - Light */}
+            <motion.div 
+              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200 min-h-[320px] md:min-h-[380px] flex flex-col justify-between"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <div>
+                <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">02</span>
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">AI needs different discovery patterns</h3>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed">
+              <p className="text-sm md:text-base text-gray-500 leading-relaxed">
                 Traditional "new feature" announcements don't work for AI. Users need to see concrete use cases and experience value immediately.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Learning 3 */}
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
-              <div className="flex items-start gap-4 mb-4">
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">Mobile AI requires new interaction patterns</h3>
+            {/* Learning 3 - Dark with Image */}
+            <motion.div 
+              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-gray-950 p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[320px] md:min-h-[380px] flex flex-col justify-between overflow-hidden"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {/* Background image with blur effect */}
+              <div 
+                className="absolute inset-0 opacity-40"
+                style={{
+                  backgroundImage: 'url(/Splash.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  filter: 'blur(8px) brightness(0.6)',
+                }}
+              />
+              <div className="relative z-10">
+                <span className="text-2xl md:text-3xl font-light text-white/80 mb-3 block">03</span>
+                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">Mobile AI requires new interaction patterns</h3>
               </div>
-              <ul className="text-base text-gray-600 leading-relaxed space-y-2">
+              <ul className="relative z-10 text-sm md:text-base text-white/70 leading-relaxed space-y-2">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
                   Suggested prompts (tap, don't type)
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
                   Text selection as primary entry point
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Learning 4 */}
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
-              <div className="flex items-start gap-4 mb-4">
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 pt-1.5">Design for habit formation</h3>
+            {/* Learning 4 - Light */}
+            <motion.div 
+              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200 min-h-[320px] md:min-h-[380px] flex flex-col justify-between"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <div>
+                <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">04</span>
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">Design for habit formation</h3>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed">
-                We focused on discovery and activation, but in retrospect, we didn't design enough for habit formation. Reccuring prompts or features and solutions that turn first-time users into regular users. I would look more into mechanisms to keep bringing back users to use something that adds value to their lives. 
+              <p className="text-sm md:text-base text-gray-500 leading-relaxed">
+                We focused on discovery and activation, but in retrospect, we didn't design enough for habit formation. Recurring prompts or features and solutions that turn first-time users into regular users. I would look more into mechanisms to keep bringing back users to use something that adds value to their lives. 
               </p>
-            </div>
+            </motion.div>
           </div>
 
           
@@ -241,43 +310,12 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Concluding thoughts</h2>
           </div>
 
-          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-700 mb-6 md:mb-8 max-w-3xl">
-            This project reinforced that AI products need fundamentally different discovery patterns than traditional features. Users don't wake up wanting to "use AI" espcially back in 2024. Acrobat users use the tool to read a contract or understand a research paper. The framework I designed solved the discovery challenge by meeting users in their moment of need and not a moment of wanting to promote a feature. 
+          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600 mb-6 md:mb-8 max-w-3xl">
+            This project reinforced that AI products need fundamentally different discovery patterns than traditional features. Users don't wake up wanting to "use AI" especially back in 2024. Acrobat users use the tool to read a contract or understand a research paper. The framework I designed solved the discovery challenge by meeting users in their moment of need and not a moment of wanting to promote a feature. 
           </p>
 
-          {/* Key Takeaways */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 md:mb-8">
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 rounded-2xl md:rounded-3xl shadow-sm">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full  mb-4">
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Discovery</h4>
-              <p className="text-sm text-gray-600">Designed a framework that brought users to AI at the right moment</p>
-            </div>
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 rounded-2xl md:rounded-3xl shadow-sm">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full mb-4">
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Value Upfront</h4>
-              <p className="text-sm text-gray-600">Users experienced AI's capabilities before committing to learn</p>
-            </div>
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 rounded-2xl md:rounded-3xl shadow-sm">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full  mb-4">
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">User Satisfaction</h4>
-              <p className="text-sm text-gray-600">Increased both adoption and satisfaction metrics</p>
-            </div>
-          </div>
-
-          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-700 max-w-3xl">
-            The framework not only addressed immediate challenges but also established a foundation for future feature launches—enabling the team to iterate and innovate rapidly within tight timelines.
+          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600 max-w-3xl">
+            The framework not only addressed immediate challenges but also established a foundation for future feature launches, enabling the team to iterate and innovate rapidly within tight timelines.
           </p>
         </section>
          
@@ -292,7 +330,7 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
              <div>
                <strong>User Awareness is Critical for New Features:</strong>
                <p className="mt-4">Even the most sophisticated tools can go unnoticed without clear entry points. 
-               I learned that designing features is only half the battle—effective promotion and discovery mechanisms are equally essential to maximize impact.</p>
+               I learned that designing features is only half the battle. Effective promotion and discovery mechanisms are equally essential to maximize impact.</p>
              </div>
              <div>
                <strong>Importance of Contextual, Non-intrusive Prompts:</strong>
@@ -331,27 +369,76 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
 
 
        {/* Contact Section */}
-       <section className="bg-gray-950 text-white py-16 sm:py-24 md:py-32">
-              <div className="container mx-auto px-4 sm:px-6 md:px-8">
-                <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-2xl sm:text-3xl md:text-5xl lg:text-6xl pl-0 sm:pl-6 md:pl-12 mb-4 max-w-2xl font-normal">
-                  Want to chat more about this case study?
-                </h2>
-                <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-500 pl-0 sm:pl-6 md:pl-12 font-normal">
-                  <a 
-                    href="https://calendly.com/kasturi-khanke/30min?month=2024-11"
-                    className="text-xl sm:text-2xl md:text-3xl transition-colors duration-300 hover:text-white"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Get in touch
-                  </a>
-                </p>
-                <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-xs sm:text-sm text-gray-500 pl-0 sm:pl-6 md:pl-12 mt-4 md:mt-8">
-                  Made with ♥ using Claude AI
+       <section className="bg-gray-950 text-white pt-16 sm:pt-24 md:pt-32 pb-0 overflow-hidden">
+          {/* Top Content Area */}
+          <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+              
+              {/* About Column */}
+              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">about</p>
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  Kasturi is a product designer<br />
+                  crafting AI-powered experiences<br />
+                  that drive measurable impact<br />
+                  and delight users.
                 </p>
               </div>
-            </section>
-       <footer className="w-full bg-transparent pb-8">
+
+              {/* Contact Column */}
+              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">contact</p>
+                <a 
+                  href="mailto:kasturi.khanke@gmail.com"
+                  className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors duration-300 block"
+                >
+                  kasturi.khanke@gmail.com
+                </a>
+              </div>
+
+              {/* Social Column */}
+              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">social</p>
+                <a 
+                  href="https://www.linkedin.com/in/kasturikhanke/"
+                  className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors duration-300 block"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Copyright Bar - Above Name */}
+          <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl mt-16 sm:mt-24 md:mt-32">
+            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out py-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-6">
+              <p className="text-sm text-gray-400">
+                © 2026 Kasturi Khanke
+              </p>
+              <p className="text-sm text-gray-400">
+                San Francisco, CA · {sfTime}
+              </p>
+              <p className="text-sm text-gray-400">
+                Made with ♥ using Claude + Cursor
+              </p>
+            </div>
+          </div>
+
+          {/* Large Name - Full Width, Clipped at Bottom */}
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out overflow-hidden">
+            <h3 
+              className="text-[15vw] sm:text-[14vw] md:text-[12vw] font-bold tracking-tighter leading-none whitespace-nowrap text-center select-none translate-y-[25%]"
+              style={{
+                color: 'white',
+              }}
+            >
+              KASTURI KHANKE
+            </h3>
+          </div>
+        </section>
+       <footer className="w-full bg-gray-950">
          <BottomNav activePage={activePage} onNavClick={handleNavClick}
          isCaseStudy={true} />
        </footer>

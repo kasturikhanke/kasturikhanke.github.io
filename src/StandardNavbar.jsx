@@ -25,7 +25,7 @@ const StandardNavbar = () => {
               href={link.url}
               target={link.url.startsWith('http') ? "_blank" : undefined}
               rel={link.url.startsWith('http') ? "noopener noreferrer" : undefined}
-              className="text-sm font-medium text-stone-800 hover:text-indigo-500 transition-colors duration-200"
+              className="text-sm font-medium text-gray-900 hover:text-indigo-500 transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -38,7 +38,7 @@ const StandardNavbar = () => {
       
       {/* Mobile menu button */}
       <button 
-        className="md:hidden text-stone-800 z-50"
+        className="md:hidden text-gray-900 z-50"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Toggle menu"
       >
@@ -62,7 +62,7 @@ const StandardNavbar = () => {
               href={link.url}
               target={link.url.startsWith('http') ? "_blank" : undefined}
               rel={link.url.startsWith('http') ? "noopener noreferrer" : undefined}
-              className="block px-4 py-2 text-sm font-medium text-stone-800 hover:bg-gray-50 hover:text-indigo-500 transition-colors duration-200"
+              className="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-500 transition-colors duration-200"
               onClick={handleLinkClick}
             >
               {link.label}

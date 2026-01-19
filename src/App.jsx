@@ -10,7 +10,6 @@ import DesignSystem from './DesignSystem';
 import AIA from './AIA';
 import SezzleUp from './SezzleUp';
 import ImpactSection from './ImpactSection';
-import IC from './ic';
 import PDFSpaces from './PDFSpaces';
 import AppRoutes from './AppRoutes';
 import './assets/fonts.css';
@@ -38,8 +37,7 @@ const App = () => {
 
   const imageMap = {
     "PDF Spaces": "Spaces.jpg",
-    "AI Assistant Discovery": "splash.jpg",
-    "Overcoming AI Cold Start": "landing-page.jpg",
+    "AI Assistant Discovery": "Splash.jpg",
     "Credit reporting": "sezzle-up.jpg"
   };
 
@@ -194,7 +192,6 @@ const App = () => {
       const textMap = {
         "PDF Spaces": "collaboration.",
         "AI Assistant Discovery": "conversion.",
-        "Overcoming AI Cold Start": "adoption.",
         "Credit reporting": "trust."
       };
 
@@ -220,7 +217,6 @@ const App = () => {
     const textMap = {
       "PDF Spaces": "collaboration.",
       "AI Assistant Discovery": "conversion.",
-      "Overcoming AI Cold Start": "adoption.",
       "Credit reporting": "trust."
     };
 
@@ -327,9 +323,9 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={
-          <div className="h-screen overflow-y-auto md:overflow-hidden bg-white text-stone-800 font-sans">
-            <header className={`sticky top-0 bg-white z-50 transition-shadow duration-300 ${
-              isScrolled ? 'shadow-md' : ''
+          <div className="h-screen overflow-y-auto md:overflow-hidden bg-white text-gray-900 font-sans">
+            <header className={`sticky top-0 z-50 transition-all duration-300 ${
+              isScrolled ? 'bg-white/70 backdrop-blur-md border-b border-white/20' : 'bg-white'
             }`}>
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-4 flex justify-between items-center">
                 <SpinningLogo />
@@ -363,12 +359,12 @@ const App = () => {
                     style={{ minWidth: 'auto', maxWidth: '100%' }}
                   >
                     <div className="relative">
-                      <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 text-stone-800 text-center md:text-left">
+                      <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 text-gray-900 text-center md:text-left">
                         <motion.span 
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.8 }}
-                          className="text-sm sm:text-base md:text-lg font-sans font-medium block mb-1 md:mb-2 text-stone-800"
+                          className="text-sm sm:text-base md:text-lg font-sans font-medium block mb-1 md:mb-2 text-gray-900"
                         >
                           Kasturi is
                         </motion.span>
@@ -376,7 +372,7 @@ const App = () => {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.8, delay: 0.4 }}
-                          className="font-sans font-bold text-stone-800 leading-tight md:leading-none"
+                          className="font-sans font-bold text-gray-900 leading-tight md:leading-none"
                         >
                           designing for
                           <br />
@@ -406,7 +402,7 @@ const App = () => {
 
                     {/* Dynamic content container - add overflow handling */}
                     <div className="min-h-[200px] md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-hidden">
-                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-stone-800 min-h-[100px] md:h-[120px] text-center md:text-left">
+                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-[100px] md:h-[120px] text-center md:text-left">
                         {selectedImage === "PDF Spaces" && (
                           <div>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">0 → 1 Notebook LM competitor</span>
@@ -420,14 +416,6 @@ const App = () => {
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">32% ↑ in conversion rate</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion.
-                            </p>
-                          </div>
-                        )}
-                        {selectedImage === "Overcoming AI Cold Start" && (
-                          <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">4% ↑ in active usage</span>
-                            <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Redesigned the assistant's landing experience to help users start faster with contextual quick prompts.
                             </p>
                           </div>
                         )}
@@ -445,15 +433,12 @@ const App = () => {
                       <div className="mt-2 md:mt-8 text-center md:text-left">
                         {(selectedImage === "PDF Spaces" ||
                           selectedImage === "AI Assistant Discovery" ||
-                          selectedImage === "Overcoming AI Cold Start" ||
                           selectedImage === "Credit reporting") && (
                           <a
                             href={selectedImage === "PDF Spaces"
                               ? "/pdf-spaces"
                               : selectedImage === "AI Assistant Discovery"
                               ? "/aia"
-                              : selectedImage === "Overcoming AI Cold Start"
-                              ? "/ic"
                               : "/sezzle-up"
                             }
                             className="inline-block"
@@ -509,7 +494,7 @@ const App = () => {
                         className={`text-sm whitespace-nowrap font-medium cursor-pointer transition-all duration-500 ease-in-out ${
                           selectedImage === text 
                             ? 'text-indigo-600 opacity-100 translate-x-2' 
-                            : 'text-stone-800 hover:text-stone-600 opacity-50'
+                            : 'text-gray-900 hover:text-gray-600 opacity-50'
                         }`}
                         onClick={() => handleImageClick(text)}
                       >
@@ -519,7 +504,7 @@ const App = () => {
                     <div className="flex justify-start mt-2">
                       <button
                         onClick={() => setIsPaused(!isPaused)}
-                        className="p-2 text-stone-800 opacity-50 hover:text-stone-600 hover:opacity-50 active:text-indigo-600 active:opacity-100 transition-colors"
+                        className="p-2 text-gray-900 opacity-50 hover:text-gray-600 hover:opacity-50 active:text-indigo-600 active:opacity-100 transition-colors"
                         aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
                       >
                         {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
@@ -544,7 +529,7 @@ const App = () => {
                           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
                             selectedImage === text 
                               ? 'text-indigo-600 bg-indigo-50 border border-indigo-200' 
-                              : 'text-stone-600 bg-stone-50 border border-stone-200'
+                              : 'text-gray-600 bg-gray-50 border border-gray-200'
                           }`}
                           onClick={() => handleImageClick(text)}
                         >
@@ -553,7 +538,7 @@ const App = () => {
                       ))}
                       <button
                         onClick={() => setIsPaused(!isPaused)}
-                        className="px-3 py-1.5 rounded-full text-xs font-medium text-stone-600 bg-stone-50 border border-stone-200 transition-colors"
+                        className="px-3 py-1.5 rounded-full text-xs font-medium text-gray-600 bg-gray-50 border border-gray-200 transition-colors"
                         aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
                       >
                         {isPaused ? <FaPlay size={12} /> : <FaPause size={12} />}
@@ -570,7 +555,7 @@ const App = () => {
                 className="mt-16 lg:mt-24 mb-32 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-2xl md:text-4xl font-sans font-medium mb-12 text-stone-800">Explore my work</h2>
+                  <h2 className="text-2xl md:text-4xl font-sans font-medium mb-12 text-gray-900">Explore my work</h2>
                   <div className="grid grid-cols-4 gap-6 aspect-square w-full">
                     {workItems.map((item, index) => (
                       <GridItem 
@@ -591,7 +576,7 @@ const App = () => {
                 className="mb-32 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-stone-800">Craft</h2>
+                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-gray-900">Craft</h2>
                   <div className="grid grid-cols-12 grid-rows-8 gap-6">
                     <div className="col-span-6 row-span-4 bg-gray-950 shadow-xl rounded-3xl overflow-hidden">
                       <VercelProject />
@@ -629,7 +614,7 @@ const App = () => {
                 className="mb-16 scroll-mt-24"
               >
                 <div className="mx-8">
-                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-stone-800">Some thoughts</h2>
+                  <h2 className="text-2xl md:text-4xl font-medium mb-12 text-gray-900">Some thoughts</h2>
                   <div className="space-y-8">
                     {wordLinks.map((link, index) => (
                       <div key={index}>
@@ -689,7 +674,6 @@ const App = () => {
         <Route path="/design-system" element={<DesignSystem />} />
         <Route path="/aia" element={<AIA />} />
         <Route path="/sezzle-up" element={<SezzleUp />} />
-        <Route path="/ic" element={<IC />} />
         <Route path="/pdf-spaces" element={<PDFSpaces />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/about" element={<About />} />

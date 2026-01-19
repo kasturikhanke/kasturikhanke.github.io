@@ -57,8 +57,8 @@ const ImpactSection = ({ impactItems }) => {
             {/* Left Column - Sticky */}
             <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
               <div className="max-w-md">
-                <h2 className="text-xl md:text-4xl font-sans font-medium mb-12 text-black">Giving back</h2>
-                <p className="text-black font-sans font-medium text-lg md:text-lg">
+                <h2 className="text-xl md:text-4xl font-sans font-medium mb-12 text-gray-900">Giving back</h2>
+                <p className="text-gray-900 font-sans font-medium text-lg md:text-lg">
                   I'm dedicated to giving back to the design community by inspiring, educating, and mentoring the next generation of designers
                 </p>
               </div>
@@ -91,7 +91,7 @@ const ImpactSection = ({ impactItems }) => {
                         <div className="text-3xl md:text-4xl flex-shrink-0">{item.icon}</div>
                         <div>
                           <h3 className="text-lg md:text-xl font-semibold mb-4">{item.title}</h3>
-                          <p className="text-gray-700 text-base md:text-lg">{item.description}</p>
+                          <p className="text-gray-600 text-base md:text-lg">{item.description}</p>
                         </div>
                       </div>
                     </div>

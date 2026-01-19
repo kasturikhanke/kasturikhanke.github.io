@@ -58,7 +58,7 @@ const PageLayout = ({
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-950 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
       <header className="w-full bg-transparent pt-8 pb-16">
         <SpinningLogo />
       </header>
