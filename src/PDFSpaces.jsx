@@ -364,14 +364,11 @@ const PDFSpaces = () => {
                   <span className="px-4 py-2 bg-gray-400 rounded-full text-sm font-medium text-white">Creative</span>
                   <span className="px-4 py-2 bg-gray-500 rounded-full text-sm font-medium text-white">Educator</span>
                 </div>
-                <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                  <div className="text-center px-6">
-                    <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                    <p className="text-gray-600 text-sm max-w-md">
-                      Hi-fi mockup: The actual personality spectrum selector UI as it appears in the product. Show the slider or selection interface, not just pills. Include outcome-focused labels ("Clear, patient explanations" for Educator).
-                    </p>
-                  </div>
-                </div>
+                <img 
+                  src="/Personality.png" 
+                  alt="Personality spectrum selector showing five agent types with outcome-focused descriptions: Formal, Professional, Casual, Creative, and Educator"
+                  className="w-full rounded-xl"
+                />
               </div>
 
               {/* Agent Creation Flow */}
@@ -380,14 +377,16 @@ const PDFSpaces = () => {
                 <p className="text-base text-gray-600 mb-6">
                   Mobile constraints forced clarity. We stripped agent creation down to three fields: name, personality type, optional focus area.
                 </p>
-                <div className="w-full aspect-[9/19] max-w-[280px] mx-auto bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                  <div className="text-center px-4">
-                    <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                    <p className="text-gray-600 text-xs max-w-[200px]">
-                      Hi-fi mockup: Agent creation screen showing the three fields: (1) Name input, (2) Personality type selector, (3) Optional focus area. Clean, focused mobile form.
-                    </p>
-                  </div>
-                </div>
+                <video 
+                  src="/customagent.mov" 
+                  className="w-full max-w-[500px] mx-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
 
               {/* Design Decisions */}
@@ -417,33 +416,18 @@ const PDFSpaces = () => {
               <div className="mb-8 md:mb-12">
                 <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Exploration: Freeform vs. Constrained</h4>
                 <p className="text-base text-gray-600 mb-6">
-                  Early explorations let users write freeform personality descriptions. Testing showed this created decision paralysis.
+                  We iterated from blank canvas to structured options, testing four approaches to find the optimal balance between guidance and flexibility.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">Explored: Freeform</p>
-                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
-                      <div className="text-center px-4">
-                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
-                        <p className="text-gray-600 text-xs max-w-[180px]">
-                          Lo-fi wireframe: Large text area asking "Describe how you want the AI to respond." Too open-ended, users stared at blank field.
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-500">Abandoned: Users didn't know what to write</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">Shipped: Constrained Spectrum</p>
-                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
-                      <div className="text-center px-4">
-                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
-                        <p className="text-gray-600 text-xs max-w-[180px]">
-                          Lo-fi wireframe: Personality spectrum with 5 preset options. Clear choices, easy to understand and select.
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-500">Shipped: Meaningful control without paralysis</p>
-                  </div>
+                <img 
+                  src="/Freeformconstrained.png" 
+                  alt="Four iterations of agent customization: Screen 1 (freeform text fields - rejected for decision paralysis), Screen 2 (hybrid with pills and text - explored), Screen 3 (guided defaults with AI-generated instructions - shipped), Screen 4 (multiple choice sections - rejected for choice overload)"
+                  className="w-full rounded-xl mb-6"
+                />
+                <div className="mb-8 md:mb-12 pl-5 border-l-2 border-gray-200">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-3">Design Insight</p>
+                  <blockquote className="text-base sm:text-lg text-gray-900 leading-relaxed mb-3">
+                    Screen 3 shipped because it balanced guidance and flexibility. Users got smart defaults without facing overwhelming choices. Screen 4's multiple choice sections created cognitive overload—proving that structure alone isn't the answer.
+                  </blockquote>
                 </div>
               </div>
 
@@ -457,13 +441,13 @@ const PDFSpaces = () => {
             <h2 className="text-xl sm:text-2xl font-medium mb-6 md:mb-8 text-gray-900">Reflection</h2>
             <div className="space-y-6">
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                This was my first 0→1 product at Adobe scale. The biggest shift was learning to ship "good enough" faster to validate assumptions, then refine based on real usage rather than speculation.
+                The hardest challenge wasn't the design—it was pushing back on stakeholder assumptions about where features belonged. PMs wanted agent customization in the share sheet because it felt like a "space setting." I had to make the case, repeatedly, that interaction context matters more than feature categorization.
               </p>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 Mobile-first design was a forcing function. The 320px constraint stripped away everything non-essential from both the sharing flow and agent UI—clarity that made the desktop experience better too.
               </p>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                If I did this again, I'd sync with the web team earlier on cross-platform patterns. Some mobile solutions required rework when scaling up.
+                If I did this again, I'd prototype the layered approach (awareness → visibility → control) earlier to show stakeholders the system thinking. It would have saved weeks of debate about "where should this live."
               </p>
             </div>
           </div>
