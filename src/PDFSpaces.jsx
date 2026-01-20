@@ -92,766 +92,532 @@ const PDFSpaces = () => {
       <main className="container mx-auto px-8 sm:px-6 max-w-4xl">
         {/* Hero Section */}
         <section className="mb-12 md:mb-16">
-          <h1 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 leading-tight max-w-3xl text-gray-900">
-            PDF Spaces: Designing Collaborative AI for Knowledge Workers
+          <h1 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-2xl sm:text-3xl md:text-4xl font-normal mb-3 md:mb-4 leading-tight text-gray-900">
+            PDF Spaces
           </h1>
-          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 text-base sm:text-lg md:text-xl font-normal leading mb-6 md:mb-8 max-w-2xl text-gray-600">
-            How I designed permission systems and custom AI agents for Adobe's NotebookLM competitor, shipped in 9 months.
+          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 text-base sm:text-lg md:text-xl font-normal mb-6 md:mb-8 text-gray-600">
+            Designing collaborative AI for knowledge workers—permission systems and custom AI agents for Adobe's NotebookLM competitor, shipped in 9 months.
           </p>
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 text-sm text-gray-500 mb-6 md:mb-8">
-            <span>Product Design</span>
-            <span className="hidden sm:inline text-gray-300">·</span>
-            <span>Jan '25 – Aug '25</span>
-            <span className="hidden sm:inline text-gray-300">·</span>
-            <span>Mobile Design Lead for Collaboration</span>
-          </div>
-        </section>
-
-        {/* Impact Section 
-        <section id="impact" className="mb-12 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Impact</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">What shipped</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
-              <div className="relative">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-6 text-gray-900">0→1 Product</h3>
-                <p className="text-base sm:text-lg text-gray-600">Launched in just 7 months</p>
-              </div>
+          
+          {/* Role Details */}
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-sm mb-8 md:mb-12">
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Role</p>
+              <p className="text-gray-900">Mobile Design Lead</p>
             </div>
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl border-2 border-gray-100 shadow-sm overflow-hidden">
-              
-              <div className="relative">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 md:mb-6 text-gray-900">8+</h3>
-                <p className="text-base sm:text-lg text-gray-600">Designers adopted the cross-platform collaboration component library for mobile, desktop, and web</p>
-              </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Timeline</p>
+              <p className="text-gray-900">9 months</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Team</p>
+              <p className="text-gray-900">4 PMs, 12 Engineers</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Platform</p>
+              <p className="text-gray-900">iOS, Android & Web</p>
             </div>
           </div>
-        </section>*/}
 
-        {/* Context Section */}
-        <section className="mb-12 md:mb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-6 md:mb-8">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <div className="max-w-md">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-12 text-gray-900">Context</h2>
-              </div>
-            </div>
-
-            <div className="space-y-6 md:space-y-8">
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <p className="text-base sm:text-lg text-gray-600">
-                  Adobe Acrobat is synonymous with PDFs, but it's a single-document tool. Knowledge workers juggle dozens of files—lawyers with case files, researchers with studies, teams with project documents. We built PDF Spaces as Acrobat's answer to NotebookLM, with two key differentiators:
-                </p>
-              </div>
-
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Multi-user collaboration</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Granular permissions for workspace collaboration</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>My focus: Designing the sharing and permission systems</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Customizable AI agents</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>AI that adapts to different working styles</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>My focus: Designing the agent personality and creation flow</span>
-                  </li>
-                </ul>
-              </div>
-
-    {/*        <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Validation</h3>
-                <p className="text-base sm:text-lg text-gray-600">
-                  User research with knowledge workers revealed they don't work with files in isolation. Early prototype testing with 50 enterprise teams confirmed users wanted AI that understood document relationships and could adapt its communication style to different contexts.
-                </p>
-              </div> */}
-              
-            </div> 
-          </div> 
-        </section> 
-
-        {/* Insights Section */}
-        <section className="mb-12 md:mb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-6 md:mb-8">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <div className="max-w-md">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-12 text-gray-900">Insights</h2>
-              </div>
-            </div>
-
-            <div className="space-y-6 md:space-y-8">
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Collaboration friction</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Existing share patterns were binary (view/no view)</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Users spent too much time deciding "what level of access?"</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Permission models optimized for single documents, not workspaces</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">AI personality mismatch</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Generic AI responses didn't match specialized work contexts</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Users wanted AI that "understood" their domain</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>One-size-fits-all tone felt impersonal in collaborative spaces</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Cross-platform complexity</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Mobile constraints (320px width) vs. desktop affordances</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-base sm:text-lg text-gray-600">
-                    <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
-                    <span>Different interaction patterns across platforms</span>
-                  </li>
-              
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Design Goals Section */}
-        <section className="mb-12 md:mb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-6 md:mb-8">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <div className="max-w-md">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-12 text-gray-900">Design goals</h2>
-              </div>
-            </div>
-
-            <div className="space-y-6 md:space-y-8">
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Permission as invitation</h3>
-                <p className="text-base sm:text-lg text-gray-600">
-                  Frame access as roles ("what are you doing here?") not restrictions ("what can't you do?")
-                </p>
-              </div>
-
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Adaptable AI personalities</h3>
-                <p className="text-base sm:text-lg text-gray-600">
-                  Let users customize how AI communicates, not just what it knows
-                </p>
-              </div>
-
-              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Context-driven responsive design</h3>
-                <p className="text-base sm:text-lg text-gray-600">
-                  Design for platform strengths, not just screen sizes
+          {/* Hero Image */}
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-300">
+            <div className="w-full aspect-[16/9] bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300">
+              <div className="text-center px-8">
+                <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                <p className="text-gray-600 text-base max-w-md">
+                  Hero product shot: iPhone mockup showing PDF Spaces main interface with a Space open, visible AI chat, and multiple PDFs. Consider a multi-device composition (iPhone + iPad) to show the ecosystem.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* HMW Statement */}
-        <section className="mb-12 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white border-2 border-gray-100 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
-            <h2 className="text-center text-base sm:text-lg md:text-2xl font-medium text-gray-900">
-              How might we design AI collaboration that respects both team dynamics and individual working styles?
-            </h2>
-          </div>
-        </section>
-
-        {/* PART 1: PERMISSIONS */}
-        <section className="mb-12 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Part 1</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Rethinking Permissions for AI Workspaces</h2>
-          </div>
-
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out space-y-6 text-base sm:text-lg text-gray-600 mb-8">
-            <p>
-              <span className="font-semibold text-gray-900">The problem:</span> Existing share sheets were binary (view/no view), designed for document sharing not workspace collaboration.
-            </p>
-            <p>
-              <span className="font-semibold text-gray-900">The reframe:</span> Instead of "what restrictions apply?", I designed around "what role are you playing?"
-            </p>
-          </div>
-
-          {/* Three Permission Roles */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">The three permission roles</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Contributor</h4>
-                <p className="text-sm text-gray-500 mb-2">"We're working together"</p>
-                <p className="text-sm text-gray-600">Add/edit documents, unrestricted chat</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Reviewer</h4>
-                <p className="text-sm text-gray-500 mb-2">"I'm giving feedback"</p>
-                <p className="text-sm text-gray-600">Comment, suggest, annotate</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Viewer</h4>
-                <p className="text-sm text-gray-500 mb-2">"I'm learning from this"</p>
-                <p className="text-sm text-gray-600">Read, chat for understanding</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100 mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">Why this mattered</h3>
-            <p className="text-base sm:text-lg text-gray-600">
-              In user feedback sessions, participants responded positively to role-based framing. They found it more intuitive than technical permission labels like "read/write/admin." The language shift from permissions to roles changed how people thought about collaboration.
-            </p>
-          </div>
-
-          {/* Mobile-first constraint */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">Mobile-first constraint as design advantage</h3>
-            <div className="space-y-4 text-base sm:text-lg text-gray-600">
-              <p>
-                <span className="font-semibold text-gray-900">Challenge:</span> 320px screen width couldn't show all three permission options with full descriptions without overwhelming the interface.
-              </p>
-              <p>
-                <span className="font-semibold text-gray-900">Solution:</span> Smart defaults based on collaboration context:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><span className="font-medium">First person added to a Space</span> → Contributor (assumes collaborative intent)</li>
-                <li><span className="font-medium">Adding to large Spaces (10+ people)</span> → Viewer (prevents chaos)</li>
-                <li><span className="font-medium">External email domain</span> → Reviewer (safe middle ground)</li>
-              </ul>
-              <p className="bg-gray-50 p-4 rounded-xl border border-gray-100 mt-4">
-                <span className="font-semibold text-gray-900">Design thinking:</span> Defaults aren't just convenience—they're teaching tools. By surfacing intelligent suggestions, we educated users about collaboration patterns without requiring documentation or tutorials.
-              </p>
-            </div>
-          </div>
-
-          {/* Share flow simplification */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">Share flow simplification</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-6">
-              I simplified the share experience from 5 steps to 2 primary actions:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-3">Before: 5 steps</h4>
-                <ol className="text-sm text-gray-600 space-y-1 list-decimal pl-4">
-                  <li>Select recipient</li>
-                  <li>Choose permission</li>
-                  <li>Add message</li>
-                  <li>Confirm access</li>
-                  <li>Send notification</li>
-                </ol>
-              </div>
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-3">After: 2 actions</h4>
-                <ol className="text-sm text-gray-600 space-y-1 list-decimal pl-4">
-                  <li>Select recipient</li>
-                  <li>Confirm (with smart default permission)</li>
-                </ol>
-                <p className="text-xs text-gray-500 mt-3">Advanced options remained accessible but didn't block the primary flow.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PART 2: CUSTOM AGENTS */}
-        <section className="mb-12 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Part 2</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Designing AI Agents That Adapt</h2>
-          </div>
-
-          {/* The pivot */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100 mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">The pivot that changed everything</h3>
-            <div className="space-y-4 text-base sm:text-lg text-gray-600">
-              <p><span className="font-semibold">Original design:</span> Agents lived in the share sheet (you'd create an agent, then share it).</p>
-              <p><span className="font-semibold">Early beta feedback:</span> This felt backwards. People wanted to choose how they interacted with their Space, not share a fixed AI personality.</p>
-              <p className="bg-white p-4 rounded-xl border border-gray-200">
-                <span className="font-semibold text-gray-900">The insight:</span> Agents aren't shared objects. Agents are interaction modes—like switching between formal and casual conversation styles.
-              </p>
-              <p><span className="font-semibold">Redesign:</span> Moved agents to main Space interface. Made them personal and contextual.</p>
-            </div>
-          </div>
-
-          {/* Agent personality spectrum */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">The agent personality spectrum</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-6">
-              Instead of freeform customization (which created decision paralysis), I designed a spectrum of personality types:
-            </p>
-            <div className="flex flex-wrap gap-3 mb-6">
-              <span className="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-600">Formal</span>
-              <span className="px-4 py-2 bg-gray-200 rounded-full text-sm font-medium text-gray-600">Professional</span>
-              <span className="px-4 py-2 bg-gray-300 rounded-full text-sm font-medium text-gray-600">Casual</span>
-              <span className="px-4 py-2 bg-gray-400 rounded-full text-sm font-medium text-white">Creative</span>
-              <span className="px-4 py-2 bg-gray-500 rounded-full text-sm font-medium text-white">Educator</span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-              <div className="bg-gray-50 p-3 rounded-xl text-center">
-                <p className="text-xs text-gray-500">Legal analysis, compliance review</p>
-              </div>
-              <div className="bg-gray-50 p-3 rounded-xl text-center">
-                <p className="text-xs text-gray-500">Business communication, reports</p>
-              </div>
-              <div className="bg-gray-50 p-3 rounded-xl text-center">
-                <p className="text-xs text-gray-500">Brainstorming, quick questions</p>
-              </div>
-              <div className="bg-gray-50 p-3 rounded-xl text-center">
-                <p className="text-xs text-gray-500">Ideation, storytelling</p>
-              </div>
-              <div className="bg-gray-50 p-3 rounded-xl text-center">
-                <p className="text-xs text-gray-500">Patient explanations, learning</p>
-              </div>
-            </div>
-            <p className="text-base sm:text-lg text-gray-600 mt-6 bg-gray-50 p-4 rounded-xl border border-gray-100">
-              <span className="font-semibold">Why a spectrum?</span> User research showed people understood personality as a continuum, not discrete categories. The spectrum gave structure while allowing nuance.
-            </p>
-          </div>
-
-          {/* Mobile agent design */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">Mobile agent design</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-6">Key design decisions:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-2">Visual icons for quick recognition</h4>
-                  <p className="text-sm text-gray-600">Not just text labels—users could switch agents at a glance</p>
+        {/* Impact Section */}
+        <section id="impact" className="relative py-6 md:py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-6 md:mb-8">
+              <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+                <div className="max-w-md">
+                  <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium md:mb-12 mb-3 md:mb-6 text-gray-900">Impact</h2>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-2">Outcome-focused descriptions</h4>
-                  <p className="text-sm text-gray-600">"Clear, patient explanations" vs. "Educator personality" — Users care about what they get, not what it is</p>
+              </div>
+
+              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100">
+                <div className="flex items-start gap-8 md:gap-12 mb-8">
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">0→1</h3>
+                    <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">Shipped to production in 9 months</p>
+                  </div>
+                  <div className="w-px bg-gray-200 self-stretch min-h-[80px]"></div>
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">3x</h3>
+                    <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">Agent switching frequency vs. beta</p>
+                  </div>
                 </div>
+                {/* Metrics note */}
+                <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                  <p className="text-xs text-amber-700 uppercase tracking-wide mb-1 font-medium">Metrics to add</p>
+                  <p className="text-sm text-amber-800">
+                    Add specific adoption metrics: How many users created Spaces in first month? Share completion rate improvement? Agent creation rate? Collaboration session frequency?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Context & Problem Section */}
+        <section className="relative py-6 md:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16">
+            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+              <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-8 text-gray-900">The Problem</h2>
+            </div>
+            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 space-y-4 md:space-y-6">
+              <p className="text-base sm:text-lg text-gray-600">
+                Adobe Acrobat is synonymous with PDFs, but it's a single-document tool. Knowledge workers juggle dozens of files—lawyers with case files, researchers with studies, teams with project documents.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600">
+                We built PDF Spaces as Acrobat's answer to NotebookLM, with two key differentiators: <span className="text-gray-900 font-medium">multi-user collaboration with granular permissions, and customizable AI agents that adapt to different working styles.</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Competitive Context */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16">
+            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+              <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-8 text-gray-900">Competitive Landscape</h2>
+            </div>
+            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 space-y-6">
+              <p className="text-base sm:text-lg text-gray-600">
+                NotebookLM proved the market for AI-powered document workspaces, but had clear gaps we could exploit.
+              </p>
+              {/* Competitive comparison placeholder */}
+              <div className="w-full aspect-[4/3] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                <div className="text-center px-6">
+                  <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                  <p className="text-gray-600 text-sm max-w-sm">
+                    2x2 competitive matrix showing: NotebookLM (single-user, generic AI) vs PDF Spaces (multi-user, customizable AI). Or a simple feature comparison table highlighting collaboration and agent customization gaps.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Discovery & Research */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16">
+            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+              <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-8 text-gray-900">Discovery</h2>
+            </div>
+            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 space-y-6">
+              {/* Research note */}
+              <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <p className="text-xs text-amber-700 uppercase tracking-wide mb-1 font-medium">Content to add</p>
+                <p className="text-sm text-amber-800">
+                  How did you learn about user needs? Add: Number of user interviews conducted. Key user segments (legal, research, enterprise teams). How you discovered "people think in relationships, not permissions." Any analytics or support ticket insights.
+                </p>
               </div>
               <div className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-2">Persistent current agent indicator</h4>
-                  <p className="text-sm text-gray-600">Chat header always shows active agent so users know who they're talking to</p>
+                <div className="flex items-start gap-3">
+                  <span className="text-gray-400 font-mono text-sm mt-1">01</span>
+                  <div>
+                    <p className="font-medium text-gray-900">User interviews revealed permission confusion</p>
+                    <p className="text-sm text-gray-600">Users described collaborators by relationship ("my reviewer") not access level ("comment-only")</p>
+                  </div>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-2">Minimal creation flow</h4>
-                  <p className="text-sm text-gray-600">3 fields maximum: name, personality type, optional focus area</p>
+                <div className="flex items-start gap-3">
+                  <span className="text-gray-400 font-mono text-sm mt-1">02</span>
+                  <div>
+                    <p className="font-medium text-gray-900">AI responses felt generic across domains</p>
+                    <p className="text-sm text-gray-600">Legal researchers wanted citations; creative teams wanted brainstorming. One-size-fits-all failed.</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">Design constraint as clarity</h3>
-            <p className="text-base sm:text-lg text-gray-600">
-              On mobile, customization options had to be radically simplified. I focused on the minimum viable inputs that would create meaningfully different agent behaviors. This constraint actually improved the desktop experience too—we realized users didn't want 15 customization knobs, they wanted 3 meaningful choices.
-            </p>
-          </div>
-        </section>
-
-        {/* PART 3: MOBILE INTERACTION DESIGN */}
-        <section className="mb-12 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Part 3</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Designing the AI Prompt Experience</h2>
-          </div>
-
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out space-y-6 text-base sm:text-lg text-gray-600 mb-8">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900">The challenge mobile revealed</h3>
-            <p>
-              Once agents lived in the main interface, I faced a new problem: how do users know which agent they're talking to while typing?
-            </p>
-            <p>
-              On desktop, there's room for a persistent sidebar showing the active agent. On mobile's 320px width, every pixel matters.
-            </p>
-          </div>
-
-          {/* Prompt bar redesign iterations */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">The prompt bar redesign</h3>
-            <div className="space-y-4">
-              <div className="p-4 rounded-xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Initial design</h4>
-                <p className="text-sm text-gray-600 mb-2">Standard chat input with agent selector above</p>
-                <p className="text-sm text-gray-500"><span className="font-medium text-gray-600">Problem:</span> Agent selector felt disconnected. Users forgot which agent was active.</p>
-              </div>
-              <div className="p-4 rounded-xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Iteration 1</h4>
-                <p className="text-sm text-gray-600 mb-2">Agent name inside the prompt bar placeholder — "Ask your Legal Agent..."</p>
-                <p className="text-sm text-gray-500"><span className="font-medium text-gray-600">Problem:</span> Placeholder text disappears when typing. Lost context mid-conversation.</p>
-              </div>
-              <div className="p-4 rounded-xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Iteration 2</h4>
-                <p className="text-sm text-gray-600 mb-2">Agent pill/chip above the input field</p>
-                <p className="text-sm text-gray-500"><span className="font-medium text-gray-600">Problem:</span> Took up valuable vertical space. Keyboard + chip pushed conversation out of view.</p>
-              </div>
-              <div className="p-4 rounded-xl border border-gray-900 bg-gray-50">
-                <h4 className="font-semibold text-gray-900 mb-2">Final solution</h4>
-                <p className="text-sm text-gray-600 mb-2">Agent indicator integrated into prompt bar chrome — small avatar + name to the left of input</p>
-                <p className="text-sm text-gray-900 font-medium mt-2">This worked: Always visible, minimal space, clear context</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100 mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">Why this mattered</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-4">
-              The prompt bar is the primary interaction point. If users don't know which agent they're talking to, the whole customization feature becomes meaningless.
-            </p>
-            <p className="text-base sm:text-lg text-gray-600">
-              In beta testing, users with the final design <span className="font-semibold">switched between agents 3x more frequently</span> than those with earlier versions. The persistent visual reminder made agent personalities feel like a real part of the conversation, not just a setting they configured once.
-            </p>
-          </div>
-
-          {/* Mobile-specific interaction patterns */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">Mobile-specific interaction patterns</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-6">Beyond the prompt bar, I designed several mobile-first patterns:</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-3">Quick agent switching</h4>
-                <p className="text-sm text-gray-600">Tap agent indicator → Bottom sheet with agent list</p>
-                <p className="text-xs text-gray-500 mt-2">No need to leave the conversation or navigate menus</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-3">Suggested prompts</h4>
-                <p className="text-sm text-gray-600 mb-2">Long-press prompt bar → Context-specific suggestions based on active agent</p>
-                <p className="text-xs text-gray-500">Legal Agent: "Summarize key terms" | "Find precedents"</p>
-                <p className="text-xs text-gray-500">Creative Agent: "Generate ideas" | "Explore alternatives"</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-3">Agent preview</h4>
-                <p className="text-sm text-gray-600">Hold on agent in selector → Peek at personality and focus area</p>
-                <p className="text-xs text-gray-500 mt-2">Quick reference without committing to a switch</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Design constraint as advantage */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out bg-gray-900 p-6 sm:p-8 rounded-2xl mb-8">
-            <h3 className="text-lg font-semibold text-white mb-3">Design constraint as advantage</h3>
-            <p className="text-base sm:text-lg text-gray-400 mb-4">
-              <span className="font-semibold text-white">The constraint:</span> Mobile screens force you to show less.
-            </p>
-            <p className="text-base sm:text-lg text-gray-400 mb-4">
-              <span className="font-semibold text-white">The advantage:</span> By designing for the most constrained platform first, I was forced to identify what was truly essential. The mobile agent indicator became the pattern we used everywhere—even on desktop where we had more room.
-            </p>
-            <p className="text-base sm:text-lg text-white font-medium">
-              The principle: Good mobile design isn't desktop design shrunk down. It's a forcing function for clarity.
-            </p>
-          </div>
-
-          {/* Text input vs. quick actions */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">Text input vs. quick actions</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-6">
-              Another mobile challenge: typing on phones is slower and more error-prone than on desktop.
-            </p>
-            <p className="text-base sm:text-lg text-gray-600 mb-4">
-              <span className="font-semibold">Design decision:</span> I added quick action buttons that appear contextually:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="bg-gray-50 p-4 rounded-xl">
-                <p className="text-sm font-medium text-gray-900 mb-2">When viewing a document:</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-white rounded-full text-xs border border-gray-200">Summarize</span>
-                  <span className="px-3 py-1 bg-white rounded-full text-xs border border-gray-200">Ask a question</span>
-                  <span className="px-3 py-1 bg-white rounded-full text-xs border border-gray-200">Find key points</span>
-                </div>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-xl">
-                <p className="text-sm font-medium text-gray-900 mb-2">When agent responds:</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-white rounded-full text-xs border border-gray-200">Tell me more</span>
-                  <span className="px-3 py-1 bg-white rounded-full text-xs border border-gray-200">Simplify this</span>
-                  <span className="px-3 py-1 bg-white rounded-full text-xs border border-gray-200">Show sources</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-gray-400 font-mono text-sm mt-1">03</span>
+                  <div>
+                    <p className="font-medium text-gray-900">Mobile sharing was an afterthought</p>
+                    <p className="text-sm text-gray-600">Existing Acrobat share flow required 5+ taps and showed every permission option regardless of context</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <p className="text-base sm:text-lg text-gray-600 bg-gray-50 p-4 rounded-xl border border-gray-100">
-              These weren't just shortcuts—they were teaching tools. By showing contextual quick actions, users learned what agents could do without reading documentation. In beta feedback, users reported that quick actions helped them discover capabilities they didn't know existed.
-            </p>
           </div>
 
-          {/* The balance */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">The balance: Speed vs. customization</h3>
-            <p className="text-base sm:text-lg text-gray-600 mb-4">
-              Mobile design is always about tradeoffs. I had to balance:
-            </p>
-            <p className="text-base sm:text-lg text-gray-600 mb-6 text-center font-medium">
-              Fast interaction (tap and go) <span className="text-gray-400">vs.</span> Customization depth (configure your agent)
-            </p>
-            <div className="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100">
-              <p className="text-base sm:text-lg text-gray-600 mb-4"><span className="font-semibold">My approach:</span></p>
-              <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-gray-600">
-                <li>Make the default path fast (quick actions, smart suggestions)</li>
-                <li>Make customization accessible but not mandatory (long-press reveals options)</li>
-                <li>Progressive disclosure (show advanced features after users master basics)</li>
-              </ul>
-              <p className="text-base sm:text-lg text-gray-600 mt-4">
-                <span className="font-semibold">Result:</span> Users could chat immediately with a default agent, then gradually customize as they understood the system better.
+          {/* My Contribution Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16">
+            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+              <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-8 text-gray-900">My Contribution</h2>
+            </div>
+            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 space-y-4 md:space-y-6">
+              <p className="text-base sm:text-lg text-gray-600">
+                I led mobile design for the two features that differentiated PDF Spaces from competitors: the sharing and permission system, and the custom AI agent framework. Both shipped across iOS, Android, and web.
               </p>
             </div>
           </div>
         </section>
 
-        {/* AI-FIRST PRINCIPLES */}
-        <section className="mb-12 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">AI-First Principles</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">What I learned designing for AI collaboration</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-gray-400 text-sm font-medium">1</span>
-                <h3 className="text-lg font-semibold text-gray-900">Default intelligence, intentional control</h3>
+        {/* What Shipped Section */}
+        <section className="relative py-12">
+          <div className="space-y-20">
+            {/* Mobile Sharing Framework */}
+            <motion.div 
+              id="sharing" 
+              className="border-b border-gray-200 pb-12 md:pb-20"
+              style={{ scrollMarginTop: '8vh'}}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <div className="mb-8 md:mb-12">
+                <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-900">Mobile Sharing Framework</h3>
+                <p className="text-base sm:text-lg text-gray-600">
+                  Acrobat's existing share patterns were binary—view or no view. For a collaborative workspace, we needed permissions that matched how teams actually work together.
+                </p>
               </div>
-              <p className="text-base text-gray-600">
-                AI should anticipate, humans decide. Smart defaults reduced friction while users retained override capability.
-              </p>
-            </div>
 
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-gray-400 text-sm font-medium">2</span>
-                <h3 className="text-lg font-semibold text-gray-900">Explainable AI through design</h3>
+              {/* Before/After Comparison */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Before & After</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="text-center px-4">
+                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                      <p className="text-gray-600 text-xs max-w-[200px]">
+                        BEFORE: Old Acrobat share sheet showing binary "View only" / "Can edit" toggle. Show the cluttered UI with too many options visible at once.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="text-center px-4">
+                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                      <p className="text-gray-600 text-xs max-w-[200px]">
+                        AFTER: New PDF Spaces share sheet showing Contributor/Reviewer/Viewer roles with relationship-based labels. Clean, focused UI.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-base text-gray-600 mb-3">Every AI response showed:</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Which agent responded (icon + name in chat header)</li>
-                <li>• Sources used (tap to see document excerpts)</li>
-                <li>• Confidence indicators for factual claims</li>
-              </ul>
-              <p className="text-sm text-gray-500 mt-3 italic">Trust through transparency without cluttering the interface.</p>
-            </div>
 
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-gray-400 text-sm font-medium">3</span>
-                <h3 className="text-lg font-semibold text-gray-900">Progressive disclosure of capabilities</h3>
+              {/* The Reframe */}
+              <div className="mb-8 md:mb-12 pl-5 border-l-2 border-gray-200">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-3">Key Insight</p>
+                <blockquote className="text-base sm:text-lg text-gray-900 leading-relaxed mb-3">
+                  People think in relationships, not permissions. "She's reviewing this" is clearer than "she has comment access."
+                </blockquote>
               </div>
-              <p className="text-base text-gray-600 mb-3">Don't overwhelm users upfront. Reveal power features through scaffolded discovery:</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• First visit: Just "Chat" and "Upload"</li>
-                <li>• After first chat: Introduce custom agents</li>
-                <li>• After 5+ chats: Show advanced features</li>
-              </ul>
-            </div>
 
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-gray-400 text-sm font-medium">4</span>
-                <h3 className="text-lg font-semibold text-gray-900">Personality as interface</h3>
+              {/* The Three Roles */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Three Roles That Shipped</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="group">
+                    <div className="pt-4">
+                      <span className="text-xs uppercase tracking-widest text-gray-400 mb-3 block">Contributor</span>
+                      <p className="font-medium text-gray-900 mb-2">"We're working together"</p>
+                      <p className="text-sm text-gray-600">Full edit access. Default for teammates.</p>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="pt-4">
+                      <span className="text-xs uppercase tracking-widest text-gray-400 mb-3 block">Reviewer</span>
+                      <p className="font-medium text-gray-900 mb-2">"I'm giving feedback"</p>
+                      <p className="text-sm text-gray-600">Comment and annotate. Default for external domains.</p>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="pt-4">
+                      <span className="text-xs uppercase tracking-widest text-gray-400 mb-3 block">Viewer</span>
+                      <p className="font-medium text-gray-900 mb-2">"I'm learning from this"</p>
+                      <p className="text-sm text-gray-600">Read and chat only. Default for large groups.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-base text-gray-600">
-                AI agents aren't just features—they're how users shape their relationship with the tool. The agent selector became the primary customization surface, more important than traditional settings.
-              </p>
-            </div>
+
+              {/* Two-Tap Share Flow */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Two-Tap Share Flow</h4>
+                <p className="text-base text-gray-600 mb-6">
+                  Select recipient, confirm. Advanced options available but never blocking the primary path.
+                </p>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="text-center px-2">
+                      <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Step 1</p>
+                      <p className="text-gray-600 text-xs">
+                        Tap share → Contact picker with recent collaborators
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="text-center px-2">
+                      <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Step 2</p>
+                      <p className="text-gray-600 text-xs">
+                        Smart default applied (shows "Reviewer" for external email)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="text-center px-2">
+                      <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Step 3</p>
+                      <p className="text-gray-600 text-xs">
+                        Confirm & send (optional: tap role to change)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Smart Defaults */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Smart Defaults in Action</h4>
+                <p className="text-base text-gray-600 mb-6">
+                  320px screens can't show all options. The system infers the right role from email domain, Space size, and sharing history.
+                </p>
+                <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <div className="text-center px-6">
+                    <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                    <p className="text-gray-600 text-sm max-w-md">
+                      Annotated mockup showing smart defaults logic: @adobe.com → Contributor (internal), @external.com → Reviewer (external), 10+ recipients → Viewer (large group). Show the UI with visual indicators of why each default was chosen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Custom AI Agents */}
+            <motion.div 
+              id="agents" 
+              className="border-b border-gray-200 pb-12 md:pb-20"
+              style={{ scrollMarginTop: '8vh'}}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <div className="mb-8 md:mb-12">
+                <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-900">Custom AI Agents</h3>
+                <p className="text-base sm:text-lg text-gray-600">
+                  Generic AI doesn't work for specialized domains. A legal researcher needs different responses than a creative brainstormer. We shipped customizable agents that adapt to how users want to work.
+                </p>
+              </div>
+
+              {/* Design Pushback */}
+              <div className="mb-8 md:mb-12 pl-5 border-l-2 border-gray-200">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-3">The Friction Point</p>
+                <blockquote className="text-base sm:text-lg text-gray-900 leading-relaxed mb-3">
+                  PMs initially defined custom agents as a sharing feature—something that belonged in the share sheet alongside permissions. I pushed back in multiple conversations with leadership: customization is valuable, but it shouldn't be the primary entry point. Users need to understand agents as interaction modes first, then optionally customize.
+                </blockquote>
+                <cite className="text-sm text-gray-500 not-italic">
+                  The result: agents live in the prompt bar where users interact with them. Customization is accessible, not mandatory.
+                </cite>
+              </div>
+
+              {/* PM vs. My Approach Comparison */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Placement Exploration</h4>
+                <p className="text-base text-gray-600 mb-6">
+                  Where should agent customization live? This was the key design debate.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">PM's Initial Proposal</p>
+                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
+                      <div className="text-center px-4">
+                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
+                        <p className="text-gray-600 text-xs max-w-[180px]">
+                          Lo-fi wireframe showing agents buried in share sheet alongside permissions. Cluttered, requires multiple taps to access.
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600">Agents as a sharing setting—hidden behind the share button, alongside permissions.</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">Shipped Design</p>
+                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
+                      <div className="text-center px-4">
+                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
+                        <p className="text-gray-600 text-xs max-w-[180px]">
+                          Lo-fi wireframe showing agent indicator in prompt bar, easily tappable. One tap to switch, visible during conversation.
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600">Agents in the prompt bar—visible, contextual, one tap to switch.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Shipped UI */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">What Shipped</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="text-center px-4">
+                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                      <p className="text-gray-600 text-xs max-w-[200px]">
+                        Hi-fi mockup: Prompt bar with small agent avatar visible. Shows the "persistent agent indicator" integrated into the input field.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="text-center px-4">
+                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                      <p className="text-gray-600 text-xs max-w-[200px]">
+                        Hi-fi mockup: Agent switching menu expanded. Shows visual icons for each agent type (Formal, Professional, Casual, Creative, Educator) with outcome-focused descriptions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Personality Spectrum */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">The Personality Spectrum</h4>
+                <p className="text-base text-gray-600 mb-6">
+                  Freeform customization created decision paralysis. We shipped a constrained spectrum that gives users meaningful control without overwhelming them:
+                </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <span className="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-600">Formal</span>
+                  <span className="px-4 py-2 bg-gray-200 rounded-full text-sm font-medium text-gray-600">Professional</span>
+                  <span className="px-4 py-2 bg-gray-300 rounded-full text-sm font-medium text-gray-600">Casual</span>
+                  <span className="px-4 py-2 bg-gray-400 rounded-full text-sm font-medium text-white">Creative</span>
+                  <span className="px-4 py-2 bg-gray-500 rounded-full text-sm font-medium text-white">Educator</span>
+                </div>
+                <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <div className="text-center px-6">
+                    <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                    <p className="text-gray-600 text-sm max-w-md">
+                      Hi-fi mockup: The actual personality spectrum selector UI as it appears in the product. Show the slider or selection interface, not just pills. Include outcome-focused labels ("Clear, patient explanations" for Educator).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Agent Creation Flow */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Three-Field Agent Creation</h4>
+                <p className="text-base text-gray-600 mb-6">
+                  Mobile constraints forced clarity. We stripped agent creation down to three fields: name, personality type, optional focus area.
+                </p>
+                <div className="w-full aspect-[9/19] max-w-[280px] mx-auto bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <div className="text-center px-4">
+                    <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
+                    <p className="text-gray-600 text-xs max-w-[200px]">
+                      Hi-fi mockup: Agent creation screen showing the three fields: (1) Name input, (2) Personality type selector, (3) Optional focus area. Clean, focused mobile form.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Design Decisions */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Design Decisions</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="font-medium text-gray-900 mb-2">Visual icons for quick switching</p>
+                    <p className="text-sm text-gray-600">Users switch agents mid-conversation. Icons let them do this at a glance without reading labels.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 mb-2">Outcome-focused descriptions</p>
+                    <p className="text-sm text-gray-600">"Clear, patient explanations" instead of "Educator personality." Users care about what they get.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 mb-2">Three-field creation</p>
+                    <p className="text-sm text-gray-600">Name, personality type, optional focus area. Mobile constraints forced this clarity.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 mb-2">Persistent agent indicator</p>
+                    <p className="text-sm text-gray-600">Small avatar integrated into the prompt bar. Always visible, minimal space.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Iteration: Freeform vs Constrained */}
+              <div className="mb-8 md:mb-12">
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Exploration: Freeform vs. Constrained</h4>
+                <p className="text-base text-gray-600 mb-6">
+                  Early explorations let users write freeform personality descriptions. Testing showed this created decision paralysis.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">Explored: Freeform</p>
+                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
+                      <div className="text-center px-4">
+                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
+                        <p className="text-gray-600 text-xs max-w-[180px]">
+                          Lo-fi wireframe: Large text area asking "Describe how you want the AI to respond." Too open-ended, users stared at blank field.
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-500">Abandoned: Users didn't know what to write</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">Shipped: Constrained Spectrum</p>
+                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
+                      <div className="text-center px-4">
+                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
+                        <p className="text-gray-600 text-xs max-w-[180px]">
+                          Lo-fi wireframe: Personality spectrum with 5 preset options. Clear choices, easy to understand and select.
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-500">Shipped: Meaningful control without paralysis</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Result */}
+              <div className="rounded-xl p-5 md:p-6 border border-gray-200">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-1 font-medium">Result</p>
+                    <p className="text-lg font-semibold text-gray-900">3x increase in agent switching frequency</p>
+                  </div>
+                  <div className="text-sm text-gray-500 md:text-right">
+                    Users engaged with agents as a core part of their workflow, not a hidden setting
+                  </div>
+                </div>
+                {/* Metrics note */}
+                <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                  <p className="text-xs text-amber-700">
+                    <span className="font-medium">Add context:</span> 3x compared to what baseline? Beta users? First week vs. fourth week? What was the absolute number?
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* LEARNINGS */}
-        <section className="mb-12 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Learnings</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">What I learned</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-100 ">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">0→1 products require different design thinking</h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                Early stage isn't about polish, it's about validation. I shipped "good enough" designs faster to learn what mattered, then refined based on real usage.
-              </p>
-            </div>
-
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-100 ">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Mobile constraints drive better design</h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                The prompt bar problem forced me to strip away everything non-essential. That clarity made the desktop experience better too. Constraints force priorities.
-              </p>
-            </div>
-
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-100 ">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Interaction design is product design</h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                The prompt bar iterations weren't just UI polish—they fundamentally changed how users understood agents. The right interaction pattern made the feature comprehensible.
-              </p>
-            </div>
-
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out group relative bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-100 ">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Design for the most constrained platform first</h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                By solving for mobile's limitations, I created patterns that worked everywhere. Starting with desktop would have produced designs that didn't translate down.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* REFLECTION */}
+        {/* Reflection */}
         <section className="mb-16 md:mb-32">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Reflection</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Impact & what's next</h2>
-          </div>
-
-          {/* What shipped */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">What shipped</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <ul className="space-y-2 text-base sm:text-lg text-gray-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1">–</span>
-                  Permission-based sharing system (3 role levels)
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1">–</span>
-                  Mobile share flow with contextual defaults
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1">–</span>
-                  Custom agent selector and creation flow
-                </li>
-              </ul>
-              <ul className="space-y-2 text-base sm:text-lg text-gray-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1">–</span>
-                  Agent personality framework (5-point spectrum)
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1">–</span>
-                  Mobile-optimized prompt bar with persistent agent context
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1">–</span>
-                  Contextual quick actions for mobile chat
-                </li>
-              </ul>
-            </div>
-            <p className="text-base sm:text-lg text-gray-600 mt-6 font-medium">
-              Launched December 2024 to 50,000+ beta users
-            </p>
-          </div>
-
-          {/* What I'm proudest of */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-100 mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">What I'm proudest of</h3>
-            <p className="text-base sm:text-lg text-gray-600">
-              The prompt bar iterations taught me that interaction design is product strategy. The final design didn't just look better—it changed how users understood what agents were. Small UI decisions compound into big product outcomes.
-            </p>
-          </div>
-
-          {/* Where I'd invest next */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">Where I'd invest next</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Agent memory across sessions</h4>
-                <p className="text-sm text-gray-600">Right now, agents start fresh each time. What if they remembered context and adapted over time?</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Collaborative agent tuning</h4>
-                <p className="text-sm text-gray-600">Multiple users could contribute examples to refine a shared agent's behavior together.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* My role */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6">My role</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-4">What I owned:</h4>
-                <ul className="space-y-2 text-base text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    Led mobile design for permissions and agent systems
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    Designed agent personality framework and creation flow
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    Iterated prompt bar experience through 4+ versions based on beta feedback
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    Created mobile-first interaction patterns (quick actions, agent switching)
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-4">Who I collaborated with:</h4>
-                <ul className="space-y-2 text-base text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    4 Product Managers: Defined collaboration and agent strategy
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    12 Engineers: Worked through technical constraints of agent indicator
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    Design team: Shared mobile patterns that influenced desktop designs
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gray-400 mt-1">–</span>
-                    ML team: Shaped agent behavior framework and suggested prompts
-                  </li>
-                </ul>
-              </div>
+            <h2 className="text-xl sm:text-2xl font-medium mb-6 md:mb-8 text-gray-900">Reflection</h2>
+            <div className="space-y-6">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                This was my first 0→1 product at Adobe scale. The biggest shift was learning to ship "good enough" faster to validate assumptions, then refine based on real usage rather than speculation.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                Mobile-first design was a forcing function. The 320px constraint stripped away everything non-essential from both the sharing flow and agent UI—clarity that made the desktop experience better too.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                If I did this again, I'd sync with the web team earlier on cross-platform patterns. Some mobile solutions required rework when scaling up.
+              </p>
             </div>
           </div>
         </section>
-      </main>
 
-      {/* Next Project Section */}
-      <section className="py-12 md:py-24">
-        <div className="container mx-auto px-4">
+        {/* Next Project Section */}
+        <section className="py-12 md:py-24">
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out max-w-4xl mx-auto flex justify-end">
-            <a
+            <a 
               href="/aia"
               className="inline-block px-6 sm:px-8 py-2 rounded-full border-2 border-black text-base sm:text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300"
             >
               Next Project →
             </a>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Contact Section */}
       <section className="bg-gray-950 text-white pt-16 sm:pt-24 md:pt-32 pb-0 overflow-hidden">
@@ -896,7 +662,6 @@ const PDFSpaces = () => {
           </div>
         </div>
         
-        {/* Large Name - Full Width, Clipped at Bottom */}
         {/* Copyright Bar - Above Name */}
         <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl mt-16 sm:mt-24 md:mt-32">
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out py-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-6">
