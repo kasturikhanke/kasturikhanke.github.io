@@ -121,14 +121,11 @@ const PDFSpaces = () => {
 
           {/* Hero Image */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-300">
-            <div className="w-full aspect-[16/9] bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300">
-              <div className="text-center px-8">
-                <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                <p className="text-gray-600 text-base max-w-md">
-                  Hero product shot: iPhone mockup showing PDF Spaces main interface with a Space open, visible AI chat, and multiple PDFs. Consider a multi-device composition (iPhone + iPad) to show the ecosystem.
-                </p>
-              </div>
-            </div>
+            <img 
+              src="/HeroSpaces.png" 
+              alt="PDF Spaces interface showing collaborative AI workspace with multiple PDFs and AI chat"
+              className="w-full rounded-2xl"
+            />
           </div>
         </section>
 
@@ -154,13 +151,6 @@ const PDFSpaces = () => {
                     <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">Agent switching frequency vs. beta</p>
                   </div>
                 </div>
-                {/* Metrics note */}
-                <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
-                  <p className="text-xs text-amber-700 uppercase tracking-wide mb-1 font-medium">Metrics to add</p>
-                  <p className="text-sm text-amber-800">
-                    Add specific adoption metrics: How many users created Spaces in first month? Share completion rate improvement? Agent creation rate? Collaboration session frequency?
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -179,66 +169,6 @@ const PDFSpaces = () => {
               <p className="text-base sm:text-lg text-gray-600">
                 We built PDF Spaces as Acrobat's answer to NotebookLM, with two key differentiators: <span className="text-gray-900 font-medium">multi-user collaboration with granular permissions, and customizable AI agents that adapt to different working styles.</span>
               </p>
-            </div>
-          </div>
-
-          {/* Competitive Context */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-8 text-gray-900">Competitive Landscape</h2>
-            </div>
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 space-y-6">
-              <p className="text-base sm:text-lg text-gray-600">
-                NotebookLM proved the market for AI-powered document workspaces, but had clear gaps we could exploit.
-              </p>
-              {/* Competitive comparison placeholder */}
-              <div className="w-full aspect-[4/3] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                <div className="text-center px-6">
-                  <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                  <p className="text-gray-600 text-sm max-w-sm">
-                    2x2 competitive matrix showing: NotebookLM (single-user, generic AI) vs PDF Spaces (multi-user, customizable AI). Or a simple feature comparison table highlighting collaboration and agent customization gaps.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Discovery & Research */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16">
-            <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
-              <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium mb-3 md:mb-8 text-gray-900">Discovery</h2>
-            </div>
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 space-y-6">
-              {/* Research note */}
-              <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
-                <p className="text-xs text-amber-700 uppercase tracking-wide mb-1 font-medium">Content to add</p>
-                <p className="text-sm text-amber-800">
-                  How did you learn about user needs? Add: Number of user interviews conducted. Key user segments (legal, research, enterprise teams). How you discovered "people think in relationships, not permissions." Any analytics or support ticket insights.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 font-mono text-sm mt-1">01</span>
-                  <div>
-                    <p className="font-medium text-gray-900">User interviews revealed permission confusion</p>
-                    <p className="text-sm text-gray-600">Users described collaborators by relationship ("my reviewer") not access level ("comment-only")</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 font-mono text-sm mt-1">02</span>
-                  <div>
-                    <p className="font-medium text-gray-900">AI responses felt generic across domains</p>
-                    <p className="text-sm text-gray-600">Legal researchers wanted citations; creative teams wanted brainstorming. One-size-fits-all failed.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 font-mono text-sm mt-1">03</span>
-                  <div>
-                    <p className="font-medium text-gray-900">Mobile sharing was an afterthought</p>
-                    <p className="text-sm text-gray-600">Existing Acrobat share flow required 5+ taps and showed every permission option regardless of context</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -279,22 +209,16 @@ const PDFSpaces = () => {
               <div className="mb-8 md:mb-12">
                 <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Before & After</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <div className="text-center px-4">
-                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                      <p className="text-gray-600 text-xs max-w-[200px]">
-                        BEFORE: Old Acrobat share sheet showing binary "View only" / "Can edit" toggle. Show the cluttered UI with too many options visible at once.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <div className="text-center px-4">
-                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                      <p className="text-gray-600 text-xs max-w-[200px]">
-                        AFTER: New PDF Spaces share sheet showing Contributor/Reviewer/Viewer roles with relationship-based labels. Clean, focused UI.
-                      </p>
-                    </div>
-                  </div>
+                  <img 
+                    src="/BeforeSS.png" 
+                    alt="Before: Old Acrobat share sheet with binary view/edit options"
+                    className="w-full rounded-xl"
+                  />
+                  <img 
+                    src="/AfterSS.png" 
+                    alt="After: New PDF Spaces share sheet with Contributor/Reviewer/Viewer roles"
+                    className="w-full rounded-xl"
+                  />
                 </div>
               </div>
 
@@ -340,48 +264,19 @@ const PDFSpaces = () => {
                 <p className="text-base text-gray-600 mb-6">
                   Select recipient, confirm. Advanced options available but never blocking the primary path.
                 </p>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <div className="text-center px-2">
-                      <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Step 1</p>
-                      <p className="text-gray-600 text-xs">
-                        Tap share → Contact picker with recent collaborators
-                      </p>
-                    </div>
-                  </div>
-                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <div className="text-center px-2">
-                      <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Step 2</p>
-                      <p className="text-gray-600 text-xs">
-                        Smart default applied (shows "Reviewer" for external email)
-                      </p>
-                    </div>
-                  </div>
-                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <div className="text-center px-2">
-                      <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Step 3</p>
-                      <p className="text-gray-600 text-xs">
-                        Confirm & send (optional: tap role to change)
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <img 
+                  src="/Sharingflow.png" 
+                  alt="Two-tap share flow: Select recipient, smart defaults applied, confirm and send"
+                  className="w-full rounded-xl"
+                />
               </div>
 
-              {/* Smart Defaults */}
+              {/* Default Role */}
               <div className="mb-8 md:mb-12">
-                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Smart Defaults in Action</h4>
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Default to Reviewer</h4>
                 <p className="text-base text-gray-600 mb-6">
-                  320px screens can't show all options. The system infers the right role from email domain, Space size, and sharing history.
+                  We set Reviewer as the default role for all invites. This encouraged collaboration through commenting—the core behavior we wanted to drive in Spaces.
                 </p>
-                <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                  <div className="text-center px-6">
-                    <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                    <p className="text-gray-600 text-sm max-w-md">
-                      Annotated mockup showing smart defaults logic: @adobe.com → Contributor (internal), @external.com → Reviewer (external), 10+ recipients → Viewer (large group). Show the UI with visual indicators of why each default was chosen.
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -413,59 +308,45 @@ const PDFSpaces = () => {
                 </cite>
               </div>
 
-              {/* PM vs. My Approach Comparison */}
+              {/* Placement Exploration */}
               <div className="mb-8 md:mb-12">
                 <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">Placement Exploration</h4>
                 <p className="text-base text-gray-600 mb-6">
-                  Where should agent customization live? This was the key design debate.
+                  Where should agent customization live? I explored three entry points, evaluating each against user intent and interaction cost.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">PM's Initial Proposal</p>
-                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
-                      <div className="text-center px-4">
-                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
-                        <p className="text-gray-600 text-xs max-w-[180px]">
-                          Lo-fi wireframe showing agents buried in share sheet alongside permissions. Cluttered, requires multiple taps to access.
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-600">Agents as a sharing setting—hidden behind the share button, alongside permissions.</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-3">Shipped Design</p>
-                    <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300 mb-3">
-                      <div className="text-center px-4">
-                        <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Wireframe Needed</p>
-                        <p className="text-gray-600 text-xs max-w-[180px]">
-                          Lo-fi wireframe showing agent indicator in prompt bar, easily tappable. One tap to switch, visible during conversation.
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-600">Agents in the prompt bar—visible, contextual, one tap to switch.</p>
-                  </div>
-                </div>
+                <img 
+                  src="/Entrypoints.png" 
+                  alt="Wireframe exploration showing three entry point options: Share sheet (rejected - conflates sharing with AI behavior), Home (considered - discoverable but not contextual), and Prompt bar (shipped - just-in-time access)"
+                  className="w-full rounded-xl"
+                />
               </div>
 
-              {/* Shipped UI */}
+              {/* What Shipped: Combined Approach */}
               <div className="mb-8 md:mb-12">
-                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">What Shipped</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <div className="text-center px-4">
-                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                      <p className="text-gray-600 text-xs max-w-[200px]">
-                        Hi-fi mockup: Prompt bar with small agent avatar visible. Shows the "persistent agent indicator" integrated into the input field.
-                      </p>
-                    </div>
+                <h4 className="text-lg md:text-xl font-medium mb-4 text-gray-900">What Shipped: A Layered Approach</h4>
+                <p className="text-base text-gray-600 mb-6">
+                  Rather than picking one entry point, we designed a system where each touchpoint serves a distinct purpose.
+                </p>
+                <img 
+                  src="/Shippedagent.png" 
+                  alt="What shipped: Four screens showing Home with AI Assistant indicator, Choose assistant sheet with outcome-focused descriptions, AI Chat with agent in prompt bar, and Share sheet with read-only agent indicator"
+                  className="w-full rounded-xl mb-6"
+                />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-gray-400 mb-2 block">① Awareness</span>
+                    <p className="font-medium text-gray-900 mb-1">Share sheet indicator</p>
+                    <p className="text-sm text-gray-600">Read-only. Users see which agent is active when sharing, but can't change it here.</p>
                   </div>
-                  <div className="w-full aspect-[9/16] bg-gray-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <div className="text-center px-4">
-                      <p className="text-gray-400 text-sm uppercase tracking-wide mb-2">Image Needed</p>
-                      <p className="text-gray-600 text-xs max-w-[200px]">
-                        Hi-fi mockup: Agent switching menu expanded. Shows visual icons for each agent type (Formal, Professional, Casual, Creative, Educator) with outcome-focused descriptions.
-                      </p>
-                    </div>
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-gray-400 mb-2 block">② Visibility</span>
+                    <p className="font-medium text-gray-900 mb-1">Prompt bar on Home</p>
+                    <p className="text-sm text-gray-600">The current agent is visible before users start a conversation.</p>
+                  </div>
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-gray-400 mb-2 block">③ Control</span>
+                    <p className="font-medium text-gray-900 mb-1">Prompt bar interaction</p>
+                    <p className="text-sm text-gray-600">Tap to switch or customize. This is where behavior change happens.</p>
                   </div>
                 </div>
               </div>
@@ -566,24 +447,6 @@ const PDFSpaces = () => {
                 </div>
               </div>
 
-              {/* Result */}
-              <div className="rounded-xl p-5 md:p-6 border border-gray-200">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-1 font-medium">Result</p>
-                    <p className="text-lg font-semibold text-gray-900">3x increase in agent switching frequency</p>
-                  </div>
-                  <div className="text-sm text-gray-500 md:text-right">
-                    Users engaged with agents as a core part of their workflow, not a hidden setting
-                  </div>
-                </div>
-                {/* Metrics note */}
-                <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-                  <p className="text-xs text-amber-700">
-                    <span className="font-medium">Add context:</span> 3x compared to what baseline? Beta users? First week vs. fourth week? What was the absolute number?
-                  </p>
-                </div>
-              </div>
             </motion.div>
           </div>
         </section>
