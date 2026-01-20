@@ -120,20 +120,25 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
           <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 text-base sm:text-lg md:text-xl font-normal leading mb-6 md:mb-8 text-gray-600">
             How I designed a contextual discovery system that increased AI Assistant adoption by 38% while reducing notification fatigue.
           </p>
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 md:gap-8 text-xs sm:text-sm text-gray-500 mb-6 md:mb-8">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    Product Design
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-                    March '24 to May '24
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    Won the Time Best Innovation of 2024 Award
-                  </div>
-                </div>
+          {/* Role Details */}
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-sm mb-8 md:mb-12">
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Role</p>
+              <p className="text-gray-900">Lead Product Designer</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Timeline</p>
+              <p className="text-gray-900">March '24 to May '24</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Award</p>
+              <p className="text-gray-900">Time Best Innovation 2024</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Platform</p>
+              <p className="text-gray-900">iOS & Android</p>
+            </div>
+          </div>
          </section>
 
      
@@ -310,11 +315,11 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Concluding thoughts</h2>
           </div>
 
-          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600 mb-6 md:mb-8 max-w-3xl">
+          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600 mb-6 md:mb-8">
             This project reinforced that AI products need fundamentally different discovery patterns than traditional features. Users don't wake up wanting to "use AI" especially back in 2024. Acrobat users use the tool to read a contract or understand a research paper. The framework I designed solved the discovery challenge by meeting users in their moment of need and not a moment of wanting to promote a feature. 
           </p>
 
-          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600 max-w-3xl">
+          <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600">
             The framework not only addressed immediate challenges but also established a foundation for future feature launches, enabling the team to iterate and innovate rapidly within tight timelines.
           </p>
         </section>
