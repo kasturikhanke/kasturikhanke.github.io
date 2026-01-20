@@ -34,12 +34,47 @@ const App = () => {
   const [isInitialLoad, setIsInitialLoad] = useState(!fromCaseStudy);
   const [isContentLoaded, setIsContentLoaded] = useState(fromCaseStudy);
   const [showNav, setShowNav] = useState(fromCaseStudy);
+  const [sfTime, setSfTime] = useState('');
 
   const imageMap = {
     "PDF Spaces": "Spaces.jpg",
     "AI Assistant Discovery": "Splash.jpg",
     "Credit reporting": "sezzle-up.jpg"
   };
+
+  // Update San Francisco time
+  useEffect(() => {
+    const updateSfTime = () => {
+      const time = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'America/Los_Angeles',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+      setSfTime(time);
+    };
+    updateSfTime();
+    const interval = setInterval(updateSfTime, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Scroll reveal animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   // Scroll handling logic remains the same
   useEffect(() => {
@@ -323,7 +358,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={
-          <div className="h-screen overflow-y-auto md:overflow-hidden bg-white text-gray-900 font-sans">
+          <div className="min-h-screen overflow-y-auto bg-white text-gray-900 font-sans">
             <header className={`sticky top-0 z-50 transition-all duration-300 ${
               isScrolled ? 'bg-white/70 backdrop-blur-md border-b border-white/20' : 'bg-white'
             }`}>
@@ -342,7 +377,7 @@ const App = () => {
               </div>
             </header>
                  
-            <main className="min-h-screen md:h-screen md:overflow-hidden container mx-auto px-1 sm:px-2 lg:px-4 max-w-5xl">
+            <main className="min-h-screen container mx-auto px-1 sm:px-2 lg:px-4 max-w-5xl">
               {/* Hero Section */}
               <section 
                 id="home" 
@@ -405,7 +440,7 @@ const App = () => {
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-[100px] md:h-[120px] text-center md:text-left">
                         {selectedImage === "PDF Spaces" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">0 → 1 Notebook LM competitor</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">AI-powered document intelligence</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Designed collaboration systems and custom AI agents for Adobe's collaborative document workspace.
                             </p>
@@ -648,6 +683,77 @@ const App = () => {
                 <ImpactSection impactItems={impactItems} />
               </section>*/}
             </main>
+
+            {/* Contact Section / Footer */}
+            <section className="bg-gray-950 text-white pt-16 sm:pt-24 md:pt-32 pb-0 overflow-hidden">
+              {/* Top Content Area */}
+              <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+                  
+                  {/* About Column */}
+                  <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">about</p>
+                    <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                      Kasturi is a product designer<br />
+                      crafting AI-powered experiences<br />
+                      that drive measurable impact<br />
+                      and delight users.
+                    </p>
+                  </div>
+
+                  {/* Contact Column */}
+                  <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">contact</p>
+                    <a 
+                      href="mailto:kasturi.khanke@gmail.com"
+                      className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors duration-300 block"
+                    >
+                      kasturi.khanke@gmail.com
+                    </a>
+                  </div>
+
+                  {/* Social Column */}
+                  <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">social</p>
+                    <a 
+                      href="https://www.linkedin.com/in/kasturikhanke/"
+                      className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors duration-300 block"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Copyright Bar - Above Name */}
+              <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl mt-16 sm:mt-24 md:mt-32">
+                <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out py-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-6">
+                  <p className="text-sm text-gray-400">
+                    © 2026 Kasturi Khanke
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    San Francisco, CA · {sfTime}
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    Made with ♥ using Claude + Cursor
+                  </p>
+                </div>
+              </div>
+
+              {/* Large Name - Full Width, Clipped at Bottom */}
+              <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out overflow-hidden">
+                <h3 
+                  className="text-[15vw] sm:text-[14vw] md:text-[12vw] font-bold tracking-tighter leading-none whitespace-nowrap text-center select-none translate-y-[25%]"
+                  style={{
+                    color: 'white',
+                  }}
+                >
+                  KASTURI KHANKE
+                </h3>
+              </div>
+            </section>
 
             {/*<section className="bg-gray-950 text-white py-32">
               <div className="container mx-auto md:px-8">

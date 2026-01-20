@@ -746,7 +746,7 @@ const SezzleUp = () => {
         <section className="py-12 md:py-24">
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out max-w-4xl mx-auto flex justify-end">
             <a 
-              href="/aia"
+              href="/pdf-spaces"
               className="inline-block px-6 sm:px-8 py-2 rounded-full border-2 border-black text-base sm:text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300"
             >
               Next Project →
