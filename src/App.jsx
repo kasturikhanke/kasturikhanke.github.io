@@ -745,7 +745,7 @@ const App = () => {
               {/* Large Name - Full Width, Clipped at Bottom */}
               <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out overflow-hidden">
                 <h3 
-                  className="text-[15vw] sm:text-[14vw] md:text-[12vw] font-bold tracking-tighter leading-none whitespace-nowrap text-center select-none translate-y-[25%]"
+                  className="text-[12vw] sm:text-[14vw] md:text-[12vw] font-bold tracking-tighter leading-none whitespace-nowrap text-center select-none translate-y-[25%]"
                   style={{
                     color: 'white',
                   }}
